@@ -17,7 +17,7 @@ void main()
 	{
 		/*The ascii values of all the characters are obtained by 
 		using this statement*/ 
-		printf("The ascii value of %d is %c: %c\n",ascii_value, ascii_value);
+		printf("The ascii value of %d is : %c\n",ascii_value, ascii_value);
 
 		++ascii_value;
 	}

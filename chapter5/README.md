@@ -1,9 +1,9 @@
-### Chapter 5 : Loop Control Instruction
+# Chapter 5 : Loop Control Instruction
 
-# [A] What will be the output of the following program
+### [A] What will be the output of the following program
 - This one is covered in `exerciseA` file.  
 
-# [B] Attempt the following
+### [B] Attempt the following
 - **a.c** : Write a program to calculate overtime pay of 10 employees. Overtime is      paid at the rate of rs.12.00 per hour for every hour worked above 40 hous.Assume   that employees do not work for  fractional part of an hour.
 
 - **b.c**: Write a program to find the factorial value of any number entered through the keyboard.  
@@ -26,3 +26,4 @@
 - **h.c**: Write a program to receive an integer and find it's octal equivalent  
 
 - **i.c**: Write a program to find the range of a set of numbers entered through the keyboard. Range is the difference between the smallest and biggest number in the list.  
+

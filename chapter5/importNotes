@@ -1,0 +1,8 @@
+Important notes:
+-----------------
+
+1. The expressions i = i+1, i += 1, ++i and i++ are all same.
+2. j = ++i; first increments i then assign the incremented value to j.
+3. j = i++; first assign the current value of i to j then increment the i.
+4. while(i++ < 10) first checks the conditions, then increments i.
+5. while(++i < 10) first increments i then checks the conditions.
