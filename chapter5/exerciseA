@@ -23,4 +23,66 @@ a. #include<stdio.h>
    8 
    9
 
-b. 
+b. #include<stdio.h>
+   int main()
+   {
+       int x = 4, y, z;
+       y = --x;
+       z = x--;
+       printf("%d %d %d\n",x,y,z);
+       return 0;
+   }
+
+   Output:
+
+c. #include<stdio.h>
+   int main()
+   {
+       int x = 4, y=3, z;
+       z = x-- -y;
+       printf("%d %d %d\n",x,y,z);
+       return 0;
+   }
+
+   Output:
+
+d. #include<stdio.h>
+   int main()
+   {
+       while('a' < 'b')
+	  printf("malayalam is palindrome\n");
+       return 0;
+   }
+
+   Output: 
+
+
+e. #include<stdio.h>
+   int main()
+   {
+       int i;
+       while(i=10)
+       {
+           printf("%d\n",i);
+           i = i+1;
+       }
+       return 0;
+   }
+
+   Output: 
+
+f. #include<stdio.h>
+   int main()
+   {
+       float x = 1.1;
+       while(x == 1.1)
+       {
+           printf("%f\n",x);
+           x = x-0.1;
+       }
+       return 0;
+   }
+
+   Output: 
+
+
