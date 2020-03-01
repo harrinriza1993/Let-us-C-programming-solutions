@@ -2,7 +2,6 @@
        of any number entered through the keyboard.
 */
 
-
 /*Apporach:
 	Ask the user to enter value, compare the index 
 	value and the number what user have entered and 
@@ -17,7 +16,7 @@ void main()
 	printf("Enter the number\n");
 	scanf("%d",&number);
 
-	while (index<=number)
+	while (index <= number)
 	{ 
 		/*a temporary variable fact is initialized to 1 and it is 
 		mulitiplied with the index value and the value is stored in 
