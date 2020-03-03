@@ -22,6 +22,9 @@ a. #include<stdio.h>
    7 
    8 
    9
+   Notes:Since we have the while condition, less 
+	 than 10 it prints the values from 1 to 9.
+	 
 
 b. #include<stdio.h>
    int main()
@@ -36,18 +39,29 @@ b. #include<stdio.h>
    Output:2
 	  3
 	  3
+   Notes:Here the value of x is decremented twice so
+	 the value of x is 2,--x first decrements x,
+	 then assign the decremented value to y so the
+	 value of y is 3,x-- first assigns the value 
+	 to z then it decrements so the value of z is 3. 
+	
 
 c. #include<stdio.h>
    int main()
    {
        int x = 4, y=3, z;
-       z = x-- -y;
+       z = x---y;
        printf("%d %d %d\n",x,y,z);
        return 0;
    }
 
-   Output: error : expected ‘;’ before ‘y’
-			z = x--y;
+   Output: 3
+           3
+	   1
+   Notes : Since x decrements once the value of x is 3,
+	   the value of y is 3,the value of z is (4-3),
+	   that is 1.
+
 
 d. #include<stdio.h>
    int main()
@@ -59,6 +73,11 @@ d. #include<stdio.h>
 
    Output: malayalam is palindrome 
 	   (Printed infinity number of times)
+   Notes : In while condition the ascii value of a
+	   is always greater than y which is always
+	   true so it prints the statement to infinity 
+	   times.
+
 
 e. #include<stdio.h>
    int main()
@@ -74,6 +93,10 @@ e. #include<stdio.h>
 
    Output: 10
 	   (priinted infinity number of times)
+   Notes :  In while condition assignment operator is there
+	    so the condition will be always true ,so 10 is 
+	    printed infinity number of times
+
 
 f. #include<stdio.h>
    int main()
@@ -88,5 +111,9 @@ f. #include<stdio.h>
    }
 
    Output: No output 
+   Notes : 1.1 in while condition is taken as an integer so when we 
+	   compare the values the condition becomes false since x is
+	   a float value.If we typecast float in while condition we 
+	   get output.
 
 
