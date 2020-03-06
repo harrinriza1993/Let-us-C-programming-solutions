@@ -6,14 +6,11 @@ Important notes:
 	(i)While
 	(ii)do While
 	(iii)for
-2)While - to repeat something an unknown number of 
-	  times
+2)While - to repeat something an unknown number of times
   for - to repeat something a fixed number of times
-  
   do while - to repeat something at least once
 
-3)for(;;)is an infinite loop.while() results into
-  an error.
+3)for(;;) is an infinite loop. while() results into an error.
 
 4)break - terminates the execution of the loop.
 
