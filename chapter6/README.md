@@ -53,7 +53,7 @@
             all such numbers up to a reasonable limit.
 
 - **k.c** : Write a program to print 24 hours of a day with suitable 
-            suffixes like AM,PM,Noon,Midnght.
+            suffixes like AM, PM, Noon, Midnight.
 
 - **l.c** : (l)Write a program to produce the following output
                   
