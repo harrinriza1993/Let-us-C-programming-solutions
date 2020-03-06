@@ -1,0 +1,84 @@
+[B] Point out the errors,if any,in the following program.
+
+a. #include<stdio.h>
+   int main()
+   {
+     int suite = 1;
+     switch(suite);
+     {
+	case 0:
+		printf("club\n");
+	case 1:
+		printf("Diamond\n");
+      }
+	return 0;
+    }
+
+   Error:case label not within a switch statement
+	semicolon in switch statement
+
+b.#include<stdio.h>
+  int main()
+  {
+     int temp;
+     scanf("%d",&temp);
+     switch (temp)
+     {
+	case (temp<=20):
+		printf("ooooooh!! Dammn cool\n");
+	case (temp>20 && temp<=30):
+		printf("Rain rain here again\n");
+	case (temp>30 && temp<=40):
+		printf("wish iam on Everest\n");
+	default :
+		printf("Good old nagpur weather\n");
+       }
+	return 0;
+   }
+
+   Error:  case label does not reduce to an integer constant
+           The relational operators cannot use as case value.
+
+c. #include<stdio.h>
+   int main()
+   {
+     float a = 3.5;
+     switch (a)
+     {
+	case 0.5:
+		printf("The art of C\n");break;
+	case 1.5:
+		printf("the spirit of c\n");break;
+	case 2.5:
+		printf("see through C\n");break;
+	case 3.5:
+		printf("Simply c\n");
+	}
+	return 0;
+    }
+
+   Error : case label does not reduce to an integer constant
+	   Float value cannot be used as a case value.
+
+ d. #include<stdio.h>
+     
+    int main()
+    {
+      int a = 3,b = 4, c;
+      c = b-a;
+       switch (c)
+	{
+	  	case 1||2:
+			printf("God give me a chance to change things\n");
+		break;
+		case a||b:
+		 	printf ("God give me a chance to run my show\n");
+		break;
+	}
+        return 0;
+      }
+   Error : case label does not reduce to an integer constant
+           The ||(or operator) cannot be used as a case value.
+  
+   
+
