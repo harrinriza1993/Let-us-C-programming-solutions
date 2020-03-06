@@ -1,10 +1,9 @@
-/*(c)Write a program to generate all combinations of 
-     1,2,3 using for loop.
-*/
+/*(c) Write a program to generate all combinations of 1,2,3 using for loop.
 
-/*Apporach:
-	1)Nested for loop should be used t0 generate 
-	all combinations*/
+Apporach:
+	Nested for loop should be used to generate all combinations
+	123, 132, 213, 231, 312, 321
+*/
 
 #include<stdio.h>
 
@@ -12,10 +11,6 @@ void main()
 {
 	int number1,number2,number3;
 
-	/*The limit of for loop and nested for loop
-	should be 3 in order to generate all combinations
-	of 1,2,3.
-	*/
 	for ( number1 =1;number1<=3;number1++)
 	{
 		for( number2 =1;number2<=3;number2++)
