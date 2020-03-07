@@ -17,9 +17,9 @@ a. #include<stdio.h>
 	}
      }
    Output:Heart
-   Notes:The variable in switch is equal to 3,which is not
-         equal to both the cases,so the default value is the
-	 output.
+
+   Notes:The variable in switch is equal to 3 [suite = 3],which is not
+         equal to case 1 and 2,so the default value is the output.
 
 b.#include<stdio.h>
 
@@ -31,10 +31,10 @@ b.#include<stdio.h>
 	{
 	   case '3':
 		printf("you never win the silver prize\n");
-	   break;
+	   	break;
 	   case 3:
 		printf("you have lose the gold prize\n");
-	   break;
+	   	break;
 	   default:
 		printf("ofcourse provided you won a prize\n");
 	}
@@ -66,8 +66,8 @@ c. #include<stdio.h>
    }
            
    output : Atleast employees are good
-   Notes  : i = 3,which is equal to 8%5 ,so the last case value is 
-	    printed.
+
+   Notes  : i = 3,which is equal to 8%5 ,so the last case value is printed.
 
 d. #include<stdio.h>
    int main()
@@ -75,18 +75,20 @@ d. #include<stdio.h>
       int k;
       float j = 2.0;
       switch (k = j+1)
-     {
+      {
 	case 3:
 		printf("Trapped\n");
-	break;
+		break;
 	default:
 		printf("caught\n");
-	}
+      }
 	return 0;
     }
 
    Output: Trapped
-   Notes : k is equal to 3 since (j =2;j+1=3)so trapped is printed.
+
+   Notes : In switch condition [k = 3] //(j =2.0;j+1=3) 
+	   so 'Trapped' is printed.
 
 e. #include<stdio.h>
    int main()
@@ -106,9 +108,10 @@ e. #include<stdio.h>
      }
 
    Output: You entered a and b
-   Notes : Since the ascii value of 'a' + 'b' is equal to 'b' + 'a'
-           last case value is printed. 
 
+   Notes : Ascii value of 'a' is 97(dec) and 'b' is 98(dec).
+	   'a' + 'b' = 97+98
+	   'a' + 'b' == 'b' + 'a'
 
 
 
