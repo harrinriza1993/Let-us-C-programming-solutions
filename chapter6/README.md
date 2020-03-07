@@ -3,6 +3,9 @@
 ### [A] What will be the output of the following program
 - This one is covered in `exerciseA` file.  
 
+### [B] Answer the following
+- This one is covered in `exerciseB` file.  
+
 ### [c] Attempt the following
 - **a.c** :Write a program to print all prime numbers from  1 to 300.
 
