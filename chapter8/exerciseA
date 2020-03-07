@@ -17,8 +17,7 @@ a.#include<stdio.h>
 	main();
     } 
 
-   Output: Followed by c++,c# and java
-	   LearnC
+   Output: LearnC
 	   Followed by c++,c# and java
 	   LearnC
 	   Followed by c++,c# and java
@@ -26,8 +25,9 @@ a.#include<stdio.h>
 	   Followed by c++,c# and java
 	   Segmentation fault (core dumped)
 
-  Notes: Since we call main function in display function
-         we get this output.
+  Notes: This one is ended with Run time error (Segmentation fault (core dumped))
+	 we are keep on calling the main() and display() function at infinite times.
+         When the memory if full, we get this output.
 
 b. #include<stdio.h>
 
@@ -54,7 +54,7 @@ b. #include<stdio.h>
 
 c. #include<stdio.h>
 
-   float circle(int);
+  float circle(int);
 
   int main()
   {

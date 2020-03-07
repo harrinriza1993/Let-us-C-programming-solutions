@@ -1,6 +1,6 @@
-/*(b)Write a function power(a,b),to calculate the value of a raised to b*/
+/*(b)Write a function power(a,b),to calculate the value of a raised to b
 
-/*Apporach:
+Apporach:
 	1) A variable power is intialized to 1 and it is multiplied 
            with the given number and it is continued at each time 
 	   when the value of i increases.

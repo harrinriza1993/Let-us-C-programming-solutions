@@ -1,8 +1,7 @@
 /*(a) Write a function to calculate the factorial of any integer entered
       through the keyboard.
-*/
 
-/*Apporach:
+Apporach:
          1)A variable fact is intialized to 1 in the factorial function.
 	 2)A variable index is intialized to 1 to the number.
 	 3)For each step in for the index is multiplied with fact and 

@@ -1,7 +1,7 @@
 /*A positive integer is entered through the keyboard.Write a function to 
-  obtain the prime factors of this number*/
+  obtain the prime factors of this number
 
-/*Apporach:
+Apporach:
 	1)To get the factors of a given number,the number should be divided 
 	  by 2 to less than the given number.
 	2)This can be done by a modulo operator.
@@ -10,17 +10,18 @@
 
 #include<stdio.h>
 
-int factor(int);
+void factor(int);
 
 void main()
 {
-	int number,fact;
+	int number;
 
 	printf("Enter a number\n");
 	scanf("%d",&number);
-	fact = factor(number);
+
+	factor(number);
 }
-int factor(int number)
+void factor(int number)
 {
 	int index;
 
@@ -31,7 +32,6 @@ int factor(int number)
 		if (number%index == 0)
 			printf ("The factors of  %d is %d\n",number,index);
 	}
-	return (index);
 }
 
 	

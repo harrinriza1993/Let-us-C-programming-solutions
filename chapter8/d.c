@@ -1,7 +1,7 @@
 /*Any year is entered through the keyboard.Write a function to determine
-  whether the year is leap year or not.*/
+  whether the year is leap year or not.
 
-/*Apporach:
+Apporach:
 	1)The given year should be checked whether it is divisible bt 4.
 	2)If it is divisible then the given year is a leap year.
 */
