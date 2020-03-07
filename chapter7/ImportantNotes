@@ -18,13 +18,15 @@ Important notes:
 	  }
 3)Using break statement is switch is optional.
 
-4)case value should be integer or character value.
+4)case value should be integer or character value but not a variable name.
 
-5)we cannot relational operator and Logical operator in switch.
+5)we can have relational operator and Logical operator in switch.
 
 6)The difference between switch and if else is switch more structured
   and works faster but the disadvantage of switch is multiple cases cannot
   use same expression.
 
 7)goto statement is used in a program to take the control whereever u want.
+
+8) Can not use float in switch.
 
