@@ -14,8 +14,9 @@ a. #include<stdio.h>
 	return 0;
     }
 
-   Error:case label not within a switch statement
-	semicolon in switch statement
+   Compiler Error: case label not within a switch statement
+
+   Note: Semicolon in switch statement, so the case condition is not belongs to switch condition.
 
 b.#include<stdio.h>
   int main()
@@ -36,8 +37,9 @@ b.#include<stdio.h>
 	return 0;
    }
 
-   Error:  case label does not reduce to an integer constant
-           The relational operators cannot use as case value.
+   Compiler error:  case label does not reduce to an integer constant
+
+   Note: case condition can not have a variable.
 
 c. #include<stdio.h>
    int main()
@@ -57,8 +59,8 @@ c. #include<stdio.h>
 	return 0;
     }
 
-   Error : case label does not reduce to an integer constant
-	   Float value cannot be used as a case value.
+   Compiler error : case label does not reduce to an integer constant
+   Note: Float value cannot be used as a case value (switch condition).
 
  d. #include<stdio.h>
      
@@ -77,8 +79,8 @@ c. #include<stdio.h>
 	}
         return 0;
       }
-   Error : case label does not reduce to an integer constant
-           The ||(or operator) cannot be used as a case value.
+   Compiler error : case label does not reduce to an integer constant
+   Note: The variable (a and b) cannot be used as a case value [switch condition].
   
    
 
