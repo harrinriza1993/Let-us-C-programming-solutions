@@ -1,0 +1,28 @@
+Important notes:
+-----------------
+
+1)A function is a self contained block of statements that performs a coherent task
+  of some kind.
+
+2)There are 2 types of function.
+	predefined function - Functions which already definition in header files
+	eg : printf(),scanf()
+   	userdefined function - Functions that we create in a program 
+	eg : void message()
+
+3)Syntax of a function:
+ 	return_type function_name(argument list)
+	{
+		set of statements - Block of code
+	}
+
+4)Writing functions avoid rewriting the same code over and over.
+
+5)Actual Parameters:
+ 	The values/Variables passed while calling a function are called 
+	actual parameters
+
+6)Formal Parameters:
+ 	These are the variables declared in a function prototype and receive their
+	values when a call to the function is made.
+

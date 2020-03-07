@@ -1,0 +1,79 @@
+[A] What will be the output of the following program.
+
+a.#include<stdio.h>
+
+  void display();
+
+  int main()
+  {
+	printf("LearnC\n");
+	display();
+	return 0;
+    }
+
+   void display()
+   {
+	printf("Followed by c++,c# and java\n");
+	main();
+    } 
+
+   Output: Followed by c++,c# and java
+	   LearnC
+	   Followed by c++,c# and java
+	   LearnC
+	   Followed by c++,c# and java
+	   LearnC
+	   Followed by c++,c# and java
+	   Segmentation fault (core dumped)
+
+  Notes: Since we call main function in display function
+         we get this output.
+
+b. #include<stdio.h>
+
+   int check(int);
+
+  int main()
+ {
+	int i = 45,c;
+	c = check(i);
+	printf("%d\n",c);
+	return 0;
+ }
+ int check(int ch)
+ {
+	if (ch>=45)
+		return(100);
+	else
+		return(10 * 10);
+ }
+
+   Output:100
+   Notes: The condition in if statement is true,so 100 is the output.
+
+
+c. #include<stdio.h>
+
+   float circle(int);
+
+  int main()
+  {
+	float area;
+	int radius = 1;
+	area = circle(radius);
+	printf("%f\n",area);
+	return 0;
+  }
+ float circle(int r)
+ {
+	float a;
+	a = 3.14 * r * r;
+	return(a);
+ }
+
+   Output: 3.140000
+   Notes : Float values takes 6 digits after decimal,so four zeros are 
+	   printed with the area. 
+
+
+

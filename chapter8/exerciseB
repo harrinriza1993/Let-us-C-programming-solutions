@@ -1,0 +1,121 @@
+[B] Point out the errors,if any,in the following program.
+
+a. #include<stdio.h>
+
+  int addmult(int,int);
+
+  int main()
+ {
+	int i = 3,j = 4,k,l;
+	k = addmult(i,j);
+	l = addmult(i,j);
+	printf("%d%d\n",k,l);
+	return 0;
+  }
+
+  int addmult(int ii, int jj)
+  {
+	int kk,ll;
+	kk = ii + jj;
+	ll = ll * jj;
+	return(kk,ll);
+   }
+
+   Run Error:00
+   Notes    : Two values cannot be return in the same function.
+
+b.#include<stdio.h>
+
+  void message();
+
+  int main()
+  {
+	int a;
+	a = message();
+	return 0;
+  }
+  void message()
+  {
+	printf("Viruses are written in c\n");
+	return;
+	
+   }
+
+  compile Error:  void value not ignored as it ought to be
+  Notes        : Since void is used in the function it does
+		 not return any value so a variable is not 
+		 needed in main function.
+
+c.#include<stdio.h>
+
+  int main()
+  {
+	float a = 15.5;
+	char ch ='C';
+	printit(a,ch);
+	return 0;
+   }
+
+  printit(a,ch)
+ {
+	printf("%f%c\n",a,ch);
+  }
+
+   Run Error : implicit declaration of function ‘printit’ [-Wimplicit-function-declaration]
+		   0.000000C
+   Notes     : The function prototype is not declared.
+	       The datatypes are not mentioned in the parameters.
+
+d. #include<stdio.h>
+
+   void message();
+
+   int main()
+   {
+	message();
+	message();
+	return 0;
+    }
+  void message();
+ {
+	printf("praise worthy and c worthy are synonyms\n");
+  }
+   compile Error : expected identifier or ‘(’ before ‘{’ token
+           {
+   Notes : Unneccesary semicolon used in the message function.
+e. #include<stdio.h>
+
+   int main()
+   {
+	let_us_c()
+	{
+		printf("C is a simple minded language!\n");
+		printf("Others are of course no match!\n");
+	}
+	return 0;
+    }
+   compile Error : expected ‘;’ before ‘{’ token
+                   {
+                   ^
+   Notes         : A function cannot be declared in another function.
+f. #include<stdio.h>
+
+   void message();
+   int main()
+   {
+	message(message());
+	return 0;
+   }
+  void message()
+  {
+	printf("It is a small world after all...\n");
+   }
+   compile Error :  invalid use of void expression
+   Notes         :  since no parameters are given in function we cannot
+		    use parameter in main function.
+
+  
+
+
+   
+
