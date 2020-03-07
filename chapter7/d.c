@@ -13,11 +13,10 @@
     -If the student gets third class and the number of subjects he
      failed in is greater than 1,then he does not get any grace mark.
      Otherwise the grace is of 5 marks.
-*/
 
-/*Apporach:
-	1)The class and failedsubject is get through the keyboard
-	  and according to that the grace mark is given.
+Apporach:
+	The class and failedsubject is get through the keyboard
+	and according to that the grace mark is given.
 */
 
 
@@ -25,21 +24,22 @@
 
 void main()
 {
-	int class,failedsubject;
+	int class,failedSubject;
 
 	printf("Enter the class\n");
 	scanf("%d",&class);
+
 	printf("Enter the number of subjects failed\n");
-	scanf("%d",&failedsubject);
+	scanf("%d",&failedSubject);
+
 	switch(class)
 	{
 		case 1:
-
 			/*After the class it checks the failedsubject 
 		 	 condition and according to that the gracemark
-		  	is given.
-			*/
-			if (failedsubject>3)
+		  	is given.*/
+			
+			if (failedSubject>3)
 				printf("There is no grace mark\n");
 			else
 			{
@@ -48,7 +48,7 @@ void main()
 			}
 			break;
 		case 2:
-			if (failedsubject>2)
+			if (failedSubject>2)
 				printf("There is no grace mark\n");
 			else
 			{
@@ -57,7 +57,7 @@ void main()
 			}
 			break;
 		case 3:
-			if (failedsubject>1)
+			if (failedSubject>1)
 				printf("There is no grace mark\n");
 			else
 			{
