@@ -1,6 +1,13 @@
-/*Programs to print inverted half pyramid using numbers*/
+/*Programs to print inverted half pyramid using numbers
 
-/*Apporach:
+Example
+	1 2 3 4 5 
+	1 2 3 4 
+	1 2 3 
+	1 2 
+	1 
+
+Apporach:
 	1)The numbers from 1 to 5 should be printed in a first line. 
 	2)In the next line the number should be printed from 1 to 4.
         3)This continues till we get 1.
@@ -17,7 +24,7 @@ void main()
 	{
 		for (int col = 1;col <= row; col ++)
 		{
-			printf("%d",col);
+			printf("%d ",col);
 		}
 		printf("\n");
 	}

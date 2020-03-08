@@ -64,3 +64,45 @@
                      2       3
                   4      5       6
               7      8       9      10
+
+### Addtional_programs
+
+- **pyramid_star.c** : Program to print half pyramid using '*'.
+
+		* 
+		* * 
+		* * * 
+		* * * * 
+		* * * * * 
+
+- **pyramid_numbers.c** : Program to print half pyramid using numbers.
+
+		1 
+		1 2 
+		1 2 3 
+		1 2 3 4 
+		1 2 3 4 5
+
+- **pyramid_alphabets.c** : Program to print half pyramid using alphabets.
+
+		A 
+		B B 
+		C C C 
+		D D D D 
+		E E E E E
+- **inverted_pyramid_star.c** : Programs to print inverted half pyramid using '*'
+
+		* * * * * 
+		* * * * 
+		* * * 
+		* * 
+		* 
+
+- **inverted_pyramid_numbers.c** : Programs to print inverted half pyramid using numbers
+
+		1 2 3 4 5 
+		1 2 3 4 
+		1 2 3 
+		1 2 
+		1 
+
