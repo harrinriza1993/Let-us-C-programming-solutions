@@ -2,7 +2,7 @@
 
 a. #include<stdio.h>
 
-  int addmult(int,int);
+  int addmult(int,int)
 
   int main()
  {
@@ -22,7 +22,7 @@ a. #include<stdio.h>
    }
 
    Output: 12 12
-   Notes : It will return the value of ll.
+   Notes : semicolon missing in the function declaration.
 	   Two values cannot be return in the same function.
 
 b.#include<stdio.h>
@@ -84,7 +84,7 @@ d. #include<stdio.h>
    compile Error : expected identifier or ‘(’ before ‘{’ token
            {
 
-   Notes : Can not have any statement outside (main() and functions) of program.
+   Notes : Invalid semicolon in function definition.
 
 e. #include<stdio.h>
 
