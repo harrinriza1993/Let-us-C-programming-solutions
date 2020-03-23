@@ -1,0 +1,76 @@
+[A] What will be the output of the following program.
+
+a. #include<stdio.h>
+
+  void fun(int,int);
+
+  int main()
+  {
+	int i = 5,j = 2;
+	fun(i,j);
+	printf("%d%d\n",i,j);
+	return 0;
+  }
+  void fun(int i, int j)
+ {
+	i = i*i;
+	j = j*j;
+ }
+
+
+   Output: 52
+   Notes: Since we don't use printf in the fun function
+	  the printf in the main function is used to get
+	  the output.
+
+b. #include<stdio.h>
+
+   void fun(int*,int*);
+
+   int main()
+   {
+	int i = 5,j = 2;
+
+	fun(&i,&j);
+	printf("%d%d\n",i,j);
+	return 0;
+    }
+    void fun(int *i,int *j)
+    {
+	*i = *i * *i;
+	*j = *j * *j;
+     }
+
+   Output: 254
+   Notes: The adress &i and &j in main function points
+          the values in sub function so the multiplied 
+          values in sub function is given in  main function.
+
+c. #include<stdio.h>
+
+   int main()
+   {
+	float a = 13.5;
+	float *b,*c;
+
+	b = &a;
+	c = b;
+	printf("%u\n%u\n%u\n",&a,b,c);
+	printf("%f\n%f\n%f\n%f\n%f\n",a,*(&a),*&a,*b,*c);
+	return 0;
+    }
+	
+   Output: 3383061524
+           3383061524
+           3383061524
+           13.500000
+           13.500000
+           13.500000
+           13.500000
+           13.500000
+   Notes : The value of &a,b,c are same since all variables
+           points the address.The value of a,*(&a),*&a,*b,*c
+           are equal since all these stores the value of a.
+
+
+

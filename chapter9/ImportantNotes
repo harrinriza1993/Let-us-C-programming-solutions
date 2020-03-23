@@ -1,0 +1,22 @@
+Important notes:
+-----------------
+
+1. 3 ways to call a function:
+   (a) call by value - When values are passed to the called
+                       function.
+   (b) call by reference - When values arec passed to the 
+                           called function.
+   (c) Mixed call - when values and address are passed to the
+                    called function.
+
+2. Pointers are variables which holds the address of other variable.
+
+3. &,*- pointer operators
+   & - Address of operator
+   * - value at address 
+
+4. call by value - change in formal arguments doesn't affect actual
+                   argumets
+   call by refernce - Using formal arguments actual arguments can be 
+                      changed.
+

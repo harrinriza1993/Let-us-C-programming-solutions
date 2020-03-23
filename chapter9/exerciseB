@@ -1,0 +1,102 @@
+[B] Point out the errors,if any,in the following program.
+
+
+a.#include<stdio.h>
+
+  void pass(int,int);
+
+  int main()
+  {
+	int i = 135,a = 135,k;
+	k = pass (i,a);
+	printf("%d\n",k);
+	return 0;
+  }
+  void pass(int j,int b)
+  int c;
+  {
+	c = j + b;
+	return(c);
+	printf("%d\n",c);
+   }
+
+   compile error: void value not ignored as it ought to be.
+                  old-style parameter declarations in prototyped function definition.
+                  ‘c’ undeclared (first use in this function).
+   Note         :  There is no need of an variable k in main function 
+                   since we use void in sub function which doesn't return value.
+                   c should be declared after the  curly braces in sub function.
+
+b.#include<stdio.h>
+
+  void jiaayjo(int,int)
+
+  int main()
+  {
+	int p = 23,f = 24;
+	jiaayjo(&p,&f);
+	printf("%d%d\n",p,f);
+	return 0;
+  }
+  void jiaayjo(int q ,int g)
+  {
+	q = q+q;
+	g = g+g;
+
+  }
+
+   Compiler error:  expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+                    {
+
+   Note          :  Semicolon should be there while declaring a function prototype.
+
+c. #include<stdio.h>
+
+  void check(int);
+
+  int main()
+  {
+	int k = 35,z;
+
+	z = check(k);
+	printf("%d\n",z);
+	return 0;
+  }
+  void check(int m)
+  {
+	
+	if (m > 40)
+		return(1);
+	else
+		return(0);
+   }
+
+   Compiler error : void value not ignored as it ought to be
+   
+   Note : There is no need of a variable z in main function as we
+          have void in sub function
+ 
+d. #include<stdio.h>
+
+   void function(int *);
+
+   int main()
+   {
+	int i = 35,*z;
+	z = function(&i);
+	printf("%d\n",*z);
+	return 0;
+   }
+  void function(int *m)
+  {
+	return(*m+2);
+   }
+
+   Compiler error : void value not ignored as it ought to be
+   
+    Note: The variable z is not needed in main function as we use
+          void in subfunction.
+   
+
+
+
