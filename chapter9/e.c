@@ -5,8 +5,8 @@
   the triangle.
 
 Apporach:
-     1)The triangle points should should always satisfies a condition
-       a+b > c && a+c >b && b+c > ,otherwise it cannot be a valid triangle
+       The triangle points should should always satisfies a condition
+       a+b > c && a+c >b && b+c > a,otherwise it cannot be a valid triangle
        point.*/
 
 #include<stdio.h>
@@ -23,7 +23,7 @@ void main()
 
 	/*If this considition is satisfied then only the area of triagle
           can be found.*/
-	if (a+b > c && a+c >b && b+c > a)
+	if (a+b > c && a+c > b && b+c > a)
 	{
 		area(a,b,c,&ar);
 		printf("The area of a triangle is %f\n",ar);
@@ -36,7 +36,7 @@ void area(float a,float b,float c,float *area)
 {
 	float s,ar;
 
-	s       = (a+b+c)/2;
+	s = (a+b+c)/2;
 
 	/*The area of the triangle can be found using this formula.*/
 	ar      = s*(s-a)*(s-b)*(s-c);

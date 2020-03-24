@@ -1,6 +1,6 @@
 /* Write a function that receives marks obtained by a student in 3 subjects
-   and returns the average and percentage of these marks.call this function
-   from main() and print the results in main().
+   and returns the average and percentage of these marks.
+   call this function from main() and print the results in main().
 
 Apporach:
 	1)The maximum mark of each subject is considered as 100.
@@ -12,31 +12,36 @@ Apporach:
 
 #include<stdio.h>
 
-int marks(int,int,int,int*,int*);
-
+void marks(int,int,int,float*,float*);
 
 int main()
 {
-	int m1,m2,m3,average,percentage;
+	unsigned short int m1,m2,m3;
+	float average,percentage;
 	
 	printf("Enter the marks\n");
-	scanf("%d%d%d",&m1,&m2,&m3);
-	marks(m1,m2,m3,&average,&percentage);
-	printf("The average of 3 subject is %d\n",average);
-	
-	printf("The percentage of 3 subject is %d\n",percentage);
+	scanf("%hu %hu %hu",&m1,&m2,&m3);
+
+	if(m1<=100 && m2<=100 && m3<=100)
+	{
+		marks(m1,m2,m3,&average,&percentage);
+
+		printf("The average of 3 subject is %f\n",average);	
+		printf("The percentage of 3 subject is %f\n",percentage);
+	}
+	else
+		printf("Invalid entry. Please enter valid numbe <0 - 100>\n");
+
+
 	return 0;
 }
-int marks(int m1, int m2 ,int m3,int *average,int *percentage)
+
+void marks(int m1, int m2 ,int m3, float *average, float *percentage)
 {
-	int M;
+	*average  = (m1 + m2 + m3)/3;
 
-	*average        = (m1 + m2 + m3)/3;
-	 M              = m1 + m2 +m3;
-
-	/*Maximum mark is considered to be 100,so the total 
-          mark of 3 subject is 300.*/
-	*percentage     = (M*100)/300;
+	// percentage = sum of 3 marks * 100/300
+	*percentage = *average/3;
 }
 
 

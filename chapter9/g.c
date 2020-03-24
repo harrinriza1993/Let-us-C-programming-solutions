@@ -20,28 +20,49 @@ Apporach:
 
 #include<stdio.h>
 
-void algorithm(int*s,int);
+void euclidAlgorithm(int j, int k, float *gcd);
 
 void main()
 {
-	int j = 1980,k = 1617;
-	
-	algorithm(&j,k);
-	printf("The greatest common divisor is %d\n",j);
-}
-void algorithm(int *j, int k)
-{
-	int remainder,r;
-	
-	/*Until k becomes zero this step continues.*/
-	while(k != 0)
+	int a, b, max, min;
+	float gcd;
+
+	printf("Enter two numbers: ");
+	scanf("%d %d", &a, &b);
+
+	if (a<b)
 	{
-		remainder = *j/k;
-		r         = *j-(remainder*k);
+		max = b;
+		min = a;
+	}
+	else
+	{
+		max = a;
+		min = b;		
+	}
+	
+	euclidAlgorithm(max, min, &gcd);
+	printf("The greatest common divisor is %f\n", gcd);
+}
+
+void euclidAlgorithm(int j, int k, float *gcd)
+{
+	float remainder, mul;
+	
+	while(1)
+	{
+		remainder = j/k;
+		mul = j - (remainder * k);
+
+		if (mul == 0)
+		{
+			*gcd = k;
+			break;
+		}
 		
 		/*Swap the values and continue the process*/
-		*j        = k;
-		k         = r;
+		j = k;
+		k = mul;
 	}
 }
 	

@@ -9,5 +9,6 @@ Solve the given C programming in Let us C programming written by Yashavant Kanet
 **chapter6** . More Complex Repetitions  
 **chapter7** . Case Control Instruction  
 **chapter8** . Functions   
+**chapter9** . Pointers   
 
 

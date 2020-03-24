@@ -1,7 +1,9 @@
-/* Given three variables x,y,z Write a function to circularly shift their
-   values to right .In other words if x = 5,y = 8, z = 10,after circular
-   shift y = 5,z = 8,x = 10.Call the function with variables a,b,c to 
-   circularly shift values.
+/* Given three variables x,y,z
+   Write a function to circularly shift their values to right.
+   In other words 
+	if x = 5,y = 8, z = 10, after circular shift
+   	   y = 5,z = 8,x = 10.
+   Call the function with variables a,b,c to circularly shift values.
 
 Apporach:
      1) A temporary variable is used and the values are shifted to 
@@ -18,8 +20,10 @@ void main()
 	int a=10,b=20,c=30;
 
 	circular(&a,&b,&c);
-	printf("b value = %d,c value = %d,a value = %d",b,c,a);
+
+	printf("b value = %d,c value = %d,a value = %d\n",b,c,a);
 }
+
 void circular(int *a,int *b,int *c)
 {
 	int temp;

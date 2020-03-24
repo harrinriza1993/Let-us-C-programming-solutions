@@ -23,9 +23,9 @@ a.#include<stdio.h>
    compile error: void value not ignored as it ought to be.
                   old-style parameter declarations in prototyped function definition.
                   ‘c’ undeclared (first use in this function).
-   Note         :  There is no need of an variable k in main function 
-                   since we use void in sub function which doesn't return value.
-                   c should be declared after the  curly braces in sub function.
+
+   Note         :  1. We can not assign the pass() to variable k as its return type is void.
+                   2. c should be declared after the curly braces in sub function.
 
 b.#include<stdio.h>
 
@@ -48,8 +48,10 @@ b.#include<stdio.h>
    Compiler error:  expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
                     {
 
-   Note          :  Semicolon should be there while declaring a function prototype.
+   Note :  1. Semicolon should be there while declaring a function prototype.
+	   2. We can not pass the address in the fuction which accepts integer as argument.
 
+		
 c. #include<stdio.h>
 
   void check(int);
@@ -62,7 +64,7 @@ c. #include<stdio.h>
 	printf("%d\n",z);
 	return 0;
   }
-  void check(int m)
+  void check(m)
   {
 	
 	if (m > 40)
@@ -73,8 +75,9 @@ c. #include<stdio.h>
 
    Compiler error : void value not ignored as it ought to be
    
-   Note : There is no need of a variable z in main function as we
-          have void in sub function
+   Note : 1. We can not assign the check() to variable z as its return type is void.
+	  2. m is undeclared variable in the functions (check(m))
+	  3. Should not return in the function as the function return type is void
  
 d. #include<stdio.h>
 
@@ -94,8 +97,8 @@ d. #include<stdio.h>
 
    Compiler error : void value not ignored as it ought to be
    
-    Note: The variable z is not needed in main function as we use
-          void in subfunction.
+    Note: 1. We can not assign the function() to variable z as its return type is void.
+	  2. Should not return in the function as the function return type is void
    
 
 
