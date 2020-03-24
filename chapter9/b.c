@@ -19,7 +19,7 @@ int main()
 	unsigned short int m1,m2,m3;
 	float average,percentage;
 	
-	printf("Enter the marks\n");
+	printf("Enter the marks for 3 subjects\n");
 	scanf("%hu %hu %hu",&m1,&m2,&m3);
 
 	if(m1<=100 && m2<=100 && m3<=100)
@@ -31,7 +31,6 @@ int main()
 	}
 	else
 		printf("Invalid entry. Please enter valid numbe <0 - 100>\n");
-
 
 	return 0;
 }

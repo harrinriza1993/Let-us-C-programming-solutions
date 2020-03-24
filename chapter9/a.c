@@ -19,7 +19,7 @@ int main()
 	int n1,n2,n3,n4,n5;
 	float s,a,sd;
 
-	printf("Enter the numbers\n");
+	printf("Enter five numbers to find avg, sum and std\n");
 	scanf("%d%d%d%d%d",&n1,&n2,&n3,&n4,&n5);
 
 	sumAvgStd(n1,n2,n3,n4,n5,&s,&a,&sd);
