@@ -10,16 +10,19 @@ Apporach:
      up to 10 terms to get the final value.
 */
 
+#include<stdio.h>
 #include<math.h>
 
-void sine(int x,float *sinx);
+void sine(int x, float *sinx);
+unsigned long long factorial(int num);
+double power(double base, double p);
 
 int main()
 {
 	int x;
 	float sinx=0;
 
-	printf("Enter the value of x\n");
+	printf("Enter the value of x: ");
 	scanf("%d",&x);
 
 	sine(x, &sinx);
@@ -29,26 +32,38 @@ int main()
 	return 0;
 }
 
+/* To find the factorial */
+unsigned long long factorial(int num)
+{
+	unsigned long long fact = 1;
+
+	for(int i = 2; i <= num; i++)
+	{
+		fact = fact * i;
+	}
+
+	return fact;
+}
+
+/* To find power */
+double power(double base, double p)
+{
+	double temp = 1;
+
+	for(int i = 1; i <= (int)p; i++)
+		temp = temp * base;
+
+	return temp;
+}
+
 void sine(int x, float *sinx)
 {
-	unsigned long int fact,factorial;
-	int sign=1;
+	int sign = 1;
 
-	for (int i = 1 ;i <=19;i = i+2)
+	for (int i = 1 ;i <= 19; i = i+2)
 	{
-		factorial = 1;
-		for ( fact = 1;fact <=i;fact = fact+1)
-		{
-			factorial = fact * factorial;
-		}
-		printf("Factorial : %d : %lu\n", i, factorial);
+		*sinx = *sinx + (power(x,i)/factorial(i)) * (sign);
 
-		/*The poower value should be divided by factorial and it 
-                  should be continued till 10 terms.*/
-		*sinx = *sinx + (pow(x,i)/(factorial))*sign;
-
-		printf("Sign : %f %f\n",  (pow(x,i)/(factorial)*sign), *sinx);
-		/*To change the sign the sin variable is used*/
 		sign = sign * -1;
 	}
 }

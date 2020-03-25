@@ -37,10 +37,12 @@ int main()
 
 void marks(int m1, int m2 ,int m3, float *average, float *percentage)
 {
-	*average  = (m1 + m2 + m3)/3;
+	int total = (m1 + m2 + m2);
 
-	// percentage = sum of 3 marks * 100/300
-	*percentage = *average/3;
+	*average  = total/3;
+
+	// percentage = (sum of 3 marks/300) * 100
+	*percentage = (total/300)*100;
 }
 
 
