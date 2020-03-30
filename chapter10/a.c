@@ -41,14 +41,14 @@ int recursive_sum(int number)
 }
 
 /* Non recursive function used */
-void non_recursive_sum(int n)
+void non_recursive_sum(int number)
 {
 	int sum=0;
 
-	while(n>0)
+	while(number > 0)
 	{
-		sum = sum+n%10;
-		n = n/10;
+		sum = sum + number%10;
+		number /= 10;
 	}
 
 	printf("The sum of 5 digit positive integer using non recursive function is %d\n",sum);

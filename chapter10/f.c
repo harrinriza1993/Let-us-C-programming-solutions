@@ -11,3 +11,9 @@
       should be moved such that all disks on pegA are finally 
       transferred to pegC.
 */
+
+
+void main()
+{
+
+}
