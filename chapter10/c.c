@@ -5,40 +5,46 @@
   1 1 2 3 5 8 13 21 34 55 89
 
 Apporach
-	1)The fibonacci number series is obtained by adding 
+	  The fibonacci number series is obtained by adding 
           first two numbers and swapping it in another variable.
 */ 
 
 #include<stdio.h>
 
-void fibo(int,int,int,int);
+void fibo(int,int,int);
 
 void main()
 {
-	int number=1,n1=0,n2=1,n3;
+	int first = 0, second = 1, terms = 25;
 
-	printf("%d\n",n2);
+	printf("Fibonacci sequence of %d term as bellow,\n", terms);
+	/* Print the first terms */
+	printf("%d %d ",first, second); 
 
-	fibo(number,n1,n2,n3);
+	fibo(first, second, terms);
+
+	printf("\n");
 }
-void fibo(int number,int n1,int n2,int n3)
-{
-	
-	if (number <= 25)
-	{
-		/*n3 is get by adding first two variables.*/
-		n3 = n1+n2;
-		printf(" %d\n",n3);
 
-		/*swapping the values of n2 and n3 to n1 and n2 the 
-                  fibonacci series is obtained.*/
-		n1 = n2;
-		n2 = n3;
-		number++;
-		fibo(number,n1,n2,n3);
+void fibo(int first, int second, int terms)
+{
+	int fib_number = 0;
+
+	if (terms > 0)
+	{
+		/*fib_number is get by adding first two variables.*/
+		fib_number = first + second;
+		printf("%d ",fib_number);
+
+		/*swapping the values of first to second and second to first */
+		first = second;
+		second = fib_number;
+
+		terms--;
+
+		fibo(first, second, terms);
 	}
 }
-
 
 	
 	

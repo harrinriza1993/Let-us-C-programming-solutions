@@ -2,10 +2,9 @@
   to obtain the prime factors of the number.Modify the function
   suitably to obtain the prime factors recursively.
 
-Apporach:
- 	1)The Factors of a number should be found.
-  	2)From the factors,the prime numbers are considered as prime
-          factors.
+  Example:
+	The prime factor of 24 is : 2 2 2 3
+	The prime factor of 42 is : 2 3 7
 */
 
 #include<stdio.h>

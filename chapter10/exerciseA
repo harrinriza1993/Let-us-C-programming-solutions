@@ -11,9 +11,12 @@ a. #include<stdio.h>
    output: C to it that C survives
 	   (printed infinited infinity times)
 	  Segmentation fault (core dumped)
-   Note  : Since we call main() in main function itself
-           the statement repeats itself and it won't have 
-           memory to save it ,so segmentation fault occurs.
+
+   Note  : Since we call main() in main function, main() will get called itself
+           at infinity times and prints "C to it that C survives" at infinity times.
+	 
+	   At certain point, there is no memory to save the main() function,
+	   so segmentation fault occurs.
 
 
 b. include<stdio.h>

@@ -13,51 +13,61 @@ Apporach
 
 #include<stdio.h>
 
-void nbinary(int);
-int rbinary(int);
+void non_recursion_binary(int);
+int recursion_binary(int);
 
 void main()
 {
-	int n,result;
+	int number, result;
 	
 	printf("Enter any positive integer\n");
-	scanf("%d",&n);
+	scanf("%d",&number);
 
-	nbinary(n);
-
-	result = rbinary(n);
-
-	printf("The binary equivalent of a number using recursion is %d\n",result);
-}
-void nbinary(int n)
-{
-	int remainder,binary=0,temp=1;
-
-	while(n > 0)
+	/* Verify the number */
+	if (number >= 0)
 	{
-		/*modulo the number by 2 till n becomes zero.*/
-		remainder = n%2;
+		non_recursion_binary(number);
+
+		result = recursion_binary(number);
+		printf("The binary equivalent of a number using recursion is %d\n",result);
+	}
+	else
+		printf("Invalid number, please enter the positive value\n");
+
+}
+
+/* without using recursion */
+void non_recursion_binary(int number)
+{
+	int remainder, binary = 0, pos = 1;
+
+	while(number > 0)
+	{
+		/*modulo the number by 2 till number becomes zero.*/
+		remainder = number%2;
 		
 		/*The binary number is found by adding the binary number with 
                   the remainder in modulo operator multiplied by a temporary 
                   variable.*/
-		binary = binary + (remainder*temp);
+		binary = binary + (remainder * pos);
 
 		/*The temporary variable should be multiplied by 10 at each step.*/
-		temp = temp*10;
-		n = n/2;
+		pos = pos * 10;
+		number = number/2;
 	}
+
 	printf("The binary equivalent is without using recursion is %d\n",binary);
 }
 
-int rbinary(int n)
+/* with using recursion */
+int recursion_binary(int number)
 {
-	int num;
+	int remainder;
 	
-	if (n!=0)
+	if (number != 0)
 	{
-		num = n%2;
-		return num+10*rbinary(n/2);
+		remainder = number%2;
+		return remainder + (10 * recursion_binary(number/2));
 	}
 	else
 		return 0;

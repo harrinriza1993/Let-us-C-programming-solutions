@@ -3,7 +3,7 @@ Important notes:
 
 1. A function that call itself is called a recursive function.
 
-2. Any function ,including main()can become a recursive function.
+2. Any function ,including main() can become a recursive function.
 
 3. Recursive call always leads to an infinite loop.So a provision
    must be made to get outside this infinite loop.
