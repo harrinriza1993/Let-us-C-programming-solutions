@@ -11,7 +11,7 @@ Apporach:
 
 #include<stdio.h>
 
-void factor(int);
+void primeFactor(int);
 
 void main()
 {
@@ -20,27 +20,37 @@ void main()
 	printf("Enter a number\n");
 	scanf("%d",&number);
 
-	factor(number);
+	/* verify the entered number */	
+	if (number < 0)
+		printf("Invalid number, please enter positive number\n");
+	else if (number == 1)
+		printf("The prime factors of %d : %d\n", number, number);
+	else
+		primeFactor(number);
 }
-void factor(int number)
+
+void primeFactor(int number)
 {
-	for (int i=2;i <= number;i++)
+	printf("The prime factors of %d : ", number);
+
+	for (int divsor = 2; divsor <= number; divsor++)
 	{
-		while(number>1)
+		while(number > 1)
 		{
 			/*The modulo operation should be performed to a number starting from 2.
                           If we get 0 as output it should proceed as follows else the condition
                           breaks.*/
-			if (number%i==0)
+			if (number%divsor == 0)
 			{
-				printf("The prime factors of a number are %d\n",i);
+				printf("%d ", divsor);
 
 				/*Each time the number is divided by i till we get 1*/
-				number = number/i;
+				number = number/divsor;
 			}
 			else
 				break;
 		}
 	}
+	printf("\n");
 }
 
