@@ -1,0 +1,112 @@
+[A] What will be the output of the following program.
+
+a. #include<stdio.h>
+
+   int i = 0;
+   void val();
+
+   int main()
+   {
+	printf("main's i=%d\n",i);
+	i++;
+	val();
+	printf("main's i=%d\n",i);
+	val();
+	return 0;
+   }
+
+   void val()
+   {
+	i = 100;
+	printf("val'si=%d\n",i);
+	i++;
+   }
+
+   output: main's i=0
+           val'si=100
+	   main's i=101
+	   val'si=100
+
+   Note  : Intially i is equal to 0.
+	   Then i is incremented and function
+           is called and i values becomes 100.
+           Due to increment of  i in main function 
+           i values becomes 101.And then again sub
+           function is called and i value becomes
+           again 100. 
+
+b. #include<stdio.h>
+
+   int main()
+   {
+	static int count = 5;
+
+	printf("count = %d\n",count--);
+	if (count != 0)
+		main();
+	return 0;
+   } 
+
+   Output:count = 5
+	  count = 4
+	  count = 3
+	  count = 2
+	  count = 1
+
+   Notes: Since static is used as storage class, the variable persists
+          between the function.so each time the count value is reduced.
+
+c. #include<stdio.h>
+
+   int main()
+   {
+	func();
+	func();
+	return 0;
+   }
+
+   void func()
+   {
+	auto int i = 0;
+	register int j = 0;
+	static int k = 0;
+
+	i++;j++;k++;
+	printf("%d%d%d\n",i,j,k);
+   }
+   
+   Output : 111
+            112
+
+   Note   : Since i and j have auto and register as storage class,the values
+            won't change each time when the function is called.
+            k have static as storage class,k value persists between various function.
+
+d. #include<stdio.h>
+
+   int x = 10;
+
+   int main()
+   {
+	int x = 20;
+	{
+		int x = 30;
+		{
+			printf("%d\n",x);
+		}
+	}
+		printf("%d\n",x);
+		return 0;
+   }
+   Output : 30
+            20
+   Note   : The storage class in this variable is considered to be auto since
+            it is a default storage class.The scope of this variable is local
+            in which the variable is defined.
+
+
+
+
+
+   
+

@@ -1,0 +1,65 @@
+[B] Point out the errors,if any,in the following program.
+
+a. #include<stdio.h>
+
+   int main()
+   {
+	long num = 2;
+
+	printf("%d\n",num);
+	return 0;
+   }
+
+   Compiler Error: format ‘%d’ expects argument of type ‘int’, 
+                   but argument 2 has type ‘long int’ [-Wformat=]
+
+    Note: "%d" is used instead of "%ld".
+
+b. #include<stdio.h>
+
+   int main()
+   {
+	char ch = 200;
+
+	printf("%d\n",200);
+	return 0;
+   }
+	
+   Runtime error:  200
+
+   Note: For a character %c should be used as format and
+         the values in a variable should be in single quotes.
+
+c. #include<stdio.h>
+
+   int main()
+   {
+	long float a = 25.345e454;
+	unsigned double b = 25;
+
+	printf("%lf%d\n",a,b);
+	return 0;
+   }
+
+   Compiler error : both ‘long’ and ‘float’ in declaration specifiers
+
+   Note: Either we can use long or float to describe the variable type.
+         We can't use both.
+
+ d. #include<stdio.h>
+
+   static int y;
+
+   int main()
+   {
+	static int z;
+
+	printf("%d%d\n",y,z);
+	return 0;
+   }
+
+   Runtime error : 00
+   Note: y is a global variable which is declared as static.
+  
+   
+

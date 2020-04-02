@@ -1,0 +1,42 @@
+
+Important notes:
+-----------------
+
+1)Data types:
+     	integer-short,long,signed,unsigned,int
+	char   - signed,unsigned
+  	Real   - float,double,long double
+
+2)Storage class signifies 4 things:
+	1)Storage
+	2)Default value
+	3)Scope
+	4)Life
+
+3)Automatic storage class:
+  	Default value : garbage
+	storage	      : Memory
+	scope	      : local to the block
+	Life 	      : till controls is in the block in which
+                        variable is defined
+
+4)Register storage class:
+	Default value : garbage
+	storage	      : CPU registers
+	scope         : local to the block
+	Life	      : till control is in the block in which variable is
+                        defined.
+5)Static storage class:
+	Default value : 0
+	Storage       : memory
+	scope         : Local to the block
+	Life 	      : Till execution of program doesn't end
+
+6)Extern storage class:
+	Default value : 0
+	Storage       : memory
+	Scope         : Global
+	Life 	      : Till execution of program doesn't end
+
+7)Redeclaration of variable is ok,redefintion is not
+	int i;---->Definition       extern int i;---->Declaration

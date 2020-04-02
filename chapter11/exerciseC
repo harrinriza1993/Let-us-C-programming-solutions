@@ -1,0 +1,25 @@
+[C] State whether the following statements are True or False.
+
+1. The value of an automatic storage class persists between various
+   function invocations - False
+
+2. If the CPU registers are not avaliable,the register storage class
+   variables are treated as static storage class variables - False
+
+3. The register storage class variables cannot hold float values- True
+
+4. If we try to use register storage class for a float variable the
+   compiler will report an error message - False
+
+5. The default value for automatic variable is zero- False
+
+6. The life of static variable is till the control remains within the
+   block in which it is defined- False
+
+7. If a global variable is to be defined ,then the extern keyword is
+   necessary in its declaration - False
+
+8. The address of register variable is not accessible - False 
+
+
+
