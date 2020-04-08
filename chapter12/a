@@ -1,0 +1,15 @@
+(a) If a macro is not getting expanded as per your expectation,how
+    will you find out how is it being expanded by the preprocessor.
+
+    Answer:
+     	If for any reason,you are unable to debug a macro,then you
+        should view the expanded code of the program to see how the
+        macros are getting expanded.If your source code is present in
+        PR1.C,then the expanded code source would be stored in PR1.I.
+        You need to generate this file at the command prompt by saying:
+  
+	cpp pr1.c
+	
+	Here CPP stands for C Preprocessor. It generates the expanded 
+        source code and stores it in a file called PR1.O.You can now 
+   	open this file and see the expanded source code.  

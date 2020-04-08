@@ -1,0 +1,81 @@
+[B] What will be the output of the following program.
+
+a. #include<stdio.h>
+
+   int main()
+   { 
+	int i = 2;
+	
+	#ifdef DEF
+		i* = i;
+	#else
+		printf("%d\n",i);
+	#endif
+	return 0;
+   }
+
+   output: 2
+   Note  : Since DEF is not defined as a macroexpansion
+	   i value is 2.
+
+b. #include<stdio.h>
+   #define PRODUCT(x) (x * x)
+
+int main()
+{
+	int i = 3,j,k,l;
+	
+	j = PRODUCT(i + 1);
+	k = PRODUCT(i++);
+	l = PRODUCT(++i);
+	printf("i = %d\nj = %d\nk = %d\nl =  %d\n",i,j,k,l);
+	return 0;
+}
+   output : i = 7
+	    j = 7
+            k = 12
+            l =  49
+   Note : Since i value is assigned and incremented at each step
+          from 3 the value changes to 7.
+	  j = (i + 1 * i + 1)//i = 3
+	    = (3 + 1 * 3 + 1)//multiplication is performed first
+	    = (3 + 3 + 1)
+	  j = 7
+	  k = (i++)(i++)//i =3
+	    = (i++)(3++)//3 is assigned but the value of i changes to 4
+	    = (4++)*(3)//4 is assigned but the vaue of i changes to 5.
+            = 4 * 3
+	    = 12
+	l = (++i)(++i)//i = 5
+	l = (7)*(7)//Since i is preincremented twice i = 7
+	l = 49
+
+c. #include<stdio.h>
+   #define PI 3.14
+   #define AREA(x,y,z) (PI * x * x + y * z)
+
+   int main()
+   {
+	float a = AREA(1,5,8);
+	float b = AREA(AREA(1,5,8),4,5);
+
+	printf("a = %f\n",a);
+	printf("b = %f\n",b);
+	return 0;
+   }
+   Output : a = 43.139999
+            b = 5863.727051
+   Note   : Since pi = 3.14
+            AREA(1,5,8) = 3.14 * 1 * 1 + 5 * 8
+			= 43.13999
+	    AREA(AREA(1,5,8),4,5
+               First AREA(1,5,8)should be found 
+            Then it will become AREA(43.1399,4,5)
+                             = 3.14 * 43.1399 * 43.1399 + 4 * 5
+	                     = 5863.727051
+
+
+
+
+   
+

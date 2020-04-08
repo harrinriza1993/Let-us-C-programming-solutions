@@ -1,0 +1,82 @@
+[A] Answer the following:
+
+(a) A preprocessor directive is:
+	1.A message from compiler to the programmer
+	2.A message from compiler to the linker
+	3.A message from programmer to the preprocessor
+	4.A message from programmer to the microprocessor
+
+	Answer : 3.A message from programmer to the preprocessor
+
+(b) Which of the following are correctly formed #define statements
+ 	#define INCH PER FEET 12
+	#define SQR(x) (x * x)
+	#define SQR(x) x*x
+	#define SQR(x) (x * x)
+
+	Answer : SQR(x) (x * x)
+
+(c) State True or False:
+	1.A macro must always be written in capital letters - True
+	2.A macro should accommodated in a single line - False
+	3.After preprocessing when the program is sent for compilation
+	  the macros are removed from expanded source code - False
+	4.Macros with arguments are not allowed - False
+	5.Nested macros are alowed - False
+	6.In a macro the control is passed to the macro - True
+ 
+(d) How many #include directives can be there in a given program file?
+
+   Answer : Many number of #include directives can be there in a program
+            It depends on the need in the program .
+
+(e) What is the difference between the following two #include directives:
+    
+ 	#include"conio.h"
+	#include<conio.h>
+
+    Answer : #include"conio.h" - This command would look for the file conio.h
+             in the current directory as well as the specified list of directories
+             as mentioned in the include search path that might have been setup
+             #include<conio.h> - This command would look for the file conio.h in the
+                                 specified list of directories only. 
+
+(f) A header file is :
+	1. A file that contains standard library functions
+ 	2. A file that contains definitions and macros
+	3. A file that contains user-defined functions
+	4. A file that is present in current working directory
+
+    Answer : 1.A file that contains standard library functions
+
+(g) Which of the following is not a preprocessor directive
+	1.#if
+	2.#elseif
+	3.#undef
+	4.#pragma
+
+   Answer : 2.#elseif
+
+(h) All macro substitutions in a program are done:
+
+	1.Before compilation of the program
+	2.After compilation
+	3.During execution
+	4.None of the above
+
+   Answer : 1.Before compilation of the program
+
+(i) In a program the statement:
+
+    #include "filename"
+    is replaced by the contents of the file "filename":
+	1.Before compilation 
+	2.After compilation
+	3.During execution
+	4.None of the above
+
+   Answer : 1.Before compilation
+
+
+
+

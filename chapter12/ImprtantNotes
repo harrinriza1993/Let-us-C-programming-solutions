@@ -1,0 +1,39 @@
+Important notes:
+-----------------
+
+1. C preprocessor is a program that process our program before 
+   it is passed to the compiler.
+
+2. The Preprocessor works on the source code and creates "Expanded
+   source code' as per directives used in the source code
+
+3. Each preprocessor directive begins with a # symbol.
+
+4. 4 types of preprocessor directives
+   (a)Macro expansion
+   (b)File inclusion
+   (c)Conditional compilation
+   (d)Miscellneous directives
+
+5. Macros - Every template is replaced by it's expansion
+          - Macros have a global effect 
+          - example : #define PI 3.14
+
+6. Macros can take multiple arguments
+
+7. Macros can be split over multiple lines.put a \at the end of
+   each line,except last line.
+
+8. Macros are faster than functions but occupies more space.
+
+9. conditional compilaton - compiles the code only if the
+                            condition is true
+                          - Implemented using #ifdef,#else,#endif
+                            #ifndef,#if
+
+10. Miscellaneous directives:
+	#undef - undefines a macro that has already been defined
+	#pragmainline - used for compilation of program that uses
+	                assembly language statements
+
+11. There are many other #pragma directives. 
