@@ -6,17 +6,18 @@
 */
 
 #include<stdio.h>
-#define CHA(i) for (i = 65;i <= 90;i++)\
-			for (char j = 97;i == j-32;j++)\
-				printf("The small case alphabet of %c is %c\n",i,j);
+#define CHA(i) for (int j = 97;j <= 122;j++)\
+	       		if (i == j-32) \
+				printf("The lowercase of a uppercase alphabet is %c\n",j);	
+
 void main()
 {
 	char alphabet;
 
-	printf("Enter the alphabet\n");
+	printf("Enter the uppercase alphabet\n");
 	scanf("%c",&alphabet);
 	
 	CHA(alphabet);
 }
 	
-			 
+			
