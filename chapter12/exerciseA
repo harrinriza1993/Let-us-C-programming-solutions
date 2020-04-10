@@ -17,13 +17,13 @@
 	Answer : SQR(x) (x * x)
 
 (c) State True or False:
-	1.A macro must always be written in capital letters - True
+	1.A macro must always be written in capital letters - False
 	2.A macro should accommodated in a single line - False
 	3.After preprocessing when the program is sent for compilation
-	  the macros are removed from expanded source code - False
+	  the macros are removed from expanded source code - True
 	4.Macros with arguments are not allowed - False
 	5.Nested macros are alowed - False
-	6.In a macro the control is passed to the macro - True
+	6.In a macro the control is passed to the macro - False
  
 (d) How many #include directives can be there in a given program file?
 
@@ -39,7 +39,7 @@
              in the current directory as well as the specified list of directories
              as mentioned in the include search path that might have been setup
              #include<conio.h> - This command would look for the file conio.h in the
-                                 specified list of directories only. 
+                                 specified/default list of directories only. 
 
 (f) A header file is :
 	1. A file that contains standard library functions
@@ -47,7 +47,7 @@
 	3. A file that contains user-defined functions
 	4. A file that is present in current working directory
 
-    Answer : 1.A file that contains standard library functions
+    Answer : All are true
 
 (g) Which of the following is not a preprocessor directive
 	1.#if
@@ -76,7 +76,4 @@
 	4.None of the above
 
    Answer : 1.Before compilation
-
-
-
 

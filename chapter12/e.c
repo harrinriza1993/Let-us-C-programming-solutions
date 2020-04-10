@@ -1,11 +1,11 @@
 /*(e) Write macro definitions with arguments for calculation
-   of simple interest and amount.Store these macro definitions
-   in a file called "interest.h".Include this file in ur program
+   of simple interest and amount. Store these macro definitions
+   in a file called "interest.h". Include this file in your program
    and use the macro definitions for calculating simple interest
    and amount.
 
 Apporach:
-	1)The formula for simpleinterest is
+	1)The formula for simple interest is
 		SI = pnr/100;
 	2)The calculation for amount is
 		A = P(1+r/n)^nt
@@ -19,21 +19,19 @@ Apporach:
 
 void main()
 {
-	int principle,year,rate,time,simpleinterest,amount;
+	float principle, year, rate, simpleinterest, amount;
 	
 	printf("Enter the principle amount\n");
-	scanf("%d",&principle);
+	scanf("%f", &principle);
 	printf("Enter the number of times interest is compounded per year\n");
-	scanf("%d",&year);
+	scanf("%f", &year);
 	printf("Enter the rate\n");
-	scanf("%d",&rate);
-	printf("Enter the time\n");
-	scanf("%d",&time);
+	scanf("%f",&rate);
 
-	simpleinterest = SIMPLE_INTEREST(principle,year,rate);
-	printf("The simple interest is %d\n",simpleinterest);
+	simpleinterest = SIMPLE_INTEREST(principle, year, rate);
+	printf("\nThe simple interest amount is %f\n", simpleinterest);
 
-	amount = AMOUNT(principle,year,rate,time);
-	printf("The amount is %d\n",amount);
+	amount = AMOUNT(principle, simpleinterest);
+	printf("The amount is %f\n\n", amount);
 }
-	
+

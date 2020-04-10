@@ -1,5 +1,5 @@
-/*A positive integer in entered through the keyboard,write a program
-  to obtain the prime factors of the number.Modify the function
+/*A positive integer in entered through the keyboard, write a program
+  to obtain the prime factors of the number. Modify the function
   suitably to obtain the prime factors recursively.
 
   Example:
@@ -7,9 +7,7 @@
 	The prime factor of 42 is : 2 3 7
 */
 
-
 #include<stdio.h>
-#include<stdlib.h>
 
 void factor(int);
 
@@ -17,37 +15,29 @@ void main()
 {
 	int number;
 	
-	printf("Enter the number\n");
-	scanf("%d",&number);
+	printf("Enter the number to find the prime factor\n");
+	scanf("%d", &number);
 
+	printf("\nThe prime factor of %d is : ", number);
 	factor(number);
+	printf("\n\n");
 }
+
 void factor(int number)
 {
-	int i;
+	int divisor;
 
-	for (i=2;i<=number;i++)
+	for (divisor = 2; divisor <= number; divisor++)
 	{	
 		/*The modulo operation to a number is performed starting from number 2*/
-		if (number%i==0)
+		if (number%divisor == 0)
 		{
-			printf("The prime factor of a number is %d\n",i);
-	
-			/*Each time the number should be divided by i*/
-			number = number/i;
+			printf("%d ", divisor);
 
-			/*If number becomes 1 we have to exit the function.*/
-			if (number ==1)
-				exit(0);
-			else
+			factor(number/divisor);
 
-				/*Otherwise we have to call the function recursively at each time.*/
-				factor(number);
+			break;
 		}
 	}
 	
 }
-
-			
-	
-

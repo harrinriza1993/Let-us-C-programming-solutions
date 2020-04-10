@@ -20,60 +20,50 @@ Apporach:
 
 #define ARITHMETIC_MEAN(a,b) (a+b)/2
 
-#define ABSOLUTE_VALUE(x)  if (x > 0)\
-		  		printf("The absolute value of a number is %d\n\n",x);\
-		           else if (x < 0)\
-		        		x = -1 * x;\
-			   	printf("The absolute value of a number is %d\n\n",x);
-			    
+#define ABSOLUTE_VALUE(x)    (x > 0) ? x : (x*-1);
 
-#define UPPERCASE_TO_LOWERCASE(i) for (int j = 97;j <= 122;j++)\
-	                          	if (i == j-32) \
-						printf("The lowercase of a uppercase alphabet is %c\n\n",j);
+#define UPPERCASE_TO_LOWERCASE(c) (c >= 65 && c <= 90) ? c+32 : 0
 
-#define BIGGEST(a,b,c)  if(a > b && a > c)\
-			 	printf("%d is greater\n",a);\
-		        else if(b > a && b > c)\
-				printf("%d is greater\n",b);\
-		    	else\
-				printf("%d is greater\n",c);
+#define BIGGEST(a,b,c)  (a > b && a > c) ? a : (b > a && b > c) ? b : c
 
 void main()
 {
-	int number1,number2,arithmeticmean,number,n1,n2,n3;
-	char alphabet;
-	
-	printf("Arithmetic mean of 2 numbers\n");
-	printf("Enter the two numbers\n");
-	scanf("%d%d",&number1,&number2);
-	
-	arithmeticmean = ARITHMETIC_MEAN(number1,number2);
-	printf("The arithmetic mean of two numbers is %d\n\n",arithmeticmean);
+	int number1, number2, abs_value, number, n1, n2, n3, bigNum;
+	float arithmeticmean;
+	char alphabet, conv_alphabet;
 
-	printf("Absolute value of a number\n");
-	printf("Enter the number\n");
-	scanf("%d",&number);
+	/* 1.To find arithmetic mean of two numbers. */
+	printf("\nEnter two numbers to find an arithmetic mean\n");
+	scanf("%d%d", &number1, &number2);
+
+	arithmeticmean = ARITHMETIC_MEAN(number1, number2);
+	printf("The arithmetic mean of two numbers is %f\n\n",arithmeticmean);
+
+	/* 2.To find absolute value of a number. */
+	printf("\nEnter number to find a absolute value\n");
+	scanf("%d", &number);
 	
-	ABSOLUTE_VALUE(number);
+	abs_value = ABSOLUTE_VALUE(number);
+	printf("Absolute value of a %d is %d\n",number, abs_value);
 
-	printf("Conversion of uppercase to lowercase alphabets\n");
-	printf("Enter the uppercase alphabet\n");
-	scanf("%c",&alphabet);
+	/* 3.To convert an upper case alphabet to lowercase. */
+	printf("\nEnter the uppercase alphabet: ");
+	/* The %c character reads the blank or newline after the first scanf
+	   use " %c" with a leading space to skip over optional white space
+	   before reading the character. */
+	scanf(" %c", &alphabet);
 
-	UPPERCASE_TO_LOWERCASE(alphabet);
-
-	printf("The Biggest of three numbers\n");
-	printf("Enter the numbers\n");
-	scanf("%d%d%d",&n1,&n2,&n3);
+	conv_alphabet = UPPERCASE_TO_LOWERCASE(alphabet);
+	if (conv_alphabet)
+		printf("Conversion of uppercase ['%c'] to lowercase is ['%c']\n" ,alphabet, conv_alphabet);
+	else
+		printf("Plaese enter a valid Upper case character\n");
 	
-	BIGGEST(n1,n2,n3);
-
+	/* 4.To obtain the biggest of three numbers. */
+	printf("\nEnter three numbers\n");
+	scanf("%d %d %d",&n1, &n2, &n3);
 	
+	bigNum = BIGGEST(n1, n2, n3);
+	printf("The Biggest of three numbers [%d %d %d] is %d\n", n1, n2, n3, bigNum);	
 }
 
-	
-	
-
-
-
-  

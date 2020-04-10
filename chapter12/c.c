@@ -14,44 +14,62 @@ Apporach:
 
 #include "areaperi.h"
 
-void main()
+void calculate_area_perimeter_triangle()
 {
-	int base,height,side1,side2,side3,side,radius,area,perimeter;
-	
-	/*Area and perimeter of a triangle*/
-	printf("Enter the base and height\n");
-	scanf("%d%d",&base,&height);
-	printf("Enter the sides of a triangle\n");
-	scanf("%d%d%d",&side1,&side2,&side3);
-	
-	area = AREA_OF_TRIANGLE(base,height);
-	perimeter = PERIMETER_OF_TRIANGLE(side1,side2,side3);
+	float area, perimeter;
+	int base, height, side1, side2, side3;
 
-	printf("The area of the triangle is %d\n",area);
-	printf("The perimeter of the triangle is %d\n\n",perimeter);
+	printf("\nEnter the base and height for triangle\n");
+	scanf("%d %d",&base, &height);
+	printf("Enter the three sides of a triangle\n");
+	scanf("%d %d %d",&side1, &side2, &side3);
 	
+	/* Area and perimeter of a triangle */
+	area = AREA_OF_TRIANGLE(base, height);
+	perimeter = PERIMETER_OF_TRIANGLE(side1, side2, side3);
+
+	printf("The area of the triangle is %f\n", area);
+	printf("The perimeter of the triangle is %f\n\n", perimeter);
+}
+
+void calculate_area_perimeter_square()
+{
+	float area, perimeter;
+	int side;
+
+	printf("\nEnter the side of the square\n");
+	scanf("%d", &side);
+
 	/*Area and perimeter of square*/
-	printf("Enter the side of the square\n");
-	scanf("%d",&side);
-
 	area = AREA_OF_SQUARE(side);
 	perimeter = PERIMETER_OF_SQUARE(side);
 
-	printf("The area of a square is %d\n",area);
-	printf("The perimeter of a  square is %d\n\n",perimeter);
+	printf("The area of a square is %f\n", area);
+	printf("The perimeter of a  square is %f\n\n", perimeter);
+}
 
- 	/*Area and perimeter of circle*/
-	printf("Enter the radius\n");
-	scanf("%d",&radius);
+void calculate_area_perimeter_circle()
+{
+ 	float area, perimeter;
+	int radius;
+
+	printf("\nEnter the radius of a circle\n");
+	scanf("%d", &radius);
 	
+	/*Area and perimeter of circle*/
 	area = AREA_OF_CIRCLE(radius);
 	perimeter = AREA_OF_CIRCLE(radius);
 
-	printf("The area of a square is %d\n",area);
-	printf("The perimeter of a square is %d\n",perimeter); 
+	printf("The area of a square is %f\n", area);
+	printf("The perimeter of a square is %f\n", perimeter); 
 }
 
+void main()
+{
+	calculate_area_perimeter_triangle();
 
-	
+	calculate_area_perimeter_square();
 
+	calculate_area_perimeter_circle();
+}
 

@@ -1,4 +1,4 @@
-/*(b)Write down the macro definitions of the following:
+/*(b) Write down the macro definitions of the following:
   
    1. To test whether a character is a small case letter or not
    2. To test whether a case is an upper case letter or not.
@@ -19,26 +19,14 @@ Apporach:
 
 #include<stdio.h>
 
-#define SMALL_CASE_LETTER(x) 	if (x >= 97 && x<= 122)\
-		               		printf("%c is a small letter\n",x);\
-				else\
-					printf("%c is not a small letter\n",x);
+#define IS_SMALL_CASE_LETTER(x)  ((x >= 97 && x<= 122) ? 1 : 0)
 
-#define UPPER_CASE_LETTER(x)  if (x >= 65 && x <= 90)\
-	       			printf("%c is a uppercase alphabet\n",x);\
-			     else\
-				printf("%c is not a uppercase alphabet\n",x);
+#define IS_UPPER_CASE_LETTER(x)  ((x >= 65 && x <= 90) ? 1 : 0)
 
-#define ALPHABET(x) 	if (x >= 65 && x <= 90 )\
-				printf("%c is a alphabet\n",x);\
-		        else if (x >= 97 && x <= 122)\
-				printf("%c is a alphabet\n",x);\
-		        else\
-				printf("%c is not a alphabet",x);
+#define IS_ALPHABET(x) 	 	 ((IS_SMALL_CASE_LETTER(x) || IS_UPPER_CASE_LETTER(x)) ? 1 : 0)
 
-#define BIGGEST(a,b)	(a > b) ? printf("%d is greater\n",a) : printf("%d is greater\n",b); 
-
-
+#define BIGGEST_OF_TWO(a,b)	 (a > b) ? printf("%d is a bigger number\n",a) :\
+					  printf("%d is a bigger number\n",b); 
 
 void main()
 {
@@ -46,13 +34,26 @@ void main()
 	int number1,number2;
 	
 	printf("Enter any character\n");
-	scanf("%c",&character);
+	scanf("%c", &character);
 
-	printf("Enter the numbers\n");
-	scanf("%d%d",&number1,&number2);
+	printf("Enter two numbers\n");
+	scanf("%d %d", &number1, &number2);
 	
-	SMALL_CASE_LETTER(character);
-	UPPER_CASE_LETTER(character);
-	ALPHABET(character)
-	BIGGEST(number1,number2);
+	if IS_SMALL_CASE_LETTER(character)
+		printf("Entered character ['%c'] is a samll case\n", character);
+	else
+		printf("Entered character ['%c'] is not a samll case\n", character);
+
+	if IS_UPPER_CASE_LETTER(character)
+		printf("Entered character ['%c'] is a uppercase\n", character);
+	else
+		printf("Entered character ['%c'] is not a uppercase\n", character);
+
+	if IS_ALPHABET(character)
+		printf("Entered character ['%c'] is a alphabet\n", character);
+	else
+		printf("Entered character ['%c'] is not a alphabet\n", character);
+
+	BIGGEST_OF_TWO(number1,number2)
 }
+

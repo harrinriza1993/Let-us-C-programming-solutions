@@ -21,7 +21,7 @@ Important notes:
 
 6. Macros can take multiple arguments
 
-7. Macros can be split over multiple lines.put a \at the end of
+7. Macros can be split over multiple lines.put a \ at the end of
    each line,except last line.
 
 8. Macros are faster than functions but occupies more space.
@@ -37,3 +37,4 @@ Important notes:
 	                assembly language statements
 
 11. There are many other #pragma directives. 
+

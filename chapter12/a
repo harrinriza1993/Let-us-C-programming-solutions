@@ -1,4 +1,4 @@
-(a) If a macro is not getting expanded as per your expectation,how
+(a) If a macro is not getting expanded as per your expectation, how
     will you find out how is it being expanded by the preprocessor.
 
     Answer:
@@ -12,4 +12,5 @@
 	
 	Here CPP stands for C Preprocessor. It generates the expanded 
         source code and stores it in a file called PR1.O.You can now 
-   	open this file and see the expanded source code.  
+   	open this file and see the expanded source code.
+
