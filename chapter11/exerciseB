@@ -10,10 +10,10 @@ a. #include<stdio.h>
 	return 0;
    }
 
-   Compiler Error: format ‘%d’ expects argument of type ‘int’, 
-                   but argument 2 has type ‘long int’ [-Wformat=]
+   Compiler Warning: format ‘%d’ expects argument of type ‘int’, 
+                     but argument 2 has type ‘long int’ [-Wformat=]
 
-    Note: "%d" is used instead of "%ld".
+   Note: No error ("%d" is used instead of "%ld").
 
 b. #include<stdio.h>
 
@@ -25,10 +25,10 @@ b. #include<stdio.h>
 	return 0;
    }
 	
-   Runtime error:  200
 
-   Note: For a character %c should be used as format and
-         the values in a variable should be in single quotes.
+   Note: No Error
+	 As we assgined character to integer (ch = 200) and print integer.
+	 It will print 200
 
 c. #include<stdio.h>
 
@@ -37,14 +37,19 @@ c. #include<stdio.h>
 	long float a = 25.345e454;
 	unsigned double b = 25;
 
-	printf("%lf%d\n",a,b);
+	printf("%lf %d\n",a,b);
 	return 0;
    }
 
-   Compiler error : both ‘long’ and ‘float’ in declaration specifiers
+   Compiler error : 1. both ‘long’ and ‘float’ in declaration specifiers
+		    2. both ‘unsigned’ and ‘double’ in declaration specifiers
 
-   Note: Either we can use long or float to describe the variable type.
-         We can't use both.
+   Note: Double can not be unsigned.
+	 float can not be long.
+         
+	 Available format in float
+	 float -> double -> long double
+	 %f -> %lf -> %Lf [Format identifier]
 
  d. #include<stdio.h>
 
@@ -54,12 +59,13 @@ c. #include<stdio.h>
    {
 	static int z;
 
-	printf("%d%d\n",y,z);
+	printf("%d %d\n",y,z);
 	return 0;
    }
 
-   Runtime error : 00
-   Note: y is a global variable which is declared as static.
+   
+   Note: No Error
+	 The default value of static variable is zero
   
    
 

@@ -54,7 +54,7 @@ b. #include<stdio.h>
 	  count = 1
 
    Notes: Since static is used as storage class, the variable persists
-          between the function.so each time the count value is reduced.
+          between the function. so each time the count value is reduced.
 
 c. #include<stdio.h>
 
@@ -95,11 +95,14 @@ d. #include<stdio.h>
 			printf("%d\n",x);
 		}
 	}
-		printf("%d\n",x);
-		return 0;
+
+	printf("%d\n",x);
+	return 0;
    }
+
    Output : 30
             20
+
    Note   : The storage class in this variable is considered to be auto since
             it is a default storage class.The scope of this variable is local
             in which the variable is defined.
