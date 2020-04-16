@@ -41,7 +41,7 @@ void modify(int elements[])
 	printf("\n");
 	
 	/*The new elements of the array are obtained by multiplying it by 3
- 	  and values are printed in main function.*/s
+ 	  and values are printed in main function.*/
 	printf("The new elements in the array are\n");
 	for (int i = 0; i <= 9;i++)
 	{
