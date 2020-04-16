@@ -2,42 +2,29 @@
       elements of an array.
 
 Apporach:
-	1)Two arrays are taken ,one has odd numbers
-          and other array has even numbers
-	2)A temporaryarray name is considered and the values
-          are interchanged.
+	1)An array of fixed size is taken
+	2)The odd element and even elements are interchanged by
+          a temporary variable
 */
 
 #include<stdio.h>
 
-int main()
+void main()
 {
-	/*The odd numbers are taken in odd[4] arrayname*/ 
-	int odd[4] = {1,3,5,7};
-
-	/*The even numbers are taken in even[4] arrayname*/ 
-	int even[4] = {2,4,6,8};
-
-	/*number[4] is used as a temporary variable used for 
-          interchanging.*/
-	int number[4],i;
+	int array[6] = {1,2,3,4,5,6};
+	int i,temp=0;
 	
-	/*The odd values are interchanged to even arrayname*/
-	printf("The interchanged odd number is\n even[4]=");
-	for (i = 0;i <= 3;i++)
-	{
-		number[i] = even[i];
-		even[i] = odd[i];
-		printf("%d ",even[i]);
-	}
-	printf("\n");
-	printf("The interchanged even number is\n odd[4]=");
+	printf("The numbers after interchanging the odd and even elements\n");
 
-	/*The even values are interchanged in to odd arrayname*/
-	for (i = 0;i <= 3;i++)
+	/*Temporary is used for interchanging and i is incremented
+          twice to consider the other two elements in a sequence.*/
+	for (i = 0;i <= 5;i = i + 2)
 	{
-		odd[i] = number[i];
-		printf("%d ",odd[i]);
+		temp = array[i];
+		array[i] = array[i + 1];
+		array[i + 1] = temp;
+
+		printf("%d %d ",array[i],array[i+1]);
 	}
-	printf("\n");
 }
+		
