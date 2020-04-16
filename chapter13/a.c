@@ -2,9 +2,9 @@
       elements of an array.
 
 Apporach:
-	1)An array of fixed size is taken
+	1)An array of fixed size is taken.
 	2)The odd element and even elements are interchanged by
-          a temporary variable
+          a temporary variable.
 */
 
 #include<stdio.h>
@@ -16,7 +16,7 @@ void main()
 	
 	printf("The numbers after interchanging the odd and even elements\n");
 
-	/*Temporary is used for interchanging and i is incremented
+	/*Temporary variable is used for interchanging and i is incremented
           twice to consider the other two elements in a sequence.*/
 	for (i = 0;i <= 5;i = i + 2)
 	{
