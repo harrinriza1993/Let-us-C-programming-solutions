@@ -1,0 +1,38 @@
+Important notes:
+-----------------
+
+1. Array is a group of elements of similar datatype.
+
+2. Syntax of array:
+	datatype arrayname[size];
+
+3. 2 ways to declare an array
+	int arr[10];//mentioning size is compulsary
+	int num[] = {1,2,3};//Size is optional
+
+4. 4 types of preprocessor directives
+   (a)Macro expansion
+   (b)File inclusion
+   (c)Conditional compilation
+   (d)Miscellneous directives
+
+5. 5 ways to access array elements using pointers:
+	- Set up a pointer holding base address of array
+	int arr[10],*p;
+	p = arr;
+	- In a for loop use one of the five expressions
+	*p;p++;   OR
+	*(p + i)  OR    *(i + p)
+	 p[i]     OR    i[p]
+
+6. To pass an array to a function we must always pass two things:
+	1)Base address of the array 2)Size of the array
+
+7. We cannot declare an array usint int arry[n] and then receive the value
+   of n from keyboard.
+
+8. To create a variable sized array,Use the following:
+	int *p;
+	p = (int *) malloc(n*sizeof(int));
+
+	Then to access all elements we can use p[i] 
