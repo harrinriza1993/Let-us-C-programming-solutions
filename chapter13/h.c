@@ -29,24 +29,27 @@ void main()
 		scanf("%d",&num[i]);
 	}
 	
+	printf("The elements after sorting\n");
+	
 	for ( i = 0;i <= 4;i++)
 	{
-		for (j = 1; j <= 4;j++)
+		for (j = 1;j <= 4;j++)
 		{
-			
-			/*The array element is checked with the next elements*/
-			if (num[i] < num[j])
+			if (num[i] < num[i + j])
 			{
 				num[i] = num[i];
 			}
 			else
 			{
-				/*Temporary variable temp is used for replacing*/
 				temp = num[i];
-				num[i] = num[j];
-				num[j] = temp;
+				num[i] = num[i + j];
+				num[i + j] = temp;
 			}
 		}
-		printf("\n The sorted numbers are \n %d\n ",num[i]);
+	}
+	for (i = 0; i <= 4;i++)
+	{
+		printf("%d\n",num[i]);
 	}
 }
+ 
