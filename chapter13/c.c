@@ -1,5 +1,5 @@
 /*(c) Twenty-five numbers are entered from the keyboard in to
-      an array.The number to be searched is entered through the
+      an array. The number to be searched is entered through the
       keyboard by the user. Write a program to find if the number
       to be searched is present in the array and if it is present,
       display the number of times it appears in the array.
@@ -16,25 +16,26 @@ Apporach:
 
 void main()
 {
-	int array[25],i,searchednumber,count = 0;
+	int array[25], i, searchedNumber, count = 0;
 	
-	printf("Enter the number to be searched\n");
-	scanf("%d",&searchednumber);
+	printf("Enter an element to be searched\n");
+	scanf("%d",&searchedNumber);
+
+	int sizeOfArray = sizeof(array)/sizeof(int);
+
+	// fill the array
+	for (i = 0; i < sizeOfArray; i++)
+		array[i] = i;
 	
 	/*An array of 25 numbers is obtained*/
-	for (i = 0;i <= 24;i++)
-	{
-		printf("Enter the numbers\n");
-		scanf("%d",&array[i]);
-		
+	for (i = 0; i < sizeOfArray; i++)
+	{	
 		/*It is compared with the searched number, if is present then it
-                  should count the number of times.*/s
-		if (searchednumber == array[i])
-		{
-			printf("The number is present in the array\n");
+                  should count the number of times.*/
+		if (searchedNumber == array[i])
 			count++;
-		}
 	}
+
 	printf("The number of times the number present in the array is %d\n",count);
 }
 

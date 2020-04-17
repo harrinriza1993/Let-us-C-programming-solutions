@@ -21,14 +21,16 @@ Important notes:
 	int arr[10],*p;
 	p = arr;
 	- In a for loop use one of the five expressions
-	*p;p++;   OR
-	*(p + i)  OR    *(i + p)
-	 p[i]     OR    i[p]
+	- To print the value in the address
+		*p; OR *(p + i)  OR  *(i + p) OR p[i] OR i[p]
+	- To increment the address'
+		p++ OR p = p+1
+		p = p+i
 
 6. To pass an array to a function we must always pass two things:
 	1)Base address of the array 2)Size of the array
 
-7. We cannot declare an array usint int arry[n] and then receive the value
+7. We cannot declare an array using int arry[n] and then receive the value
    of n from keyboard.
 
 8. To create a variable sized array,Use the following:

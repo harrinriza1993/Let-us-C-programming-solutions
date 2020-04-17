@@ -13,16 +13,16 @@ elements of an array.
 another in the reverse oder. 
 
 **c.c**: Twenty-five numbers are entered from the keyboard in to
-an array.The number to be searched is entered through the keyboard 
+an array. The number to be searched is entered through the keyboard 
 by the user. Write a program to find if the number to be searched 
 is present in the array and if it is present, display the number of
 times it appears in the array.
 
 **d.c**: Twenty-five numbers are entered from keyboard in to an 
 array.Write a program to find out how many of them are positive,
-how many are negative,how many are even and  how many odd.
+how many are negative, how many are even and how many odd.
 
-**e.c**: If a array arr contains n elements,then write a program to
+**e.c**: If a array arr contains n elements, then write a program to
 check if arr[0] = arr[n-1],arr[1] = arr[n-2] and so on.
 
 **f.c**: Write a program using pointers to find the smallest

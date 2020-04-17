@@ -2,29 +2,50 @@
       elements of an array.
 
 Apporach:
-	1)An array of fixed size is taken.
-	2)The odd element and even elements are interchanged by
-          a temporary variable.
+	1) An array of fixed size is taken.
+	2) The odd element and even elements are interchanged by
+           a temporary variable.
 */
 
 #include<stdio.h>
 
+void printArray(int *p, int size)
+{
+	for(int index = 0; index < size; index++)
+		printf("%d ", *p++);
+
+	printf("\n");
+}
+
 void main()
 {
-	int array[6] = {1,2,3,4,5,6};
-	int i,temp=0;
-	
-	printf("The numbers after interchanging the odd and even elements\n");
+	int index, temp, sizeOfArray;
 
+	printf("Enter size of array\n");
+	scanf("%d", &sizeOfArray);
+
+	int array[sizeOfArray];
+
+	/* Fill the array */
+	for(index = 0; index < sizeOfArray; index++)
+		array[index] = index;
+
+	printf("Before interchanging the odd and even elements: ");
+	printArray(array, sizeOfArray);
+	
 	/*Temporary variable is used for interchanging and i is incremented
           twice to consider the other two elements in a sequence.*/
-	for (i = 0;i <= 5;i = i + 2)
+	for(index = 0; index < sizeOfArray; index = index + 2)
 	{
-		temp = array[i];
-		array[i] = array[i + 1];
-		array[i + 1] = temp;
+		if(index+1 == sizeOfArray)
+			break;
 
-		printf("%d %d ",array[i],array[i+1]);
+		temp = array[index];
+		array[index] = array[index + 1];
+		array[index + 1] = temp;
 	}
+
+	printf("After interchanging the odd and even elements : ");
+	printArray(array, sizeOfArray);
 }
 		

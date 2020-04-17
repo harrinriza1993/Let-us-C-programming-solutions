@@ -1,6 +1,6 @@
 /*(d) Twenty-five numbers are entered from keyboard in to an 
-      array.Write a program to find out how many of them are
-      positive,how many are negative,how many are even and 
+      array. Write a program to find out how many of them are
+      positive, how many are negative, how many are even and 
       how many odd.
 
 Apporach:
@@ -17,19 +17,17 @@ Apporach:
 void main()
 {
 	int array[25];
-	int i, odd = 0,even = 0,positive = 0,negative = 0;
+	int i, odd = 0, even = 0, positive = 0, negative = 0;
 
-	
-	/*An array of 25 numbers is obtained*/
-	for (i = 0;i <= 24;i++)
+	int sizeOfArray = sizeof(array)/sizeof(int);
+
+	printf("Enter %d numbers\n", sizeOfArray);
+
+	for (i = 0; i < sizeOfArray; i++)
 	{
-		
-		printf("Enter the numbers\n");
 		scanf("%d",&array[i]);
 		
-		/*The array numbers should be checked if it is
-                  greater than zero or less than zer0*/
-		if (array[i] > 0)
+		if (array[i] >= 0)
 			positive++;
 		else
 			negative++;
@@ -41,6 +39,7 @@ void main()
 		else
 			odd++;
 	}
+
 	printf("The number of positive numbers is %d\n",positive);
 	printf("The number of negative numbers is %d\n",negative);
 	printf("The number of even numbers is %d\n",even);

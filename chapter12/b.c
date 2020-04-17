@@ -19,19 +19,19 @@ Apporach:
 
 #include<stdio.h>
 
-#define IS_SMALL_CASE_LETTER(x)  ((x >= 97 && x<= 122) ? 1 : 0)
+#define IS_SMALL_CASE_LETTER(x)  ((x >= 97 && x <= 122) ? 1 : 0)
 
 #define IS_UPPER_CASE_LETTER(x)  ((x >= 65 && x <= 90) ? 1 : 0)
 
 #define IS_ALPHABET(x) 	 	 ((IS_SMALL_CASE_LETTER(x) || IS_UPPER_CASE_LETTER(x)) ? 1 : 0)
 
-#define BIGGEST_OF_TWO(a,b)	 (a > b) ? printf("%d is a bigger number\n",a) :\
-					  printf("%d is a bigger number\n",b); 
+#define BIGGEST_OF_TWO(a,b)	 (a > b) ? printf("%d is a bigger number\n", a) :\
+					   printf("%d is a bigger number\n", b); 
 
 void main()
 {
 	char character;
-	int number1,number2;
+	int number1, number2;
 	
 	printf("Enter any character\n");
 	scanf("%c", &character);
@@ -54,6 +54,6 @@ void main()
 	else
 		printf("Entered character ['%c'] is not a alphabet\n", character);
 
-	BIGGEST_OF_TWO(number1,number2)
+	BIGGEST_OF_TWO(number1, number2)
 }
 

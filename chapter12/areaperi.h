@@ -3,7 +3,7 @@
 
 // Calculation for triangle
 #define AREA_OF_TRIANGLE(b,h) (b * h)/2
-#define PERIMETER_OF_TRIANGLE(a,b,c) (a + b + c)
+#define PERIMETER_OF_TRIANGLE(a, b, c) (a + b + c)
 
 // Calculation for square
 #define AREA_OF_SQUARE(a) (a * a)

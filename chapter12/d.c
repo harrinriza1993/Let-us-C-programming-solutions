@@ -18,13 +18,13 @@ Apporach:
 
 #include<stdio.h>
 
-#define ARITHMETIC_MEAN(a,b) (a+b)/2
+#define ARITHMETIC_MEAN(a, b) (a+b)/2
 
 #define ABSOLUTE_VALUE(x)    (x > 0) ? x : (x*-1);
 
 #define UPPERCASE_TO_LOWERCASE(c) (c >= 65 && c <= 90) ? c+32 : 0
 
-#define BIGGEST(a,b,c)  (a > b && a > c) ? a : (b > a && b > c) ? b : c
+#define BIGGEST(a, b, c)  (a > b && a > c) ? a : (b > a && b > c) ? b : c
 
 void main()
 {

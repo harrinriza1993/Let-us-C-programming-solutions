@@ -12,18 +12,23 @@ Apporach:
 
 void main()
 {
-	int array[4] = {1,2,3,4};
+	int i, sizeOfArray;
+
+	printf("Enter size of array\n");
+	scanf("%d", &sizeOfArray);
+
+	int array[sizeOfArray], reversearray[sizeOfArray];
+
+	for(i = 0; i < sizeOfArray; i++)
+		array[i] = i;
 	
-	/*reversearray is a empty array with size4.*/
-	int reversearray[4],i;
-	
-	printf("The reverse order of a array in another array is\n reversearray[4]="); 
-	for (i = 0; i <= 3;i++)
+	printf("Index: Orignal Array: Reversed array\n"); 
+	for (i = 0; i < sizeOfArray; i++)
 	{
 		/*The last element of array will be the first element in reverse array
 		  and so on.*/
-		reversearray[i] = array[3 - i];
-		printf("%d ",reversearray[i]);
+		reversearray[i] = array[sizeOfArray-i-1];
+		printf("%d	: 	%d   :	%d\n", i, array[i], reversearray[i]);
 	}
 }
 		

@@ -8,7 +8,7 @@ Apporach:
 	1)The formula for simple interest is
 		SI = pnr/100;
 	2)The calculation for amount is
-		A = P(1+r/n)^nt
+		A = p + SI
 	2) We have to define this in another file and it is 
 	   included in the current file.
 */
@@ -26,7 +26,7 @@ void main()
 	printf("Enter the number of times interest is compounded per year\n");
 	scanf("%f", &year);
 	printf("Enter the rate\n");
-	scanf("%f",&rate);
+	scanf("%f", &rate);
 
 	simpleinterest = SIMPLE_INTEREST(principle, year, rate);
 	printf("\nThe simple interest amount is %f\n", simpleinterest);
