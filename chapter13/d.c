@@ -25,7 +25,7 @@ void main()
 
 	for (i = 0; i < sizeOfArray; i++)
 	{
-		scanf("%d",&array[i]);
+		scanf("%d", &array[i]);
 		
 		if (array[i] >= 0)
 			positive++;

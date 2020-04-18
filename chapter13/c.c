@@ -23,13 +23,13 @@ void main()
 
 	int sizeOfArray = sizeof(array)/sizeof(int);
 
-	// fill the array
-	for (i = 0; i < sizeOfArray; i++)
-		array[i] = i;
-	
+	printf("Enter 25 numbers\n");
+
 	/*An array of 25 numbers is obtained*/
 	for (i = 0; i < sizeOfArray; i++)
 	{	
+		scanf("%d", &array[i]);
+
 		/*It is compared with the searched number, if is present then it
                   should count the number of times.*/
 		if (searchedNumber == array[i])

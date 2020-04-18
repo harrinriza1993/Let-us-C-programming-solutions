@@ -24,7 +24,7 @@ void main()
 	modify(elements, 10);
 
 	printf("\nThe new elements in the array are\n");
-	for (int i = 0;i <= 9; i++)
+	for (int i = 0; i <= 9; i++)
 		printf("%d ",elements[i]);
 
 	printf("\n");
