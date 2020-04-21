@@ -8,46 +8,42 @@
 	   22             22		   22--		   55  |	3 [44]
            11         	  11		   11		   11---	4 [55]
 Apporach:
-	1) Compare the first element with all the elements in an array
-        2) If the first element is small then it remain same.
-	3) Otherwise it is replaced by the smallest element.
-	4) By this way the sorted elements are obtained.
-
-
+	1) Compare the second element with all the first element
+        2) Then compare the third element with second and first
+	   element
+	3) The nth element should be compared with all other elements.
+	4) Then it is sorted in ascending order.
 */
 
 #include<stdio.h>
 
 void main()
 {
-	int num[5],i,temp = 0,j;
+	int num[25], i, temp = 0, j, size = 25 ;
 		
-	
-	for (i = 0;i <= 4;i++)
+	printf("Enter the numbers for sorting\n");
+
+	for (i = 0; i < size; i++)
 	{
-		printf("Enter the numbers for sorting\n");
-		scanf("%d",&num[i]);
+		
+		scanf("%d", &num[i]);
 	}
 	
 	printf("The elements after sorting\n");
 	
-	for ( i = 0;i <= 4;i++)
+	for ( i = 1; i < size; i++)
 	{
-		for (j = 1;j <= 4;j++)
+		for(j = 0; j < i; j++)
 		{
-			if (num[i] < num[i + j])
+			if (num[j] > num[i])
 			{
-				num[i] = num[i];
-			}
-			else
-			{
-				temp = num[i];
-				num[i] = num[i + j];
-				num[i + j] = temp;
+				temp = num[j];
+				num[j] = num[i];
+				num[i] = temp;
 			}
 		}
 	}
-	for (i = 0; i <= 4;i++)
+	for (i = 0; i < size; i++)
 	{
 		printf("%d\n",num[i]);
 	}
