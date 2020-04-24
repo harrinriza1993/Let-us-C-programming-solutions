@@ -19,7 +19,7 @@ Apporach:
 
 void main()
 {
-	int num[25], i, temp = 0, j, size = 25 ;
+	int num[25], i, temp = 0, j, size = 25, swap ;
 		
 	printf("Enter the numbers for sorting\n");
 
@@ -33,13 +33,14 @@ void main()
 	
 	for ( i = 1; i < size; i++)
 	{
-		for(j = 0; j < i; j++)
+		temp = i;
+		for (j = i -1; j >= 0; j--, temp--)
 		{
-			if (num[j] > num[i])
+			if (num[j] > num[temp])
 			{
-				temp = num[j];
-				num[j] = num[i];
-				num[i] = temp;
+				swap = num[j];
+				num[j] = num[temp];
+				num[temp] = swap;
 			}
 		}
 	}
@@ -47,5 +48,4 @@ void main()
 	{
 		printf("%d\n",num[i]);
 	}
-}
- 
+} 
