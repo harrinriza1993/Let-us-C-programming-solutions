@@ -29,12 +29,9 @@ Apporach:
 	1) The adjacent elements are compared till we get exact
            sorted elements.
 */
-
-#include<stdio.h>
-
-void main()
+void bubblesort(int arr[], int size)
 {
-	int arr[5], i, j, size = 5, temp;
+	int i, j, temp;
 	
 	printf("Enter the numbers\n");
 

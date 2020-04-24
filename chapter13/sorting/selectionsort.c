@@ -12,24 +12,22 @@ Apporach:
 	3) Finally sorted elements are obtained.
 */
 
-#include<stdio.h>
-
-void main()
+void selectionsort(int num[], int size)
 {
-	int num[5],i,temp = 0,j;
+	int num[5], i, temp = 0, j;
 		
 	printf("Enter the numbers for sorting\n");
-	for (i = 0;i <= 4;i++)
+	for (i = 0; i < size; i++)
 	{
 		
-		scanf("%d",&num[i]);
+		scanf("%d", &num[i]);
 	}
 	
 	printf("The elements after sorting\n");
 	
-	for ( i = 0;i <= 4;i++)
+	for ( i = 0; i < size; i++)
 	{
-		for (j = i + 1;j <= 4;j++)
+		for (j = i + 1; j <= size; j++)
 		{
 			if (num[i] > num[j])
 			{
@@ -39,7 +37,7 @@ void main()
 			}
 		}
 	}
-	for (i = 0; i <= 4;i++)
+	for (i = 0; i < size; i++)
 	{
 		printf("%d\n",num[i]);
 	}
