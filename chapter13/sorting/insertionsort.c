@@ -20,35 +20,27 @@
   5, 6, 11, 12, 13 
 */
 
-void insertionsort(int num[], int size)
+#include<stdio.h>
+
+void insertionsort(int arr[], int size)
 {
 	 int i, temp = 0, j, swap ;
 		
-	printf("Enter the numbers for sorting\n");
-
-	for (i = 0; i < size; i++)
-	{
-		
-		scanf("%d", &num[i]);
-	}
-	
-	printf("The elements after sorting\n");
-	
 	for ( i = 1; i < size; i++)
 	{
 		temp = i;
 		for (j = i -1; j >= 0; j--, temp--)
 		{
-			if (num[j] > num[temp])
+			if (arr[j] > arr[temp])
 			{
-				swap = num[j];
-				num[j] = num[temp];
-				num[temp] = swap;
+				swap = arr[j];
+				arr[j] = arr[temp];
+				arr[temp] = swap;
 			}
 		}
 	}
 	for (i = 0; i < size; i++)
 	{
-		printf("%d\n",num[i]);
+		printf("%d\n",arr[i]);
 	}
 } 

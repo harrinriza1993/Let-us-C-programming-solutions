@@ -29,16 +29,12 @@ Apporach:
 	1) The adjacent elements are compared till we get exact
            sorted elements.
 */
+#include<stdio.h>
+
 void bubblesort(int arr[], int size)
 {
 	int i, j, temp;
 	
-	printf("Enter the numbers\n");
-
-	for(i = 0; i < size; i++)
-	{
-		scanf("%d",&arr[i]);
-	}
 	for(i = 0;i < size; i++)
 	{
 		for(j = 0; j < size - i; j++)
@@ -48,7 +44,6 @@ void bubblesort(int arr[], int size)
 				temp = arr[j];
 				arr[j] = arr[j + 1];
 				arr[j + 1] = temp;	
-				
 			}
 		}
 	}
