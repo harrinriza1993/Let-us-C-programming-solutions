@@ -1,5 +1,4 @@
 #include<stdio.h>
-#include<stdlib.h>
 #include "main.h"
 
 void main()
@@ -31,8 +30,6 @@ void main()
 			printf("Insertion sort");
 			insertionsort(arr,  size);
 			break;
-		case 4:
-			exit(0);
 	}
 }
 
