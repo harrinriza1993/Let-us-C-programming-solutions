@@ -1,4 +1,5 @@
 #include<stdio.h>
+
 #include "main.h"
 
 void main()
@@ -30,6 +31,8 @@ void main()
 			printf("Insertion sort");
 			insertionsort(arr,  size);
 			break;
+		default:
+			printf("Invalid entry\n");
 	}
 }
 

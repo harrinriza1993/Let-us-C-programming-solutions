@@ -39,6 +39,7 @@ void insertionsort(int arr[], int size)
 			}
 		}
 	}
+
 	for (i = 0; i < size; i++)
 	{
 		printf("%d\n",arr[i]);

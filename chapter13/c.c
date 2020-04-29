@@ -19,7 +19,7 @@ void main()
 	int array[25], i, searchedNumber, count = 0;
 	
 	printf("Enter an element to be searched\n");
-	scanf("%d",&searchedNumber);
+	scanf("%d", &searchedNumber);
 
 	int sizeOfArray = sizeof(array)/sizeof(int);
 
