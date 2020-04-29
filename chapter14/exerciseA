@@ -1,0 +1,79 @@
+[A] What will be the output of the following program.
+
+a. #include<stdio.h>
+
+   int main()
+   {
+	int n[3][3] = {
+			2, 4, 3,
+			6, 8, 5,
+			3, 5, 1
+		      };
+	printf("%d\n%d\n%d\n",*n,n[1][1],n[2][2]);
+   }
+   output : 1003336128
+		8
+		1
+   Notes  : *n points the address of &n[0][0](the first
+             value of an array)
+	    The values of n[1][1] and n[2][2] are printed
+	    from the array.
+
+b. #include<stdio.h>
+
+   int main()
+   {
+	int n[3][3] = {
+			2,4,3,
+			6,8,5,
+			3,5,1
+		      };
+	int i, *ptr;
+
+	ptr = &n[0][0];
+	for(i = 0; i <= 8; i++)
+		printf("%d\n",*(ptr + i));
+	return 0;
+   }
+   output : 2
+	    4
+	    3
+	    6
+	    8
+	    5
+	    3
+	    5
+	    1
+   Notes :  *(ptr + i) points the address of the values of the array,
+  	    each time when i value is incremented, the address is incremented,
+             
+c. #include<stdio.h>
+
+   int main()
+   {
+	int n[3][3] = {
+			2,4,3,
+			6,8,5,
+			3,5,1
+		      };
+	int i, j;
+
+	for(i = 0; i <= 2; i++)
+		for(j = 0; j <= 2; j++)
+			printf("%d%d\n",n[i][j], *(*(n + i) + j));
+	return 0;
+   }
+   output :  22
+	     44
+	     33
+	     66
+	     88
+	     55
+	     33
+	     55
+	     11
+   Notes :   Since a[i][j] and *(*(n + i) + j) both represents the values
+             of the array, the array elements are printed twice.
+
+
+

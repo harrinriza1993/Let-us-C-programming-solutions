@@ -1,0 +1,23 @@
+Important notes:
+-----------------
+
+1. 2-D array is a collection of several 1-D arrays.
+
+2. If 2-D arrays is initialized at the same place where
+   it is declared, then mentioning column dimension is 
+   optional.
+
+3. Given a 2-D array int a[4][5];
+   a[z][3] == *a[z]  + 3 == *(*(a + 2) + 3)
+
+4. int *p[4]; -p is an array of 4 integer pointers. Size of p = 16
+   bytes.
+
+5. int(*p)[4]; - p is a pointer to an array of 4 integers. size of p 
+               = 4 bytes.
+
+6. Size of a 3-D array is a collection of several 2-D arrays
+
+7. For a 3-D array:
+	a, *a, **a, will give address
+        ***a will give the integer at a[0][0][0].

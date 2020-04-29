@@ -1,0 +1,32 @@
+Important notes:
+-----------------
+
+1. int *p;
+   p = &i; is equal to *p = &i;
+
+2. int *p;
+   p = i; is equal to *p = i;
+
+3. int *p;
+   p = &i[0]; is equal to p = &i; 
+   is equal to p = i;(if i is in array). 
+
+4. p++ == *p++ == *(p++) == *(p++).
+   These statements increase the address.
+
+5. ++*p == ++(*p) == (*p)++, increments the values.
+
+6. *(p + 1) - It does nothhing
+
+7. (*(p + 1)) - It points the first index.
+
+8. &arr[0] == arr == &arr
+   &arr[1] == arr + 1
+   &arr[2] == arr + 2
+
+9. int *p - pointer to an integer.
+   int (*p)(int, int) - It points the function address.
+   int (*p)[5] - pointer to an array of 5 integers.
+   int *p[5] - Array of 5 pointers to int.
+   int *p(int,int) - p is a pointer to a function returning to int.
+   

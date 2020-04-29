@@ -1,0 +1,36 @@
+[B] Point out the errors,if any,in the following program.
+
+a. #include<stdio.h>
+
+   int main()
+   {
+	int twod[][] = {
+			 2,4,
+			 6,8
+		       };
+	printf("%d\n",twod);
+	return 0;
+   }
+   Compiler Error: array type has incomplete element type ‘int[]’
+
+   Note: The row and column is not specified in [][].
+
+b. #include<stdio.h>
+
+   int main()
+   {
+	int three[3][] = {
+			   2,4,3,
+			   6,8,2,
+			   2,3,1
+			 };
+
+	printf("%d\n",three[1][1]);
+   }
+			   
+
+   Compiler error:  array type has incomplete element type ‘int[]’ 
+
+   Note: The column value is not specified.
+
+
