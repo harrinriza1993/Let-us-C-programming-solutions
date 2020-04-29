@@ -11,13 +11,13 @@ a. #include<stdio.h>
 		      };
 	printf("%d\n%d\n%d\n",*n,n[1][1],n[2][2]);
    }
-   output : 1003336128
+   output : 1003336128 //[Base address][Garbage value]
 		8
 		1
+
    Notes  : *n points the address of &n[0][0](the first
-             value of an array)
-	    The values of n[1][1] and n[2][2] are printed
-	    from the array.
+             value of an array). As we our printing format %d.
+	     It is printing the carbage value.
 
 b. #include<stdio.h>
 
@@ -44,8 +44,8 @@ b. #include<stdio.h>
 	    3
 	    5
 	    1
-   Notes :  *(ptr + i) points the address of the values of the array,
-  	    each time when i value is incremented, the address is incremented,
+   Notes :  *(ptr + i) ptr is pointing base address of the array and 
+	    its printing the value based on index of i
              
 c. #include<stdio.h>
 
@@ -73,7 +73,7 @@ c. #include<stdio.h>
 	     55
 	     11
    Notes :   Since a[i][j] and *(*(n + i) + j) both represents the values
-             of the array, the array elements are printed twice.
+             of the array based i & j value, the array elements are printed twice.
 
 
 

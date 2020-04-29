@@ -24,7 +24,7 @@ void main()
 	
 	/*To find the largest number each element in the array is compared
           with the first element and the largest element is stored in
-          first element in an array*/s
+          first element in an array*/
 	for (i = 0; i < 5; i++)
 	{
 		for ( j = 0; j < 5; j++)
@@ -41,6 +41,7 @@ void main()
 			}
 		}
 	}
+
 	for (i = 0; i < 5; i++)
 	{
 		for ( j = 0; j < 5; j++)

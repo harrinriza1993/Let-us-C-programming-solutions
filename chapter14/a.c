@@ -34,20 +34,11 @@ void main()
 
 			      };
 
-	printf("The first and last element in the array is \n");
+	printf("The first element of the array is \n");
+	printf("\t***thread : %d\n\tthread[0][0][0] : %d\n\t*(*(*thread+0)+0)+0): %d\n", \
+			***thread, thread[0][0][0], *(*(*(thread+0)+0)+0) );
 
-	for (i = 0; i < 3; i++)
-	{
-		for (j = 0; j < 2; j++)
-		{
-			for (k = 0; k < 3; k++)
-			{
-				/*In order to refer the 1st and last element their corresponding
-				  positions are printed.*/
-				printf("%d\n%d\n", thread[0][0][0], thread[2][1][2]);
-				exit(0);
-			}
-		}	
-	}
-	
+	printf("\nThe last element of the array is \n");
+	printf("\tthread[0][0][0] : %d\n\t*(*(*(thread+2)+1)+2)): %d\n", \
+			thread[2][1][2], *(*(*(thread+2)+1)+2) );
 }
