@@ -40,11 +40,11 @@ number in an array of 25 integers.
 on a set of 25 numbers.
 
 	Iteration1	Iteration2	Iteration3	Iteration4	Result
-        44 <--|     3		   33 <---|	   22 <---|	 0 [11]
-        33 ---|     44 <--|    44     |	   33  	  |	 1 [22] 
-        55          55 ---|	   55     |	   44     |	 2 [33]
-        22          22		   22-----|	   55     |	 3 [44]
-        11         	11		   11		   11 ----|	 4 [55]
+        44 <--|     33		   	33 <---|	   22 <---|	 0 [11]
+        33 ---|     44 <--|    		44     |	   33  	  |	 1 [22] 
+        55          55 ---|	   	55     |	   44     |	 2 [33]
+        22          22		   	22-----|	   55     |	 3 [44]
+        11          11			11		   11 ----|	 4 [55]
 
 **sorting**: Program for Selection, Bubble and Insertion sorting.
 
