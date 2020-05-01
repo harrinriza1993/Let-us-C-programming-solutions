@@ -13,7 +13,6 @@
 
 	int i=0, j = 25;
 	int *pi, *pj = &j;
-
 	*pj = j + 5;
 	 j = *pj + 5;
 	 pi = pj;
@@ -43,11 +42,11 @@
 	2.	&j		b. F9E
 	3.	pj		i. F9E
 	4.	*pj		c. 35
-	5.	i		c. 35
+	5.	i		 (unspecified in list) 0
 	6. 	pi		j. F9E		
 	7.	*pi		c. 35
 	8. 	(pi + 2) 	d. FA2
-	9.	(*pi + 2)	f. unspecified (37)
+	9.	(*pi + 2)	(unspecified in list 37
 	10.	*(pi + 2)	g. unspecified	 
 
 

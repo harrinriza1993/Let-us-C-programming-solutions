@@ -12,8 +12,6 @@ Apporach:
 
 void main()
 {
-	int i, j, k;
-
 	/*The outer array has 3 elements, each of which is a 2-D
           array of two 1-D arrays,each of which contain 3 integers*/ 
 	int thread[3][2][3] = {

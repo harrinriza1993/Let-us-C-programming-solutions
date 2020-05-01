@@ -31,8 +31,8 @@ corresponding column.
 	 *pi = i + j;
 
 	Each integer quantity occupies 2 bytes of memory. The value assigned to i begin at (hexadecimal) address
-F9C and the value assigned to j begins at address F9E. Match the value represented by left hand side quantities
-with the right.
+	F9C and the value assigned to j begins at address F9E. Match the value represented by left hand side quantities
+	with the right.
 
 	1.	&j		a. 30
 	2.	&j		b. F9E
@@ -97,20 +97,26 @@ with the right.
 **i.c**:  Write a program to multiply any 3 x 3 matrices.
 
 **j.c**:  Given an array p[5], write a function to shift it circularly left by 
-two positions. Thus, if p[0] = 15, p[1] = 30, p[2] = 28, p[3] = 19 and p[4] = 61 
-then after the shift p[0] = 28, p[1] = 19, p[2] =61, p[3] = 15 and p[4] = 30. 
+two positions. Thus,
+
+	if p[0] = 15, p[1] = 30, p[2] = 28, p[3] = 19 and p[4] = 61 
+
+then after the shift
+
+	p[0] = 28, p[1] = 19, p[2] =61, p[3] = 15 and p[4] = 30.
+
 Call this function for a (4 X 5) matrix and get it's rows left shifted.
 
 **k.c**: A 6 x 6 matrix is entered through the keyboard. Write a program to 
 obtain the Determinant value of the matrix.
 
-**l.c**:  For the following set of sample data, compute the standard 
+**l.c**: For the following set of sample data, compute the standard 
 deviation and the mean.
 	
 	-6, -12, 8, 13, 11, 6, 7, 2, -6, -9, -10, 11, 10, 9, 2
 
 	The formula for standard deviation is
-	 	__
+	 	 __
 	sqrt(xi - x)^2/n          __
 	where xi is the data item  x is the mean.
 

@@ -22,7 +22,7 @@ void main()
 	display(a,row,col); 
 }
 
-void display(int a[4][5],int row, int col)
+void display(int a[4][5], int row, int col)
 {
 	int i, j, k, b[4][5];
 

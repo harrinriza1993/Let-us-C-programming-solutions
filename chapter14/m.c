@@ -25,35 +25,42 @@ Apporach:
 
 void main()
 {
-	float a[6][3] = {
-			{137.4, 80.9, 0.78}, 
-			{155.2,	92.62, 0.89},
-			{149.3,	97.93,	1.35},
-			{160.0, 100.25,	9.00},
-			{155.6, 68.95,	1.25},
-			{149.7,	120.0,	1.75}
+	float a[6][4] = {
+			/*Plot	a 	b    	angle */
+			{1,	137.4,  80.9,   0.78}, 
+			{2, 	155.2,	92.62,  0.89},
+			{3, 	149.3,	97.93,	1.35},
+			{4,	160.0, 100.25,	9.00},
+			{5, 	155.6,  68.95,	1.25},
+			{6, 	149.7, 120.0,	1.75}
 		      };
 
-	int size = 6, i, j;
-	float area[6], temp;
+	int size = 6, i, j, largestPloat;
+	float area[6], temp, largestArea;
 
 	printf("The area for 6 pieces of land are \n");
 
+	/* Area calculation */
 	for(i = 0; i < size; i++)
 	{
-		area[i] =  ( a[i][0] * a[i][1] * sin(a[i][2]))/2 ; 
-		printf("%f\n",area[i]);
+		area[i] =  ( a[i][1] * a[i][2] * sin(a[i][3]))/2 ; 
+		printf("Plot %d : Area : %f\n", i, area[i]);
 	}
+
+	/*  */
+	largestPloat = i;
+	largestArea = area[i];
+
 	for(i = 1; i < size; i++)
 	{
-		if (area[0] < area[i])
+		if (largestArea < area[i])
 		{
-			temp = area[0];
-			area[0] = area[i];
-			area[i] = temp; 
-		}
+			largestPloat = i;
+			largestArea = area[i];
+		}	
 	}
-	printf("The largest area is %f\n",area[0]);
+
+	printf("The largest area of Plot[%d] is %f\n", largestPloat, largestArea);
 }	
 
 
