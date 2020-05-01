@@ -11,38 +11,58 @@ Apporach:
 
 #include<stdio.h>
 
+#define ROW 3
+#define COLUMN 3
+
+void printMatrix(int (*array)[COLUMN])
+{
+	int i, j;
+
+	for(i = 0; i < ROW; i++)
+	{
+		for(j = 0; j < COLUMN; j++)
+		{
+			printf("%3d ", array[i][j]);
+		}
+		printf("\n");
+	}
+}
+
 void main()
 {
-	int a[3][3] = {
+	int matrix3[3][3], i, j, k, size = 3;
+
+	int matrix1[3][3] = {
 			{1, 2, 3},
 			{4, 5, 6},
 			{1, 3, 3}
 		      };
 
-	int b[3][3] = {
+	int matrix2[3][3] = {
 			{4, 7, 8},
 			{4, 9, 10}, 
 			{3, 3, 4}
 		      };
 
-	int c[3][3], i, j, k, l, size = 3;
+	printf("\nThe matrices1\n");
+	printMatrix(matrix1);
 
-	printf("The multiplication of two matrices is \n");
+	printf("\nThe matrices2\n");
+	printMatrix(matrix2);	
 	
-	for(i = 0; i < size; i++)
+	for(i = 0; i < ROW; i++)
 	{
-		
-		for(j = 0; j < size; j++)
+		for(j = 0; j < COLUMN; j++)
 		{
-			c[i][j] = 0;
+			matrix3[i][j] = 0;
 			for(k = 0; k < size; k++)
-			{
-				c[i][j] = c[i][j] + (a[i][k] * b[k][j]);
-				
-			}
-		printf("%d ", c[i][j]);
-		
+				matrix3[i][j] = matrix3[i][j] + (matrix1[i][k] * matrix2[k][j]);
 		}
 	}
+
+	printf("\nThe multiplication of two matrices is \n");
+	printMatrix(matrix3);
 }
+
+
 

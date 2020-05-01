@@ -1,4 +1,4 @@
-### Chapter 13 : Multidimensional Arrays
+### Chapter 14 : Multidimensional Arrays
 
 ### [A] What will be the output of the following programs.
 
@@ -30,7 +30,9 @@ corresponding column.
 	 pj = pj;
 	 *pi = i + j;
 
-	Each integer quantity occupies 2 bytes of memory. The value assigned to i begin at (hexadecimal) address F9C and the value assigned to j begins at address F9E. Match the value represented by left hand side quantities with the right.
+	Each integer quantity occupies 2 bytes of memory. The value assigned to i begin at (hexadecimal) address
+F9C and the value assigned to j begins at address F9E. Match the value represented by left hand side quantities
+with the right.
 
 	1.	&j		a. 30
 	2.	&j		b. F9E
