@@ -20,8 +20,8 @@ matrix.
 matrix is obtained by exchanging the elements of each row with the elements of the 
 corresponding column.
 
-**d.**: Match the following with reference to the program segment
-given below:
+**d.**: Match the following with reference to the program segment given below:
+
 	int i, j = 25;
 	int *pi, *pj = &j;
 	/*more lines of program*/
@@ -30,10 +30,7 @@ given below:
 	 pj = pj;
 	 *pi = i + j;
 
-	Each integer quantity occupies 2 bytes of memory. The value
-        assigned to i begin at (hexadecimal) address F9C and the value
-    	assigned to j begins at address F9E. Match the value represented
- 	by left hand side quantities with the right.
+	Each integer quantity occupies 2 bytes of memory. The value assigned to i begin at (hexadecimal) address F9C and the value assigned to j begins at address F9E. Match the value represented by left hand side quantities with the right.
 
 	1.	&j		a. 30
 	2.	&j		b. F9E
@@ -48,8 +45,8 @@ given below:
 				k. FAO
 				l. F9D
 
-**e.**: Match the folowing with reference to the following program
- segment:
+**e.**: Match the folowing with reference to the following programsegment:
+
 	int x[3][5] = {
 			{1, 2, 3, 4, 5},
 			{6, 7, 8, 9, 10},
@@ -70,8 +67,8 @@ given below:
 					l. 10
 					m. 6
 
-**f**: Match the following with reference to the following program
-    segment:
+**f**: Match the following with reference to the following program segment:
+
 	unsigned int arr[3][3] = {
 				   2, 4, 6,
 				   9, 1, 10,

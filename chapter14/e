@@ -32,3 +32,30 @@
 	8.	(*(n + 3) + 1		k. 5
 	9.	*(n + 5) + 1		h. 7
 	10.	++*n		        e. 2
+
+
+Notes to remeber:
+-----------------
+Address 
+	&x = Addrss of the array
+	Base address = &x[0][0]
+	x[0] === x === (x+0) == x[0] === *x === *(x) === *(x + 0)
+	(x + index) == (x[0] + index) : x is pointing the address, based on index. x is pointing base address and moving into index times.
+	x[index] : x is pointing the address of begining of row (based on index)
+
+Value : x[0][0]
+	*(x + index) : moved the x from base address to index times and point the value in that address
+	*(x[index]) : Pointing the value in the x[index] {ROW}
+
+1. *(*(x + 2) + 1) === *(x[2] + 1)     === x[2][1]     === 12
+2. *(*x + 2) + 5   === *(x[0] + 2) + 5 === x[0][2] + 5 === 3+5 == 8
+3. *(*(x + 1))     === *(x[1])         === x[1][0]     === 6
+4. *(*(x) + 2) + 1 === *(x[0] + 2) + 1 === x[0][2] + 1 === 3+1 == 4
+5. *(*(x + 1) + 3) === *(x[1] + 3)     === x[1][3]     === 9
+6. *n              === *(x[0])         === x[0][0]     === 1
+7. *(n + 2)        === *(x[0] + 2)     === x[0][2]     === 3
+8. (*(n + 3) + 1   === (*(x[0] + 3)+1  === x[0][3] + 1 === 4+1 == 5
+9. *(n + 5) + 1    === (*(x[0] + 5)+1  === x[1][0] + 1 === 6+1 == 7
+10. ++*n           === ++*(x[0])       === ++x[0][0]   === ++1 == 2
+
+

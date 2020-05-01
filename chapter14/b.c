@@ -8,49 +8,31 @@ Apporach:
 */
 
 #include<stdio.h>
-#include<stdlib.h>
 
 void main()
 {
-	int temp, i, j;
+	int largeNumber, i, j;
 
-	int array [5][5] = {
+	int array[5][5] = {
 				{1, 2, 3, 4, 5},
 				{6, 7, 8, 9, 10},
 				{11, 12, 13, 14, 15},
-				{16, 17, 18, 100, 20},
-				{21, 22, 23, 24, 25}
-			    };
-	
-	/*To find the largest number each element in the array is compared
-          with the first element and the largest element is stored in
-          first element in an array*/
-	for (i = 0; i < 5; i++)
-	{
-		for ( j = 0; j < 5; j++)
-		{
-			if (array[0][0] > array[i][j])
-			{
-				array[0][0] = array[0][0];
-			}
-			else
-			{
-				temp = array[0][0];
-				array[0][0] = array[i][i];
-				array[i][i] = temp;
-			}
-		}
-	}
+				{16, 17, 1800, 100, 20},
+				{21, 22, 23, 2488, 25}
+			   };
+
+	largeNumber = array[0][0];
 
 	for (i = 0; i < 5; i++)
 	{
-		for ( j = 0; j < 5; j++)
+		for (j = 0; j < 5; j++)
 		{
-			printf("The largest number in an array is %d\n",array[0][0]);
-			exit(0);
+			if (largeNumber < array[i][j])
+				largeNumber = array[i][j];
 		}
 	}
 
+	printf("The largest number in an array is %d\n", largeNumber);
 }
 				
 

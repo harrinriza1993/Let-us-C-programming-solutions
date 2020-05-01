@@ -5,6 +5,17 @@
 	/*more lines of program*/
 	*pj = j + 5;
 	 j = *pj + 5;
+	 pj = pj;
+	 *pi = i + j;
+
+	Note: In the above program pi is not pointing any address and i value is garbage.
+	      Assued that there is typo error so I modified the program as bellow.
+
+	int i=0, j = 25;
+	int *pi, *pj = &j;
+
+	*pj = j + 5;
+	 j = *pj + 5;
 	 pi = pj;
 	 *pi = i + j;
 
@@ -31,12 +42,12 @@
 	1.	&i		e. F9C		
 	2.	&j		b. F9E
 	3.	pj		i. F9E
-	4.	*pj		c. 35
-	5.	i	
-	6. 	pi		
-	7.	*pi		
-	8. 	(pi + 2) 
-	9.	(*pi + 2)	
-	10.	*(pi + 2)	 
+	4.	*pj		g. unspecified (35)
+	5.	i		c. 35
+	6. 	pi		j. F9E		
+	7.	*pi		g. unspecified (35)
+	8. 	(pi + 2) 	d. FA2
+	9.	(*pi + 2)	f. unspecified (37)
+	10.	*(pi + 2)	g. unspecified	 
 
 
