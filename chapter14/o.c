@@ -1,9 +1,15 @@
 /*(0) For the following set of point given by (x, y) fit a straight line
-      given by y = a + bx
-	where,	    ---   ---
+      given by 
+
+	y = a + bx
+
+	where,
+		    ---   ---
 		a =  y  -b y  and
-		b = n * [summation(xy) - summation(x) * summation(y)/n * 
-		    (summation(x^2)- summation(x))^2
+
+		b = n * sumOf(xy) - sumOf(x) * sumOf(y)/
+		    n * (sumOf(x^2)- sumOf(x) * sumOf(x))
+
 		x	y
 		3.0	1.5
 		4.5	2.0
@@ -15,12 +21,6 @@
 		9.0	10.5
 		9.5	12.0
 		10.0	14.0
-
-Apporach:
-	1) Using the formula the value of a and b are calculated
-		a =  y  -b y  and
-		b = n * [summation(xy) - summation(x) * summation(y)/n * 
-		    (summation(x^2)- summation(x))^2
 */
 
 #include<stdio.h>
@@ -40,19 +40,23 @@ void main()
 			{9.5, 12.0},
 			{10.0, 14.0}
 		       };
-	int i;
-	float x = 0, y = 0, xy = 0, a, b, mean_x, mean_y;
 
-	for (i = 0; i < 10; i++)
+	int i, n = 10;
+	float sumOfx = 0, sumOfy = 0, sumOfxy = 0, sum_x_square = 0, a, b, xbar, ybar;
+
+	for (i = 0; i < n; i++)
 	{
-		x = x + arr[i][0];
-		y = y + arr[i][1];
-		xy = xy + (arr[i][0] * arr[i][1]);
+		sumOfx = sumOfx + arr[i][0];
+		sumOfy = sumOfy + arr[i][1];
+		sumOfxy = sumOfxy + (arr[i][0] * arr[i][1]);
+		sum_x_square = sum_x_square + (arr[i][0] * arr[i][0]);
 	}
-	mean_y = y/10;
-	mean_x = x/10;
-	b = (10 * xy - x * y)/10 *( pow((pow(x,2) - x), 2));
-	a = mean_y - (b * mean_x);
+
+	xbar = sumOfx/n;
+	ybar = sumOfy/n;
+
+	b = (n * sumOfxy - sumOfx * sumOfy)/ (n *sum_x_square - sumOfx * sumOfy);
+	a = ybar - (b * xbar);
 
 	printf("The value of b is %f\n",b);
 	printf("The value of a is %f\n",a);

@@ -47,9 +47,9 @@ void main()
 		printf("Plot %d : Area : %f\n", i, area[i]);
 	}
 
-	/*  */
-	largestPloat = i;
-	largestArea = area[i];
+	/* Find the largest area */
+	largestPloat = 0;
+	largestArea = area[0];
 
 	for(i = 1; i < size; i++)
 	{

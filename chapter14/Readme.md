@@ -136,11 +136,11 @@ deviation and the mean.
 	6	149.7	120.0	1.75
 
 **n.c**: For the following set of n data points (x, y), write a 
-program to compute the correlation coefficient r, given 
-by 
-	r = (sumation(xy) - sumation(x) * sumation(y))/
-	    sqrt([n * (summation(x^2)- summation(x))^2]
-	    * sqrt([n * (summation(y^2)- summation(y))^2]
+program to compute the correlation coefficient r, given by 
+
+	r = ( sumOf(xy) - sumOf(x) * sumOf(y) )/
+	      sqrt([n * ( sumOf(x^2)- sumOf(x) * sumOf(x) )]
+	    * sqrt([n * ( sumOf(y^2)- sumOf(y) * sumOf(y) )]
 
 	x 	y 	
 	34.22	102.43
@@ -155,12 +155,18 @@ by
 	40.71	94.85
 	55.15	94.65
 
-**o.c**: For the following set of point given by (x, y) fit a straight line
-given by y = a + bx
-	where,	    ---   ---
-		a =  y  -b y  and
-		b = n * [summation(xy) - summation(x) * summation(y)/n * 
-		    (summation(x^2)- summation(x))^2
+**o.c**: For the following set of point given by (x, y) fit a straight line given by 
+
+	y = a + bx
+
+	where,	
+
+		    ---  ---
+		a =  y  - bx  and
+
+		b = n * sumOf(xy) - sumOf(x) * sumOf(y)/
+		    n * (sumOf(x^2)- sumOf(x) * sumOf(x))
+
 		x	y
 		3.0	1.5
 		4.5	2.0
@@ -174,8 +180,8 @@ given by y = a + bx
 		10.0	14.0
 
 **p.c**: The X and Y coordinates of 10 different points are entered through
-the keyboard. Write a program to find the distance of last pointfrom the first 
-point(sum of distance between consecutive points).
+the keyboard. Write a program to find the distance of last point from the first 
+point (sum of distance between consecutive points).
 
 **q.c**: A dequeue is an ordered set of elements in which the  elements may be 
 inserted or retrieved from either end. Using an array simulate a dequeue of characters

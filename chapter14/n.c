@@ -1,9 +1,10 @@
 /*(n) For the following set of n data points (x, y), write a 
       program to compute the correlation coefficient r, given 
       by 
+
 	r = (sumation(xy) - sumation(x) * sumation(y))/
-	    sqrt([n * (summation(x^2)- summation(x))^2]
-	    * sqrt([n * (summation(y^2)- summation(y))^2]
+	    sqrt([n * (summation(x^2)- summation(x) * sumation(x) )]
+	    *  sqrt([n * (summation(y^2)- summation(y) * sumation(y) )]
 
 	x 	y 	
 	34.22	102.43
@@ -17,13 +18,6 @@
 	49.12	91.59
 	40.71	94.85
 	55.15	94.65
-
-Apporach:
-	1) The correlation coefficient can be calculated can be found using the formula
-		r = (sumation(xy) - sumation(x) * sumation(y))/
-	    sqrt([n * (summation(x^2)- summation(x))^2]
-	    * sqrt([n * (summation(y^2)- summation(y))^2]
-	2) summation of x, y, xy is the sum of all the values of x, y, and xy.
 */
 
 #include<stdio.h>
@@ -44,21 +38,34 @@ void main()
 			{40.71,	94.85},
 			{55.15,	94.65}
 		      };
-	float x = 0, y = 0, xy = 0, r;
-	int i;
 
-	for (i = 0; i < 11; i++)
+	float sum_x = 0, sum_y = 0, sum_xy = 0, n = 11, r;
+	float sum_x_square, sum_y_square, rx, ry;
+
+	for (int i = 0; i < 11; i++)
 	{
-		x = x + arr[i][0];
-		y = y + arr[i][1];
-		xy = xy + (arr[i][0] * arr[i][1]);
+		sum_x = sum_x + arr[i][0];
+		sum_y = sum_y + arr[i][1];
+		sum_xy = sum_xy + (arr[i][0] * arr[i][1]);
+
+		sum_x_square = sum_x_square + (arr[i][0] * arr[i][0]);
+		sum_y_square = sum_y_square + (arr[i][1] * arr[i][1]);
 	}
-	printf("summation of x is %f\n",x);
-	printf("summation of y is %f\n",y);
-	printf("summation of xy is %f\n",xy);
+
+	printf("\nsummation of x is %f\n", sum_x);
+	printf("summation of y is %f\n", sum_y);
+	printf("summation of xy is %f\n", sum_xy);
+	printf("summation of x^2 is %f\n", sum_x_square);
+	printf("summation of y^2 is %f\n\n", sum_y_square);
+
+	rx = n * (sum_x_square - sum_x * sum_x);
+	ry = n * (sum_y_square - sum_y * sum_y);
 	
-	r= ((xy) - (x * y))/(sqrt(11 * pow(pow(x, 2) - x,2))) * (sqrt(11 * pow((pow(y, 2) - y), 2)));
+	r = (sum_xy - sum_x * sum_y) / (sqrt(rx * ry));
+
 	printf("The correlation coefficient r is %f\n",r);
 }
+
+
 
 	    
