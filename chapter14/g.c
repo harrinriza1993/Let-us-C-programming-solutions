@@ -16,12 +16,12 @@ void main()
 	/* Since square matrix has to be used,a array with same number 
            of column and row should be used */
 	int array[4][4] = {
-			     {1,  2, 3, 4},
-			     {5,  7, 6, 8},
-			     {9, 10,11,12},
-			     {13,14,16,17}
+			     {1, 2, 3, 4},
+			     {2, 5, 8, 9},
+			     {3, 8, 9, 0},
+			     {4,9, 0, 1}
 			  };
-	int i, j, row = 4, col = 4;
+	int i, j, row = 4, col = 4, count = 0;
 	
 	printf("The given matrix is \n");
 	for (i = 0; i < 4; i++)
@@ -42,18 +42,22 @@ void main()
 				printf("%d ",array[j][i]);
 			}
 		}
-		printf("\n");
+		printf("\n\n");
 		for (i = 0; i < 4; i++)
 		{
 			for (j = 0; j < 4; j++)
 			{
 				if ((array[i][j]) == (array[j][i]))
-					continue;
+					count++;
 				else
-					printf("The given matrix is not symmetric\n");
-				exit(0);
+				{
+					printf("The given array is not symmetric\n");
+					exit(0);
+				}
 			}
 		}
+		if (count == row * col)
+			printf("The given array is symmetric\n");
 	}
 }
  
