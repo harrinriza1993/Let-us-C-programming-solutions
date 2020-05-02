@@ -10,6 +10,7 @@ Apporach:
 #include<stdio.h>
 #include<stdlib.h>
 
+
 void main()
 {
 	/* Since square matrix has to be used,a array with same number 
@@ -20,19 +21,39 @@ void main()
 			     {9, 10,11,12},
 			     {13,14,16,17}
 			  };
-
-	int i, j, transpose_array[4][4];
-
+	int i, j, row = 4, col = 4;
+	
+	printf("The given matrix is \n");
 	for (i = 0; i < 4; i++)
-	{
-		for (j = 0; j < 4; j++)
 		{
-			array[i][j] = array[j][i];
-
-			if (transpose_array[i][j] == array[j][i])
-				printf("The given matrix is symmetric\n");
-			exit(0);
+			for (j = 0; j < 4; j++)
+			{
+				printf("%d ",array[i][j]);
+			}
+		}
+	printf("\n");
+	printf("The transpose matrix is \n");
+	if (row == col)
+	{
+		for (i = 0; i < 4; i++)
+		{
+			for (j = 0; j < 4; j++)
+			{
+				printf("%d ",array[j][i]);
+			}
+		}
+		printf("\n");
+		for (i = 0; i < 4; i++)
+		{
+			for (j = 0; j < 4; j++)
+			{
+				if ((array[i][j]) == (array[j][i]))
+					continue;
+				else
+					printf("The given matrix is not symmetric\n");
+				exit(0);
+			}
 		}
 	}
-	
 }
+ 
