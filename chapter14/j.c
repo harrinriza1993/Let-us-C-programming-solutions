@@ -12,44 +12,42 @@ Apporach:
 
 #include<stdio.h>
 
-void display(int a[4][5],int,int);
+void display(int a[5],int,int);
 
 void main()
 {
-	int a[4][5];
+	int a[5];
 	int row = 4, col = 5;
 
 	display(a,row,col); 
 }
 
-void display(int a[4][5], int row, int col)
+void display(int a[5],int row, int col)
 {
-	int i, j, k, b[4][5];
+	int i, j, k, n = 5, temp1, temp2;
 
 	k = 0;
 	while (k < row) 
 	{
 		printf("Enter the %d row\n",k);
-	 	i = 0;
 		{
 			for(j = 0; j < col; j++)
 			{
-			scanf("%d",&a[i][j]);
+				scanf("%d",&a[j]);
 			}
 		}
+		temp1 = a[0];
+		temp2 = a[1];
 		printf("The numbers after sorting\n");
-		i = 0;
-		for(j = 0; j <=2; j++)
+		
+		for(j = 0; j < n-2; j++)
 		{
-			b[i][j] = a[i][j];
-			a[i][j] = a[i][j + 2];
-			printf("%d\n",a[i][j]);
+			a[j] = a[j + 2];
+			printf("%d\n",a[j]);
 		}
-		i = 0;
-		for(j = 0; j < 2; j++)
-		{
-			printf("%d\n",b[i][j]);
-		}
+		a[n - 1] = temp1;
+		a[n - 2] = temp2;
+		printf("%d\n%d\n",a[n - 1],a[n - 2]);
 		k++;
 	}
 }	
