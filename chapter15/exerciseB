@@ -1,0 +1,23 @@
+[b] Fill in the blanks:
+
+(a) "A" is a ______ whereas 'A' is a ______
+
+	Answer : String, character
+
+(b) A string is terminated by a _______ character.
+
+	Answer : '\0'
+
+(c) The array char name[10] can consist of a maximum 
+    of _______ characters.
+
+	Answer : 10
+
+(d) The array elements are always stored in ________
+    memory locations.
+
+	Answer : continous
+
+
+
+	   

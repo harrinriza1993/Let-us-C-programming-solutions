@@ -1,0 +1,7 @@
+(a) Which is more appropriate for reading in a multi-word string?
+
+	gets()		printf()	scanf()		puts()
+
+   Answer:
+
+	puts() is cable of reading a multi-word string at a time.	

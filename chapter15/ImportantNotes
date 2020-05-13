@@ -1,0 +1,31 @@
+Important notes:
+-----------------
+
+1. Strings are character array ending with '\0'. '\0' is 
+   called String Terminator.
+
+2. ways to output strings :
+
+	char name[] = "Sanjay";
+	printf("%s\n", name);
+	puts(name);
+
+3. ways to input strings:
+
+	char name[30];
+	scanf("%s",name);
+	gets(name);
+
+4. Useful string functions :
+
+	int1 = strlen(str); /* returns length of string str */
+	strcpy(target, source); /* copies source string to target string */
+	strcat(target, source); /* appends source at the end of target */
+	int1 = strcmp(str1, str2); /* returns 0 if strings are equal, 
+                		      nonzero if they are unequal */
+	strupr(str); /* converts string str to uppercase */
+	strlwr(str); /* converts string str to lowercase */
+	toupper(ch); /* convers character ch to uppercase */
+	tolower(ch); /* converts character ch to lowercase */
+
+5. #include<string.h> for prototypes of library string functions. 

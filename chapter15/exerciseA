@@ -1,0 +1,189 @@
+[A] What will be the output of the following programs:
+
+(a) #include<stdio.h>
+
+   int main()
+   {
+	char c[2] = "A";
+
+	printf("%c\n", c[0]);
+	printf("%s\n", c);
+	return 0;
+   }
+   output : A
+	    A 
+   Note   : c[0] and c refers to the first element in an array.
+
+(b) #include<stdio.h>
+
+   int main()
+   {
+	char s[] = "Get organized! Learn c!!";
+	
+	printf("%s\n", &s[2]);
+	printf("%s\n", s);
+	printf("%s\n", &s);
+	printf("%c\n",s[2]);
+	return 0;
+   }
+   
+   output : t organized! Learn c!!
+	    Get organized! Learn c!!
+    	    Get organized! Learn c!!
+   	    t
+   Note  :  &s[2] - It prints from 2nd element till the last element
+            in an array.
+	    s and &s - It prints from first element to the last element.
+	    s[2] - prints the 2nd index position element in an array. 
+
+
+(c) #include<stdio.h>
+
+   int main()
+   {
+	char s[] = "No two viruses work similarly";
+	int i = 0;
+
+	while(s[i] != 0)
+	{
+		printf("%c%c\n",s[i],*(s + i));
+		printf("%c%c\n",i[s], *(i + s));
+		i++;
+	}
+	return 0;
+    }
+   
+   output : NN
+	    NN
+	    oo
+	    oo
+	  
+	  
+	   tt
+	   tt
+	   ww
+	   ww
+	   oo
+	   oo
+	  
+	  
+	   vv
+	   vv
+	   ii
+	   ii
+	   rr
+	   rr
+	   uu
+	   uu
+	   ss
+	   ss
+	   ee
+	   ee
+	   ss
+	   ss
+	  
+	  
+	   ww
+	   ww
+	   oo
+	   oo
+	   rr
+	   rr
+	   kk
+	   kk
+	  
+	  
+	   ss
+	   ss
+	   ii
+	   ii
+	   mm
+	   mm
+	   ii
+	   ii
+	   ll
+	   ll
+	   aa
+	   aa
+	   rr
+	   rr
+	   ll
+	   ll
+	   yy
+	   yy
+    
+   Note : s[i],*(s + i)), i[s], *(i + s) all refers to
+    	  same value.
+
+(d) #include<stdio.h>
+
+    int main()
+    {
+	char s[] = "Churchgate : no church no gate";
+	char t[25];
+	char *ss, *tt;
+
+	ss = s;
+
+	while(*ss != '\0')
+		*tt++ = *ss++;
+	printf("%s\n",t);
+	return 0;
+    }
+
+    output : Segmentation fault (core dumped)
+
+    Note   : Since *tt doesn't hold any adress, segmentation
+	     fault occurs.
+
+(e) #include<stdio.h>
+
+    int main()
+    {
+	char str1[] = {'h', 'e', 'l', 'l', 'o', 0};
+	char str2[] = "hello";
+	
+	printf("%s\n",str1);
+	printf("%s\n",str2);
+	return 0;
+     }
+
+    output : hello
+	     hello
+
+    Notes  : Since 0 is not denoted by '' it is not a character, so
+	     it is neglected and hello is printed and in str2 since it
+	     is a string hello is printed. 
+ 
+(f) #include<stdio.h>
+
+    void main()
+   {
+	printf(5 + "Good Morning");
+	printf("%c\n", "abcdefgh"[4]);
+    }
+
+    output : Morninge
+    
+    Note   : 5 + "Good Morning"- From the fifth element the rest of the array
+             is printed.
+             abcdefgh"[4] - The 4th array index position element is printed. 
+
+(g) #include<stdio.h>
+
+    int main()
+    {
+	printf("%d\n%d\n%d\n",sizeof('3'),sizeof("3"),sizeof(3));
+	return 0;
+     }
+
+     output : 4
+	      2
+              4
+
+     Note  : '3' - is a character printed as an integer so size is 4.
+	     "3" - string which includes '\0' also, so size is 2.
+	      3 - ineger size is 4.  
+ 
+
+
