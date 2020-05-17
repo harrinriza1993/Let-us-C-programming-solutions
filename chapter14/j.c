@@ -12,42 +12,58 @@ Apporach:
 
 #include<stdio.h>
 
-void display(int a[5],int,int);
+void printArray(int a[4][5], int row, int col);
+void circularlyLeftShiftByTwoPosition(int a[4][5], int, int);
 
 void main()
 {
-	int a[5];
-	int row = 4, col = 5;
+	int a[4][5] = { {15, 30, 28, 19, 61},
+			{15, 30, 28, 19, 61},
+			{15, 30, 28, 19, 61},
+			{15, 30, 28, 19, 61},
+		      };
 
-	display(a,row,col); 
+	int row = 4, col = 5;
+	
+	printf("orignal array\n");
+	printArray(a, row, col); 
+
+	circularlyLeftShiftByTwoPosition(a, row, col);
+
+	printf("\nArray circularly left shifted by two positions\n");
+	printArray(a, row, col); 
 }
 
-void display(int a[5],int row, int col)
+void circularlyLeftShiftByTwoPosition(int a[4][5], int row, int col)
 {
-	int i, j, k, n = 5, temp1, temp2;
+	int i, j, temp1, temp2;
 
-	k = 0;
-	while (k < row) 
+	for(i=0; i<row; i++)
 	{
-		printf("Enter the %d row\n",k);
+		temp1 = a[i][0];
+		temp2 = a[i][1];
+
+		for(j = 0; j < col-2; j++)
 		{
-			for(j = 0; j < col; j++)
-			{
-				scanf("%d",&a[j]);
-			}
+			a[i][j] = a[i][j + 2];
 		}
-		temp1 = a[0];
-		temp2 = a[1];
-		printf("The numbers after sorting\n");
-		
-		for(j = 0; j < n-2; j++)
-		{
-			a[j] = a[j + 2];
-			printf("%d\n",a[j]);
-		}
-		a[n - 1] = temp1;
-		a[n - 2] = temp2;
-		printf("%d\n%d\n",a[n - 1],a[n - 2]);
-		k++;
+
+		a[i][col-1] = temp2;
+		a[i][col-2] = temp1;
 	}
-}	
+}
+
+
+void printArray(int a[4][5], int row, int col)
+{
+	for(int i = 0; i < row; i++)
+	{
+		for(int j = 0; j < col; j++)
+			printf("%2d ", a[i][j]);
+
+		printf("\n");
+	}
+
+}
+
+

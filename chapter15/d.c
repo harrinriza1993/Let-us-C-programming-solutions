@@ -12,16 +12,16 @@ Apporach:
 void main()
 {
 	char string_number[] = "124";
-	int size = 3, i;
+	int size = strlen(string_number), i;
 	int integer_number = 0, number = 0;
-	
+
 	/*Since the ascii value of 0 is 48, it is subtracted each time 
 	  from the string of numbers. */
-	printf("The integer number is \n");
 	for(i = 0; i < size; i++)
 	{
 		number = string_number[i] - 48;
 		integer_number = (number) + (10 * integer_number);
 	}
-	printf("%d\n", integer_number);
+
+	printf("The integer number is  : %d\n", integer_number);
 }

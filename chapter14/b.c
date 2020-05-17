@@ -23,16 +23,19 @@ void main()
 
 	largeNumber = array[0][0];
 
+	printf("The 5 * 5 array is\n");
 	for (i = 0; i < 5; i++)
 	{
 		for (j = 0; j < 5; j++)
 		{
+			printf("%4d ", array[i][j]);
 			if (largeNumber < array[i][j])
 				largeNumber = array[i][j];
 		}
+		printf("\n");
 	}
 
-	printf("The largest number in an array is %d\n", largeNumber);
+	printf("\nThe largest number in an array is %d\n", largeNumber);
 }
 				
 

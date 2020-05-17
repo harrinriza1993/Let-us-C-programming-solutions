@@ -38,6 +38,7 @@ void main()
 	{
 		for(i = 0; i < numberOfchar; i++)
 			printf("%c", s[position + i]);
+
 		printf("\n");
 	}
 }

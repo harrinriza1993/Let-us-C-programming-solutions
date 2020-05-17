@@ -25,6 +25,7 @@ void main()
 	{
 		for (j = 0;j < 4;j++)
 			printf("%d ",array[i][j]);
+
 		printf("\n");
 	}
 
@@ -39,6 +40,7 @@ void main()
 
 			 printf("%d ",transpose_array[i][j]);
 		}
+
 		printf("\n");
 	}
 }

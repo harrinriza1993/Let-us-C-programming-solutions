@@ -25,13 +25,15 @@ void main()
 	
 	printf("The given matrix is \n");
 	for (i = 0; i < 4; i++)
+	{
+		for (j = 0; j < 4; j++)
 		{
-			for (j = 0; j < 4; j++)
-			{
-				printf("%d ",array[i][j]);
-			}
+			printf("%d ",array[i][j]);
 		}
+		printf("\n");
+	}
 	printf("\n");
+
 	printf("The transpose matrix is \n");
 	if (row == col)
 	{
@@ -41,8 +43,10 @@ void main()
 			{
 				printf("%d ",array[j][i]);
 			}
+			printf("\n");
 		}
 		printf("\n\n");
+
 		for (i = 0; i < 4; i++)
 		{
 			for (j = 0; j < 4; j++)
@@ -56,6 +60,7 @@ void main()
 				}
 			}
 		}
+
 		if (count == row * col)
 			printf("The given array is symmetric\n");
 	}

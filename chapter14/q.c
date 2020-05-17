@@ -7,110 +7,155 @@
 */
 
 #include<stdio.h>
-void insertrear(int a[], int rear);
-void insertfront(int a[], int front);
-void deletefront(int a[], int front);
-void deleterear(int a[], int front);
+#include<stdlib.h>
+
+#define MAX 5
+
+void insertRight(int a[], int *right, int *left);
+void insertLeft(int a[], int *right, int *left);
+void deleteRight(int a[], int *right);
+void deleteLeft(int a[], int *right, int *left);
+void display(int a[], int *right);
 
 void main()
 {
-	int a[5], rear = -1, front = -1;
+	int a[5], right = -1, left = -1, choice;
 
-	insertrear(a, rear);
-	insertfront(a, front);
-	deletefront(a, front);
-	deleterear(a, rear);
+	while(1)
+	{
+		printf("\nEnter the choice\n");
+		printf("1. Insert at right\n");
+		printf("2. Insert at left\n");
+		printf("3. Delete at right\n");
+		printf("4. Delete at left\n");
+		printf("5. Display the queue·\n");
+		printf("6. Exit·\n\n");
+		scanf("%d", &choice);
+
+		switch(choice)
+		{
+
+			case 1:
+				insertRight(a, &right, &left);
+				break;
+
+			case 2:
+				insertLeft(a, &right, &left);
+				break;
+
+			case 3:
+				deleteRight(a, &right);
+				break;
+
+			case 4:
+				deleteLeft(a, &right, &left);
+				break;
+
+			case 5:
+				display(a, &right);
+				break;
+
+			case 6:
+				exit(0);
+
+			default:
+				printf("\nWrong choice\n\n");
+		}
+	}
 }
 
-void insertrear(int a[], int rear)
+// Insert at right
+void insertRight(int a[], int *right, int *left)
 {
+	if (*right == MAX-1)
+	{
+		printf("\nQueue is full\n\n");
+		return;
+	}
+
 	int element;
+
+	if (*right == -1)
+		*left = 0;
+
+	*right = *right + 1;
 	
-	if (rear >= 4)
-		printf("Dequeue is full\n");
-	else
+	printf("Enter the element to insert at right: ");
+	scanf("%d", &element);
+
+	a[*right] = element;
+}
+
+
+// Insert at left
+void insertLeft(int a[], int *right, int *left)
+{
+	if (*right == MAX-1)
 	{
-		printf("Enter the elements inserted by insert rear method\n");
-		while (rear < 4)
-		{
-			scanf("%d",&element);
-			a[rear] = element;
-			rear++;
-		}
+		printf("\nQueue is full\n\n");
+		return;
+	}
+
+	if (*right == -1)
+		*left = 0;
+
+	*right = *right + 1; //4
+
+	//shift the queue
+	for(int i = *right; i >= 0; i--)
+		a[i+1] = a[i];
+
+	int element;
+	printf("Enter the element to insert at left: ");
+	scanf("%d", &element);
+	a[*left] = element;
+}
+
+// Delete at left
+void deleteLeft(int a[], int *right, int *left)
+{
+	if (*right == -1)
+	{
+		printf("\nQueue is empty\n\n");
+		return;
+	}
+
+	printf("Removed item from list: %d\n\n", a[*left]);
+	*right = *right - 1;
+
+	for(int i = 0; i<= *right; i++)
+	{
+		a[i] = a[i+1];
 	}
 }
 
-void insertfront(int a[], int front)
+// Delete at right
+void deleteRight(int a[], int *right)
 {
-	int element, size = 4;
-
-
-	front = size-1;
-	printf("Enter the elements inserted by insert front method\n");
-	while (front < size && front >= -1)
+	if (*right == -1)
 	{
-		scanf("%d",&element);
-		a[front] = element;
-		front--;
+		printf("\nQueue is empty\n\n");
+		return;
 	}
+
+	printf("Removed item from list: %d\n\n", a[*right]);
+	*right = *right - 1;
 }
 
-void deletefront(int a[], int front )
+void display(int a[], int *right)
 {
-	int element, number, size = 5;
+	if (*right == -1)
+	{
+		printf("\nQueue is empty\n\n");
+		return;
+	}
+	
+	printf("\nDequeue List\n");
+	for (int i = 0; i <= *right; i++)
+		printf("%d\t", a[i]);
 
-	printf("Enter the elements\n");
-	for(front = -1; front <=3; front++)
-	{
-		scanf("%d",&element);
-		a[front] = element;
-	}
-	printf("Enter the number of elements to be deleted\n");
-	scanf("%d",&number);
-	if (number <= 5)
-	{
-		front = -1;
-		front = number + front;
-		printf("The elements after front deletion\n");
-		while(front <= 3)
-		{
-			printf("%d\n",a[front]);
-			front++;
-		}
-	}
+	printf("\n\n");
 }
 
-void deleterear(int a[], int rear)
-{
-	int element, number, size = 5;
-	printf("Enter the elements\n");
-	for(rear = -1; rear <= 3; rear++)
-	{	
-		scanf("%d",&element);
-		a[rear] = element;
-	}
-	printf("Enter the number of elements to be deleted\n");
-	scanf("%d",&number);
-	if (number <= 5)
-	{
-		rear = 3;
-		rear = rear - number;
-		printf("The elements after rear deletion\n");
-		while (rear >= -1)
-		{
-			printf("%d\n",a[rear]);
-			rear--;
-		}
-	}
-} 
 
-		
-	
 
-	
-	
-
-	
-	
-	
-	
