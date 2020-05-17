@@ -21,29 +21,23 @@ Approach:
 void main()
 {
 	char s[30] = "Working with strings is fun";
-	int start, end, i;
+	int position, numberOfchar, i;
 
-	printf("Enter the starting and ending positions\n");
-	scanf("%d%d", &start, &end);
-	
-	/*Since the array element start from zero, the first element 
-	  should be considered as start - 1*/
-	if(end == 0)
+	printf("Enter the starting position to print the string\n");
+	scanf("%d", &position);
+	position = position - 1;
+
+	printf("How many character you would like print\n");
+	scanf("%d", &numberOfchar);
+
+	if(numberOfchar == 0)
 	{
-		printf("%s\n", &s[start - 1]);
+		printf("%s\n", &s[position]);
 	}
 	else
 	{
-		/*The ending position should be found by adding end position
-    		  with (start - 1) position.*/
-		end = end + (start-1);
-		i = start - 1;
-
-		/*Till end - 1 elements are to be printed*/
-		while(i < end)
-		{
-			printf("%c",s[i]);
-			i++;
-		}
+		for(i = 0; i < numberOfchar; i++)
+			printf("%c", s[position + i]);
+		printf("\n");
 	}
 }

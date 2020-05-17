@@ -11,7 +11,7 @@
 (c) The array char name[10] can consist of a maximum 
     of _______ characters.
 
-	Answer : 10
+	Answer : 9 characters and 10 is for '\0'
 
 (d) The array elements are always stored in ________
     memory locations.

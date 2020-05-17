@@ -20,26 +20,22 @@ Apporach:
 
 void main()
 {
-	int arr[10];
-	int i, checksum ;
+	char arr[10];
+	int i, checksum = 0 ;
 	
 	/*step1 : Ten numbers are obtained from keyboard.*/
 	printf("Enter the isbn number\n"); 
 	for(i = 0; i < 10; i++)
 	{
-		scanf("%d", &arr[i]);
-
-		checksum = 0;
+		printf("Enter %d digit of isbn number: ", i);
+		scanf(" %c", &arr[i]);
+		arr[i] = arr[i] - (48);
 		
-		/*step2 : The checksum is calculated using the condition.*/
-		checksum = arr[0] + (2 * arr[1]) + (3 * arr[2]) 
-			   + (4 * arr[3]) + (5 * arr[4]) + (6 * arr[5])
-			   + (7 * arr[6]) + (8 * arr[7]) + (9 * arr[8])
- 			   + (10 * arr[9]);
+		checksum = checksum + (arr[i] * (i + 1));
 	}
 	printf("The checksum is %d\n", checksum);
 
-	/*step3 : If the checksum is divisible by 11, then the given
+	/*step2 : If the checksum is divisible by 11, then the given
   		  number is a ISBN number. */
 	if (checksum % 11 == 0)
 		printf("The number is ISBN number\n");

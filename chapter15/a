@@ -4,4 +4,4 @@
 
    Answer:
 
-	puts() is cable of reading a multi-word string at a time.	
+	gets() is cable of reading a multi-word string at a time.	

@@ -12,7 +12,8 @@
    }
    output : A
 	    A 
-   Note   : c[0] and c refers to the first element in an array.
+   Note   : c[0] refers to the first element in an array.
+	    c points the starting address of the string(&a[0]).
 
 (b) #include<stdio.h>
 
@@ -32,7 +33,7 @@
     	    Get organized! Learn c!!
    	    t
    Note  :  &s[2] - It prints from 2nd element till the last element
-            in an array.
+            in an array("\0").
 	    s and &s - It prints from first element to the last element.
 	    s[2] - prints the 2nd index position element in an array. 
 
@@ -181,7 +182,7 @@
 	      2
               4
 
-     Note  : '3' - is a character printed as an integer so size is 4.
+     Note  : '3' - size is 4(it is 4 bytes value)
 	     "3" - string which includes '\0' also, so size is 2.
 	      3 - ineger size is 4.  
  
