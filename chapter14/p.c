@@ -28,9 +28,9 @@ void main()
 	for(i = 0; i < row-1; i++)
 	{
 		x2Minusx1Square = pow((a[i+1][0] - a[i][0]), 2); // (x2 - x1)^2
-		x2Minusx1Square = pow((a[i+1][1] - a[i][1]), 2); // (x2 - x1)^2
+		y2Minusy1Square = pow((a[i+1][1] - a[i][1]), 2); // (x2 - x1)^2
 
-		distance  += sqrt(x2Minusx1Square + x2Minusx1Square);
+		distance  += sqrt(x2Minusx1Square + y2Minusy1Square);
 	}
 
 	printf("\nThe distance of last point(%d,%d) from the first(%d,%d) is %d\n\n", \
