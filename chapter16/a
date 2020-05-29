@@ -1,0 +1,17 @@
+(a) How many bytes in memory would be occupied by the following array of pointers
+    to a string? How many bytes would be required to store the same strings, if they
+    are stored in a two- dimensional character array?
+
+		char *mess[] = {
+				  "Hammer and tongs",
+				  "Tooth and nail",
+				  "spit and polish",
+				  "You and C"
+				};
+
+  Answer:
+	   Total number of characters in mess is 64 . So array of pointers occupy 68
+           bytes of memory including '\0' .
+
+	   In two dimensional character array they are stored as rows and columns, Since
+           there is 4 rows and 16 column the total number of bytes is 68 including '\0'.

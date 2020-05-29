@@ -1,0 +1,31 @@
+Important notes:
+-----------------
+
+1. 2 ways to handle multiple related strings:
+	1) Using 2D array of strings
+	2) Using array of pointers to strings
+
+2. Pros and cons of using 2D array of strings
+	prons:
+		1) Easy to process using 2 for loops 
+                   and expression str[i][j]
+
+   	Cons:
+		1) Leads to wastage of precious memory space
+		2) leads to tedious processing of array elements
+
+3. Pros and cons of using array of pointer to strings:
+
+	Pros:
+		1) Easy to process
+		2) Saves space
+
+	cons:
+		1) Cannot change strings. Their relative positions in 
+                   the array can be changed.
+		2) Cannot receive strings from keyboard easily. Can be 
+                   done by allocating space for each string using malloc()
+                   and then assigning the addresses returned by malloc()
+                   to the array elements.
+
+
