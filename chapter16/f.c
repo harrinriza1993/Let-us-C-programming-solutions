@@ -18,7 +18,7 @@ void main()
 	printf("Enter the sentence\n");
 	gets(&sent);
 	
-	printf("To delete the occurences of the word the\n");
+	printf("\nTo delete the occurences of the word the\n");
 	for (i = 0; sent[i] != '\0'; i++)
 	{
 		if (sent[i] == 't' && sent[i + 1] == 'h' && sent[i + 2] == 'e') 
@@ -29,7 +29,6 @@ void main()
 	
 			}
 			sent[i] = '\0';
-			printf("%s\n", sent);
 			i = -1;
 		}
 	}

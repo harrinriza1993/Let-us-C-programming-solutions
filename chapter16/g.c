@@ -12,7 +12,7 @@ Apporach:
 void main()
 {
 	char name[80];
-	int i;
+	int i, count = 0;
 
 	printf("Enter a name\n");
 	gets(name);
@@ -23,13 +23,21 @@ void main()
           the abbreviate. */
 	printf("%c\n", name[0]);
 
-	for(i = 1; i < strlen(&name); i++)
+	for(i = 1; i < strlen(name); i++)
 	{
-		/*The ascii value of a space is 32, the
-                  first letter afer the space is printed.*/
 		if(name[i] == 32)
-			printf("%c\n", name[i + 1]);
+			count++;
 	}
+	char *p = &name[0];
+
+	for(i = 0; i < count; i++)
+	{
+		printf("%c", *p);
+		while(*p != ' ');
+			p++;
+		p++;
+	}
+	printf("%s", p);
 }
 
 	

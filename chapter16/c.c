@@ -21,13 +21,14 @@ void main()
 		     };
 	int i, j;
 	char temp[10];
-
+	
+	/*Prints the given array. */
 	printf("The given array is \n");
-
 	for (i = 0; i < 5; i++)
 	{
 		printf("%s\n", names[i]);
 	}
+
 	/*Loop for sorting */
 	for ( i = 0; i < 5; i++)
 	{
@@ -41,7 +42,9 @@ void main()
 			}
 		}
 	}
-	printf("The sorted array is\n");
+	
+	/*Prints the sorted array. */
+	printf("\nThe sorted array is\n");
 	for (i = 0; i < 5; i++)
 	{
 		printf("%s\n", names[i]);

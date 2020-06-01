@@ -8,31 +8,30 @@ Apporach:
 
 #include<stdio.h>
 #include<string.h>
-void reverse(char a[3][20], row, col);
+void revstr(char *p);
 
 void main()
 {
-	char a[3][20] = {
-			 "she is nice",
-			 "Earth is round",
-			 "Lal Bosco"
-			 
-		        };
-	int row = 3, col = 20;
-
-	reverse(&a[0][0], row, col);
+	char str[10] = "Hello";
+	
+	revstr(&str[0]);
+	printf("%s\n", str);
 }
 
-void reverse(char a[3][20], int row, int col)
+void revstr(char *p)
 {
-	for(int i = 0; i < row; i++)
+	int len, i;
+
+	len = strlen(p);
+
+	char q[len];
+
+	for(i = 0; i >= 0; i--)
 	{
-		/*The columns are reversed by initializing the maximum value for the
-                  column and then decrement the column value each time. */
-		for(int j = col - 1; j >= 0; j--)
-		{
-			printf("%c", a[i][j]);
-		}
-		printf("\n");
+		*p = q[i];
+		p++;
 	}
-} 
+}
+
+ 
+	

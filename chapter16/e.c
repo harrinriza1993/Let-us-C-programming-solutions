@@ -33,16 +33,16 @@ void main()
 		for (j = 0; j <= strlen(&a[i][0]); j++)
 		{
 			
-			/*Except the vowels all the other value should be printed so continue is used.*/
+			/*Except the vowels all the other value should be printed, so just shift the word if a vowel
+                	  is found. */
 			if ((a[i][j] == 'a')|| (a[i][j] == 'e') ||(a[i][j] == 'i')|| (a[i][j] == '0')|| (a[i][j] == 'u')
 			     || (a[i][j] == 'A')|| (a[i][j] == 'E')|| (a[i][j] == 'I')|| (a[i][j] == 'O')|| (a[i][j] == 'U'))
 			{
-				continue;
+				a[i][j] = a[i][j + 1];
 			}
 			printf("%c", a[i][j]);
 		}
-			printf("\n");
+		printf("\n");
 	}
-	
 }
 				

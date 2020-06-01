@@ -20,28 +20,26 @@ void main()
 	
 	printf("Enter the sentence\n");
 	gets(sent);
-
+	
+	/*To check the presence of the vowels. */
 	for(i = 0; i < strlen(&sent); i++)
 	{
-		
 		/*The vowels are a, e, i, o, u, each combiations are checked and the count is increased
 		  if it is present. */
-		if ((sent[i] =='a' && sent[i + 1] == 'e') ||(sent[i] == 'a' && sent[i + 1] == 'i')
-                   || (sent[i] == 'a' && sent[i + 1] == '0')||(sent[i] == 'a' && sent[i + 1] == 'u'))
-			count++;
-		if ((sent[i] == 'e' && sent[i + 1] == 'a') ||(sent[i] == 'e' && sent[i + 1] == 'i')
-                   || (sent[i] == 'e' && sent[i + 1] == '0')||(sent[i] == 'e' && sent[i + 1] == 'u'))
-			count++;
-		if ((sent[i] == 'i' && sent[i + 1] == 'a') ||(sent[i] == 'i' && sent[i + 1] == 'e')
-                   || (sent[i] == 'i' && sent[i + 1] == '0')||(sent[i] == 'i' && sent[i + 1] == 'u'))
-			count++;
-		if ((sent[i] == 'o' && sent[i + 1] == 'a') ||(sent[i] == 'o' && sent[i + 1] == 'e')
-                   || (sent[i] == 'o' && sent[i + 1] == 'i')||(sent[i] == 'o' && sent[i + 1] == 'u'))
-			count++;
-		if ((sent[i] == 'u' && sent[i + 1] == 'e') ||(sent[i] == 'u' && sent[i + 1] == 'i')
-                   || (sent[i] == 'u' && sent[i + 1] == '0')||(sent[i] == 'u' && sent[i + 1] == 'a'))
-			count++;
+		if ((sent[i] == 'a')|| (sent[i] == 'e') || (sent[i] == 'i') || (sent[i] == 'o') 
+		|| (sent[i] == 'u') || (sent[i] == 'A') || (sent[i] == 'E') || (sent[i] == 'I') 
+		|| (sent[i] == 'O') || (sent[i] == 'U'))
+		{
+			if ((sent[i + 1] == 'a') || (sent[i + 1] == 'e') || (sent[i + 1] == 'i') || (sent[i + 1] == 'o')
+			|| (sent[i + 1] == 'u') || (sent[i + 1] == 'A') || (sent[i + 1] == 'E') || (sent[i + 1] == 'I') 
+			|| (sent[i + 1] == 'O') || (sent[i + 1] == 'U'))
+			{
+				count++;
+			}
+		}
 	}
+	
+	/*Print the number of occurences of Vowels. */
 	printf("The number of occurences of any vowels in a line is\n");
 	printf("%d\n", count);
 }

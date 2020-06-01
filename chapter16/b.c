@@ -23,10 +23,22 @@ void main()
 			  "Grasses are green",
 		          "Sky is blue"
 			};
-	char word[] = "Sky";
-	int found = 0;
+	char word[20];
+	int found = 0, i;
+	
+	/*Prints the given string*/
+	printf("The given string is\n\n");
+	for(i = 0; i < 3; i++)
+	{
+		printf("%s\n", &a[i][0]);
+	}
+	
+	/*Enter the word to be searched. */
+	printf("\nEnter the word to be searched in the string\n");
+	scanf("%s", word);
 
-	for(int i = 0; i < 3; i++)
+	/*Check whether the word is found or not. */
+	for(i = 0; i < 3; i++)
 	{
 		char *check = strstr(&a[i][0], word);
 		if(check)
