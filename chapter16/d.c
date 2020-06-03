@@ -12,26 +12,45 @@ void revstr(char *p);
 
 void main()
 {
-	char str[10] = "Hello";
+	char str[4][10] = {
+			    "Hello",
+			    "Harrin",
+			    "Lal bosco",
+			    "12345678"
+			  };
+
+	/*Print the given array. */
+	printf("The given array is \n");
+	for(int i = 0; i < 4; i++)
+	{
+		printf("%s\n", &str[i]);
+	}
 	
-	revstr(&str[0]);
-	printf("%s\n", str);
+	/*Print the array in reverse order. */
+	printf("\nThe given array in reverse order is\n");
+	for(int i = 0; i < 4; i++)
+	{
+		revstr(&str[i]);
+		printf("%s\n", &str[i]);
+	}
 }
 
 void revstr(char *p)
 {
-	int len, i;
+	int len = 0, i = 0;
+	char temp;
 
-	len = strlen(p);
+	len = strlen(p) - 1;
 
-	char q[len];
-
-	for(i = 0; i >= 0; i--)
+	while(i < len)
 	{
-		*p = q[i];
-		p++;
+		temp = p[i];
+		p[i] = p[len];
+		p[len] = temp;
+
+		i++;
+		len--;
 	}
 }
+		
 
- 
-	

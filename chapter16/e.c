@@ -3,7 +3,7 @@
 
 Apporach:
 	1) Except the vowels all others are to be printed, so vowels are excluded
-           using continue keyword.
+           shifting the other characters which excludes the Vowels.
 */
 
 #include<stdio.h>
@@ -11,38 +11,21 @@ Apporach:
 
 void main()
 {
-	char a[3][80];
-	int i, j, row = 3, col = 80, k;
+	char a[80];
 
-	printf("Enter the sentences\n");
-	for (i = 0; i < row; i++)
-	{
-		gets(&a[i][0]);
-		
-		/*To check whether the sentence is not more than 80 characters long, 
-     		  this condition is checked.*/
-		k = strlen(&a[i][0]);
-		if (k > 80)
-			printf("The sentence is in valid\n");
-	}
+	printf("Enter the sentence\n");
+	gets(a);
 	
-	/*To delete all vowels and print the sentence*/
-	printf("The sentence after deletion of vowels\n");
-	for (i = 0; i < row; i++)
+	int length = strlen(a);
+	
+	/*Print the sentence without Vowels. */
+	for(int i = 0; i < length; i++)
 	{
-		for (j = 0; j <= strlen(&a[i][0]); j++)
+		if ((a[i] == 'a')|| (a[i] == 'e') || (a[i] == 'i')|| (a[i] == '0')|| (a[i] == 'u'))
 		{
-			
-			/*Except the vowels all the other value should be printed, so just shift the word if a vowel
-                	  is found. */
-			if ((a[i][j] == 'a')|| (a[i][j] == 'e') ||(a[i][j] == 'i')|| (a[i][j] == '0')|| (a[i][j] == 'u')
-			     || (a[i][j] == 'A')|| (a[i][j] == 'E')|| (a[i][j] == 'I')|| (a[i][j] == 'O')|| (a[i][j] == 'U'))
-			{
-				a[i][j] = a[i][j + 1];
-			}
-			printf("%c", a[i][j]);
+			strcpy(&a[i], &a[i + 1]);
 		}
-		printf("\n");
 	}
+	printf("%s\n", a);
+	
 }
-				

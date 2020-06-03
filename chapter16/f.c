@@ -32,7 +32,7 @@ void main()
 			i = -1;
 		}
 	}
-	printf("%s", sent);
+	printf("%s\n", sent);
 }
                       
                         

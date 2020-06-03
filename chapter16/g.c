@@ -17,27 +17,26 @@ void main()
 	printf("Enter a name\n");
 	gets(name);
 	
-	printf("The abbreviates of the name\n");
-
-	/*The first letter of any name is the first letter of 
-          the abbreviate. */
-	printf("%c\n", name[0]);
-
+	/*Find the number of spaces. */
 	for(i = 1; i < strlen(name); i++)
 	{
 		if(name[i] == 32)
 			count++;
 	}
+	
+	/*A temporary pointer is used to pass the address of first variablr. */
 	char *p = &name[0];
 
+	/*Prints the abbreviation of the name. */
+	printf("The abbreviation of the name is \n");
 	for(i = 0; i < count; i++)
 	{
 		printf("%c", *p);
-		while(*p != ' ');
+		while(*p != ' ')
 			p++;
 		p++;
 	}
-	printf("%s", p);
+	printf("%s\n", p);
 }
 
 	
