@@ -27,5 +27,4 @@ void main()
 		}
 	}
 	printf("%s\n", a);
-	
 }
