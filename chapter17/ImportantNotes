@@ -1,0 +1,28 @@
+Important notes:
+-----------------
+
+1. Structure is a collection of dissimilar elements stored in adjacent locations.
+
+2. Structure is a user defined datatype. Using structure we can define a datatype
+   which holds more than one element of differnt types.
+ 
+ 3. Syntax of structure is 
+ 	
+ 	struct employee
+ 	{
+ 		char name; int age; float salary;
+ 	};
+ 	
+ 	struct employee e1, e2, e[10];
+ 	
+ 	struct - Keyword         employee - Structure name/tag
+ 	name, age, salary - Structure elements/ structure members
+ 	e1, e2 - structure variables  e[] - Array of structures
+ 	
+ 4. size of structure variable = sum of sizes of structure elements.
+ 
+ 5. To access structure elements using structure variable, use . operator
+    as in
+    
+    	struct emp e;
+    	printf("%s %d %f", e.name, e.age, e.sal);

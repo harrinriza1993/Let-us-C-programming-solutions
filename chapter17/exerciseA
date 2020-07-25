@@ -1,0 +1,50 @@
+[A] Answer the following:
+
+(a) Ten floats are to be stored in memory. What would you prefer, an array or 
+    a structure?
+    
+    Answer : Since we use same datatype 'float', and we know the size, array is preffered.
+ 
+ (b) Given the statement,
+ 	
+ 	maruti.engine.bolts = 25;
+ 	
+ 	which of the following is True?
+ 	
+ 	1. Structure bolts is nested within structure engine
+ 	2. Structure engine is nested within structure maruti
+ 	3. Structure maruti is nested within structure engine
+ 	4. Structure maruti is nested within structure bolts
+ 	
+ 	Answer:  1. Structure bolts is nested within structure engine
+ 		 2. Structure engine is nested within structure maruti
+  
+  (c) State True or False
+  
+  	1. All structure elements are stored in contiguous memory locations. - False
+  	
+  	2. An array should be used to store dissimilar elements, and a structure
+  	   to store similar elements. False
+  	   
+  	3. In an array of structures, not only are all structures stored in contiguous
+  	   memory locations, but the elements of individual structures are also stored
+  	   in contiguous locations. - False
+  	   
+   (d) struct time
+       {
+   		int hours; int minutes; int seconds;
+   		
+   	}t;
+   	
+   	struct time *pt;
+   	pt = &t;
+   	
+   	With reference to the above declarations Which of the following refers to the 
+   	seconds correctly:
+   	
+   	1. pt.seconds
+   	2. pt -> seconds
+   	3. time.seconds
+   	4. time -> seconds
+   	
+   	Answer : time -> seconds
