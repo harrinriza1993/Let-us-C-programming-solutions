@@ -1,0 +1,118 @@
+[B] Point out the errors, if any, in the following programs:
+
+a. #include<stdio.h>
+
+   int main()
+   {
+	int i;
+	char a[] = "Hello";
+	
+	while(a != '\0')
+	{
+		printf("%c", *a);
+		a++;
+	}
+	return 0;
+   }
+
+   Compiler error : lvalue required as increment operand
+
+   Notes : The base address should be stored in a variable, so once the base address 
+   	   is obtained in the variable would yield the value at address. Since it doesn't
+           point to any variable, the base address a cannot be incremented and the 
+           value cannot be printed.
+
+b. #include<stdio.h>
+
+   int main()
+   {
+	double dval;
+	
+	scanf("%f", &dval);
+	printf("Double val = %lf\n", dval);
+	
+	return 0;
+   } 
+   
+   Compiler error : format ‘%f’ expects argument of type ‘float *’, but argument 2 has type ‘double *’ [-Wformat=]
+
+   Notes : Since double is the datatype %lf should be used in format specifier instead of %f.
+
+c. #include<stdio.h>
+
+   int main()
+   {
+	int ival;
+	
+	scanf("%d\n", &n);
+	printf("Integer Value = %d\n", ival);
+	
+	return 0;
+   }
+
+   Compiler error : ‘n’ undeclared (first use in this function)
+
+   Notes : The variable declared in the program is ival, but n is used to get the input ,
+           Which is not declared in the program.
+            
+d. #include<stdio.h>
+
+   int main()
+   {
+	int dd, mm, yy;
+	
+	printf("Enter date in dd/mm/yy or dd-mm-yy format\n");
+	scanf("%d%*c%d%*c%d", &dd, &mm, &yy);
+	
+	printf("The date is : %d -%d -%d\n", dd, mm, yy);
+	
+	return 0;
+   }
+
+   Error : No compilation and run time error.
+   
+   Notes : output is
+   	   Enter date in dd/mm/yy or dd-mm-yy format
+	   23 67 89
+	   The date is : 23 -67 -89
+
+e. #include<stdio.h>
+
+   int main()
+   {
+	char text;
+	
+	sprintf(text, "%4d\t%2.2f\n%s", 12, 3.452, "Merry Go Round");
+	printf("%s\n", text);
+	
+	return 0;
+   }
+
+   Compiler error : passing argument 1 of ‘sprintf’ makes pointer from integer without a cast [-Wint-conversion]
+
+   Notes :  text is a buffer which stores all value as a string but here declared text as a single character.
+   
+f. #include<stdio.h>
+
+   int main()
+   {
+	char buffer[50];
+	int no = 97;
+	double val = 2.34174;
+	char name[10] = "Shweta";
+	
+	sprintf(buffer, "%d%lf%s", no, val, name);
+	printf("%s\n", buffer);
+	
+	sscanf(buffer, "%4d%2.2lf%s", &no, &val, name);
+	printf("%s\n", buffer);
+	
+	printf("%d%lf%s\n", no, val, name);
+	return 0;
+   } 
+
+   Compiler error : unknown conversion type character ‘.’ in format [-Wformat=]
+   
+   Notes : We cannot be able to mention the format specification value in sscanf since it directly 
+           gets the value from printf() function.
+

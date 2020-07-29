@@ -1,0 +1,21 @@
+Important Notes
+
+1) IO in c is always done using functions, and not using Keywords.
+
+2) All IO functions can be divided into 2 broad categories
+
+	1) Console IO functions : a)Formatted b)Unformatted
+	2) Disk IO functions
+
+3) All formatted Console IO is done using printf() and scanf()
+
+4) Examples of formatting:
+	%20s - right align a string in 20 columns
+	%-10d - left align an integer in 10 columns
+	%12.4f - right align a float in 12 columns with 4 places beyond 
+	         decimal point
+
+5) Unformatted console IO functions:
+	char - getchar() - Waits for enter
+	int/float - no functions
+	string - gets(), puts()
