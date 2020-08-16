@@ -4,6 +4,7 @@
        
        (1) Write a function to print the Account number and name of each
            customer with balance below rs.100.
+
        (2) If a customer requests for withdrawl or deposit, the form contains
            the fields:
            
@@ -11,101 +12,96 @@
            
            Write a function that prints a message "The balance is insufficient for 
            the specified withdrawl", if on withdrawl the balance falls below Rs.100
-
-Apporach:
-	1) A Bank customer detail structure is created.
-	2) The account number and name of each customer whose balance below 100 is printed.
-	3) If a customer needs withdrawl or deposit the bank should ask details of accn0, amount, 
-	   code.
-	4) If a customer has minimum balance then a message is printed.
 */
 
 #include<stdio.h>
 
+// Private variable
+#define NUM_OF_CUSTOMER 5 //200
+
 struct customer
 {
-	int accno;
-	char name[10];	
+	int accNo;
+	char name[25];
 	int balance;
-}c[5];
+}customerDetails[NUM_OF_CUSTOMER] = {
+	1, "Rihanna",      23,
+	2, "Beyonce",     101,
+	3, "Jennifer",   3000,
+	4, "Lawrence",   7000,
+	5, "Will Smith",   34
+};
 
-void display(int accountnumber, char *name);
-void message();
+// Private function declaration
+static void lowBalance();
+static void requestForDepositOrWithdrawl(int accountNumber,int depositOrWithdrawl,int amount);
 
 void main()
 {
-	int i;
-	
-	printf("Enter the bank customer details\n");
-	printf("Enter the accountnumber, name, balance\n");
-	for(i = 0; i < 5; i++)
+	int accountNumber, depositOrWithdrawl, amount;
+
+	lowBalance();
+
+	printf("\nTo get the requirements of each customer in the need of deposit or withdrawl\n");
+	printf("Enter the account number to deposit or withdrawl\n");
+	scanf("%d", &accountNumber);
+	printf("Please enter 1 for deposit, 0 for withdrawl\n");
+	scanf("%d", &depositOrWithdrawl);
+
+	if(depositOrWithdrawl)
 	{
-		scanf("%d %s %d", &c[i].accno, c[i].name, &c[i].balance);
+		printf("Enter the amount for deposit\n");		
 	}
-	
-	/*Print the account number and name of customers whose balance is less than 100. */
-	printf("\nThe account number and name of customers whose balance is below 100 are\n");
-	for(i = 0; i < 5; i++)
+	else
 	{
-		if (c[i].balance < 100)
-			display(c[i].accno, c[i].name);
+		printf("Enter the amount for withdrawl\n");
 	}
-	
-	int customernumber = 0;
-	while(customernumber < 5)
+	scanf("%d", &amount);
+
+	requestForDepositOrWithdrawl(accountNumber, depositOrWithdrawl, amount);
+}
+
+/*Print the account number and name of customers whose balance is less than 100. */
+static void lowBalance()
+{
+	printf("\nThe account number and name of customers whose balance is below 100 are\n\n");
+	for(int i = 0; i < NUM_OF_CUSTOMER; i++)
 	{
-		int withdrawl, deposit, accountno, amount;
-		
-		printf("\nTo get the requirements of each customer in the need of deposit or withdrawl\n");
-		
-		/* As mentioned in the program if a customer need withdrawl 1 is given and if a customer need
-		   deposit 0 is given. */
-		printf("Is withdrawl is needed\n");
-		scanf("%d", &withdrawl);
-		printf("Is depoist is needed\n");
-		scanf("%d", &deposit);
-		
-		if(withdrawl == 0 || deposit == 1)
+		if (customerDetails[i].balance < 100)
 		{
-			printf("Enter the accno\n");
-			scanf("%d", &accountno);
+			printf("Name: %s\n", customerDetails[i].name);
+			printf("Account Number: %d\n\n", customerDetails[i].accNo);
 		}
-			
-		for(i = 0; i < 5; i++)
-		{
-			if((accountno == c[i].accno) && (deposit == 1))
-			{
-				printf("Enter the amount for deposit\n");
-				scanf("%d", &amount);
-				c[i].balance = amount + c[i].balance;
-				printf("The amount of money after deposit is %d\n",c[i].balance);
-			}
-			if((accountno == c[i].accno) && (withdrawl == 0))
-			{
-				printf("Enter the amount for deposit\n");
-				scanf("%d", &amount);
-				
-				if(c[i].balance > amount && c[i].balance > 100)
-				{
-					c[i].balance = c[i].balance - amount;
-					printf("The amount after withdrawl of money is %d\n",c[i].balance);
-				}
-				else
-					message();
-			}
-		}
-			customernumber++;
 	}
 }
 
-void display(int accountnumber, char *name)
+// Fuction to deposir or withdrawl
+static void requestForDepositOrWithdrawl(int accountNumber,int depositOrWithdrawl,int amount)
 {
-	printf("%d %s\n", accountnumber, name);
-}
+	int i = 0;
+	for(; i < NUM_OF_CUSTOMER; i++)
+	{
+		if(customerDetails[i].accNo == accountNumber)
+			break;
+	}
 
-void message()
-{
-	printf("The balance is insufficient for withdrawl\n\n");
+	if(depositOrWithdrawl)
+	{
+		customerDetails[i].balance += amount;
+		printf("The amount of money after deposit is %d\n",customerDetails[i].balance);
+	}
+	else
+	{
+	        if((customerDetails[i].balance > 100) && (customerDetails[i].balance-amount > 0))
+		{
+			customerDetails[i].balance -= amount;
+			printf("The amount after withdrawl of money is %d\n",customerDetails[i].balance);
+		}
+		else
+		{
+			printf("The balance is insufficient for withdrawl\n\n");
+		}
+	}
 }
 
 	

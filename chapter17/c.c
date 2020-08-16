@@ -5,22 +5,26 @@
        1) Create a structure to store information corresponding to a part.
        2) Write a program to retrieve information on parts with serial
           numbers between BB1 and cc6.
-          
- Apporach :
- 	1) Create a structure company with required data for the engine parts 
- 	   from AA0 to FF9.
- 	2) The infromation of the parts from AA0 to FF9 is printed.
 */
 
 #include<stdio.h>
 
 /* Structure named company is created with required information. */
 struct company
-	{
+{
+	char serial[4];
 	int year;
 	char material[10];
 	int quantity;
-	}AA[10], BB[10], CC[10], DD[10], EE[10], FF[10];
+}Bens[5] = {
+"AA0", 2005, "Iron", 20,
+"BB1", 2007, "Steel", 13,
+"BB2", 1992, "Aluminium", 57,
+"CC1", 2005, "Stainless Steel", 7,
+"CC6", 2007, "Steel", 34,
+"CC7", 2010, "Steel", 14
+};
+
 
 void information(struct company, struct company );
 

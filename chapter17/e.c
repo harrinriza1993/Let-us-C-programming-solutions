@@ -2,50 +2,64 @@
        date of joining. Write a program to create an array of structure and write a 
        data into it. Then ask the user to enter current date, Display the names of those
        employee whose tenure is greater than or equal to 3 years.
- 
- Apporach:
- 	1) A structure employee is created with details given below.
- 	2) Current year should be compared with date of joining year.
- 	3) If the tenure is greater than or equal to three years,
-           then the names are printed.
 */
  
- #include<stdio.h>
+#include<stdio.h>
  
- struct dateofjoining
- {
- 	int day;
- 	int month;
- 	int year;
- };
- 
- struct employee
- {
- 		int code;
- 		char name[20];
- 		struct dateofjoining date;
- 		
- }emp[5];
- 
- void main()
- {
- 	int i;
- 	int currentday, currentmonth, currentyear;
- 	
- 	/*Get the information from the user. */
- 	printf("Enter the code, name and date of joining of employees with day, month and year\n");
- 	for(i = 0; i < 5; i++)
- 		scanf("%d %s %d %d %d", &emp[i].code, emp[i].name, &emp[i].date.day, &emp[i].date.month, &emp[i].date.year);
- 	
- 	printf("Enter current date of joining with day, month, year\n");
- 	scanf("%d %d %d", &currentday, &currentmonth, &currentyear);
- 	
- 	/*Print the employees whose tenure greater than or equal to three years */
- 	printf("\n The name of employees whose tenure greater than or equal to 3 years is\n");
- 	for(i = 0; i < 5; i++)
- 	{
- 		if((currentyear - emp[i].date.year) >= 3)
- 			printf("%s\n", emp[i].name);
- 	}
- }
- 	
+// Private variables
+#define NUM_OF_EMPLOYEE 7
+
+struct dateofjoining
+{
+	int day;
+	int month;
+	int year;
+};
+
+struct employee
+{
+	int code;
+	char name[30];
+	struct dateofjoining date;		
+}Intel[NUM_OF_EMPLOYEE] = {
+	001, "Will Smith",  17, 6, 2016,
+	002, "Rock",        21, 6, 2017,
+	003, "Jennifer",    17, 9, 2017,
+	004, "Akon",        15, 8, 2017,
+	005, "Nicky Minaj", 15, 8, 2020,
+	006, "Timber",      16, 8, 2020,
+	007, "Jason",       16, 8, 2018,
+};
+
+void printEmployeeInfo(int index)
+{
+	printf("Name: %s\n", Intel[index].name);
+}
+
+void main()
+{
+	int index = 0;
+	int currentday, currentmonth, currentyear;
+
+	printf("Enter current date of joining with day, month, year\n");
+	scanf("%d %d %d", &currentday, &currentmonth, &currentyear);
+
+	/*Print the employees whose tenure greater than or equal to three years */
+	printf("\nThe name of employees whose tenure greater than or equal to 3 years is\n");
+	for(; index < NUM_OF_EMPLOYEE; index++)
+	{
+		if((currentyear - Intel[index].date.year) > 3)
+		{
+			printEmployeeInfo(index);
+		}			
+		else if((currentyear - Intel[index].date.year) == 3)
+		{
+			if(((Intel[index].date.month - currentmonth) >= 0) ||
+			   ((Intel[index].date.day - currentday) >= 0))
+			{
+				//printEmployeeInfo(index);
+			}
+		}
+	}		
+}
+

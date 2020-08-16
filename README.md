@@ -16,3 +16,5 @@ Solve the given C programming in Let us C programming written by Yashavant Kanet
 **chapter13** . Arrays   
 **chapter14** . Multidimensional Arrays   
 **chapter15** . Strings   
+**chapter16** . Handling Multiple Strings   
+**chapter17** . Structures   
