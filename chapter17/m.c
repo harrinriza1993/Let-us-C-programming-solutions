@@ -10,60 +10,48 @@ Apporach:
 	   player.
 */
  
- #include<stdio.h>
- 
- /*A structure named players is created. */
- struct players
- {
- 	int rank;
- }r[3];
- 
- void main()
- {
- 	int player[5], temp = 0;
- 	
- 	printf("Enter the rank of first judge, second judge, third judge of 5 players\n");
- 	for(int i = 0; i < 5; i++)
- 	{
- 		temp = 0;
- 		printf("The rank of %d player is \n", i+1);
-		for(int j = 0; j < 3; j++)
- 		{
- 			scanf("%d", &r[j].rank);
- 			temp = temp + r[j].rank;
-	 	}
- 		player[i] = temp;
- 	}
- 	
- 	/*Prints the rank of players. */
- 	printf("\nThe total rank of all the five players are \n"); 
- 	for(int i = 0; i < 5; i++)
- 	{
- 		printf("%d\n", player[i]);
- 	}
- 	
- 	/*Find the Most valuable player. */
- 	for(int i = 0; i < 5; i++)
- 	{
- 		if(player[i] >= player[0])
-	 	{
-	 		if(player[i] >= player[1])
-	 		{
-	 			if(player[i] >= player[2])
-	 			{
-	 				if(player[i] >= player[3])
-	 				{
-	 					if(player[i] >= player[4])
-	 					{
-	 						/*Since the starting index of array is 0 , (i + 1) index is printed*/
-	 						  printf("\nThe most valuable player is p[%d]\n", (i + 1));	
-	 					}
-	 				}
-	 			}
-	 		}
-	 	}
- 	}
- }
+#include<stdio.h>
 
- 				
-  
+#define NUM_OF_NUMBER 5
+
+/*A structure named players is created. */
+struct players
+{
+	char name[50];
+	int rank[3];
+	int total;
+}MVP[NUM_OF_NUMBER] = {
+"Sachin Tendulkar", 0, 0, 0, 0,
+"Saurav Gangully",  0, 0, 0, 0,
+"Gill Christ",      0, 0, 0, 0,
+"Ricky Ponting",    0, 0, 0, 0,
+"Yuvaraj Singh",    0, 0, 0, 0,
+};
+ 
+void main()
+{
+	int max = 0, i;
+
+	for(i = 0; i < NUM_OF_NUMBER; i++)
+	{
+		printf("\nThe rank of %dst player [%s] is \n", i+1, MVP[i].name);
+		for(int j = 0; j < 3; j++)
+		{
+			printf("Enter the rank by Judge %d: ", j+1);
+			scanf("%d", &MVP[i].rank[j]);
+		}
+		MVP[i].total  = MVP[i].rank[0] + MVP[i].rank[1] + MVP[i].rank[2];
+
+		if(MVP[i].total > max)
+			max = MVP[i].total;
+	}
+
+	for (i = 0; i < 5; i++)
+	{
+		if (max == MVP[i].total)
+		{
+			printf("\nThe most valuable player is %s\n", MVP[i].name);
+		}
+	}
+}
+
