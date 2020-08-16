@@ -23,11 +23,11 @@ struct employee
 	struct dateofjoining date;		
 }Intel[NUM_OF_EMPLOYEE] = {
 	001, "Will Smith",  17, 6, 2016,
-	002, "Rock",        21, 6, 2017,
+	002, "Rock",        12, 8, 2017,
 	003, "Jennifer",    17, 9, 2017,
-	004, "Akon",        15, 8, 2017,
+	004, "Akon",        14, 8, 2017,
 	005, "Nicky Minaj", 15, 8, 2020,
-	006, "Timber",      16, 8, 2020,
+	006, "Timber",      21, 8, 2020,
 	007, "Jason",       16, 8, 2018,
 };
 
@@ -54,10 +54,10 @@ void main()
 		}			
 		else if((currentyear - Intel[index].date.year) == 3)
 		{
-			if(((Intel[index].date.month - currentmonth) >= 0) ||
-			   ((Intel[index].date.day - currentday) >= 0))
+			if(((currentmonth - Intel[index].date.month) >= 0) &&
+			   ((currentday - Intel[index].date.day) >= 0))
 			{
-				//printEmployeeInfo(index);
+				printEmployeeInfo(index);
 			}
 		}
 	}		
