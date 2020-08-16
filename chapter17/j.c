@@ -2,10 +2,6 @@
        (called 'rear' of queue.), Whereas deletion take place at the other end
        (called 'front' of queue). Write a program to implement a queue using
        the linked list.
-       
-Apporach:
-	1) In queue addition take place at one end called rear and deletion take
-	   place at the other end.
 */
 
 #include<stdio.h>
@@ -22,8 +18,7 @@ struct node *front, *rear;
 /*Function to add element at the rear(end) of the list. */
 void enqueue()
 {
-	struct node *new_node = (struct node *)malloc(sizeof(struct node));
-	
+	struct node *new_node = (struct node *)malloc(sizeof(struct node));	
 	if(new_node == NULL)
 	{
 		printf("Unable to allocate memory\n");
@@ -32,22 +27,17 @@ void enqueue()
 
 	printf("Enter the value\n");
 	scanf("%d",&new_node -> data);
-	
 	new_node -> next = NULL;
 	
 	if(front == NULL && rear == NULL)
 	{
-		front = new_node;
+		front = rear = new_node;
 	}
 	else
 	{
-		rear = front;
-		
-		while(rear -> next != NULL)
-		{
-			rear = rear -> next;
-		}
-		rear -> next = new_node;
+		// insertion at the end
+		rear->next = new_node;
+		rear = new_node;
 	}
 }
 
@@ -60,9 +50,13 @@ void dequeue()
 	}
 	else
 	{
-		rear = front;
+		struct node *temp = front;
+
 		front = front -> next;
-		free(rear);
+		free(temp);
+
+		if(front == NULL)
+			rear = NULL;
 	}
 }
 
@@ -84,7 +78,6 @@ void display()
 		printf("%d\n", rear -> data);
 	}
 }
-
 
 void main()
 {
@@ -120,6 +113,9 @@ void main()
 				break; 
 			case 4:
 				exit(0);
+			default:
+				printf("Unknown option\n");
+				break;
 		}
 	}
 }

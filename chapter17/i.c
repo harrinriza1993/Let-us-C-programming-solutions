@@ -1,19 +1,19 @@
 /* (i) A stack is a data structure in which addition of new element or deletion of 
        existing element always take place at the same end known as 'top' of stack.
-       Write a program to implement a stack using a linked list. 
+       Write a program to implement a stack using a linked list.
 
 Apporach:
 	1) Since the time complexity of for push and pop operation is O(1) 
  	   data insertion and deletion takes place at the starting of the list
- 	   that is the top of the list. */
+ 	   that is the top of the list.
 */
  
- #include<stdio.h>
- #include<stdlib.h>
- 
- struct node
- {
- 	int data;
+#include<stdio.h>
+#include<stdlib.h>
+
+struct node
+{
+	int data;
 	struct node *next;
 };
 
@@ -22,8 +22,7 @@ struct node *top;
 /*Function to insert a node at top. */
 void push()
 {
-	struct node *new_node = (struct node *) malloc (sizeof (struct node));
-	
+	struct node *new_node = (struct node *) malloc (sizeof (struct node));	
 	if(new_node == NULL)
 	{
 		printf("Unable to allocate memory\n");
@@ -32,11 +31,11 @@ void push()
 	
 	printf("Enter the newnode data\n");
 	scanf("%d", &new_node -> data);
-	new_node -> next = NULL;
 	
 	if(top == NULL)
 	{
 		top = new_node;
+		new_node -> next = NULL;
 	}
 	else
 	{
@@ -48,15 +47,13 @@ void push()
 /*Function to delete a node at top. */
 void pop()
 {
-	struct node *temp;
-	
 	if(top == NULL)
 	{
 		printf("There is no elements to delete\n");
 	}
 	else
 	{
-		temp = top;
+		struct node *temp = top;
 		top = top -> next;
 		free(temp);
 	}
@@ -64,9 +61,7 @@ void pop()
 
 /*Print the elements in the list. */
 void display()
-{
-	struct node *temp;
-	
+{	
 	if(top == NULL)
 		printf("The list is empty\n");
 	else
@@ -76,7 +71,7 @@ void display()
 		printf("The list is \n");
 		while(temp -> next != NULL)
 		{
-			printf("%d\n", temp -> data);
+			printf("%d ", temp -> data);
 			temp = temp -> next;
 		}
 		printf("%d\n", temp -> data);
@@ -115,6 +110,9 @@ void main()
 				break;
 			case 4:
 				exit(0);
+			default:
+				printf("Unknown option\n");
+				break;
 		}
 	}
 }

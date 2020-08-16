@@ -8,18 +8,13 @@
        Write a program to build a linked list by adding new nodes at the begining, at the end
        or in the middle of the linked list. Also write a function display() which displays all
        the nodes present in the linked list.
-
-ApporacH:
-	1) A linked list is created by value and address in it.
-	2) The insert at front, insert at end and insert at middle operation should
-	   be done in a linked list.
 */
  
- #include<stdio.h>
- #include<stdlib.h>
+#include<stdio.h>
+#include<stdlib.h>
  
  /*A structure node is created to create a node in linked list. */
- struct node
+struct node
 {
 	int data;
 	struct node *next;
@@ -27,8 +22,7 @@ ApporacH:
 
 struct node *head;
 
-/*Function to insert a node in front. */
-void insert_front()
+struct node *create_node()
 {
 	struct node *new_node = (struct node *)malloc(sizeof(struct node));
 	if(new_node == NULL)
@@ -36,38 +30,35 @@ void insert_front()
 		printf("Unable to allocate memory\n");
 		exit(0);
 	}
-	
-	printf("Enter the value\n");
+
+	printf("Enter the value to add in the list\n");
 	scanf("%d",&new_node -> data);
-	
-	new_node -> next = NULL;
-	
+
+	return new_node;
+}
+
+/*Function to insert a node in front. */
+void insert_front()
+{
+	struct node *new_node = create_node();	
+
 	if(head == NULL)
 	{
 		head = new_node;
+		new_node -> next = NULL;
 	}
 	else
 	{
 		new_node -> next = head;
 		head = new_node;
 	}
-	
 }
 
 /*Function to insert a node at the end in the linked list. */
 void insert_end()
 {
-	struct node *new_node = (struct node *)malloc(sizeof(struct node));
-	
-	if(new_node == NULL)
-	{
-		printf("Unable to allocate memory\n");
-		exit(0);
-	} 
+	struct node *new_node = create_node();
 
-	printf("Enter the value\n");
-	scanf("%d",&new_node -> data);
-	
 	new_node -> next = NULL;
 	
 	if(head == NULL)
@@ -76,10 +67,7 @@ void insert_end()
 	}
 	else
 	{
-		struct node *temp;
-		
-		temp = head;
-		
+		struct node *temp = head;
 		while(temp -> next != NULL)
 		{
 			temp = temp -> next;
@@ -91,51 +79,44 @@ void insert_end()
 /*Function to insert a node at middle. */
 void insert_middle()
 {
-	int count = 0;
-	struct node* temp;
-	
 	if(head == NULL)
 	{
-		count = 0;
+		insert_front();
 	}
 	else
 	{
-		temp = head;
+		int count = 0;
+		struct node* temp = head;
 		
 		while(temp != NULL)
 		{
 			count++;
 			temp = temp -> next;
 		}
-	}
-	printf("\nThe total number of nodes is %d\n", count);
-	
-	if(count % 2 == 0)
-	{
-		count = count / 2;
+		printf("\nThe total number of nodes is %d\n", count);
+		
+		if(count % 2 == 0)
+		{
+			count = count / 2;
+		}
+		else
+		{
+			count = (count + 1)/2;
+		}
 		printf("The count is %d\n", count);
+		
+		temp = head;
+		
+		while(count-- > 1)
+		{
+			temp = temp -> next;
+		}
+		
+		struct node * new_node = create_node();
+
+		new_node -> next = temp -> next;
+		temp -> next = new_node;
 	}
-	else
-	{
-		count = (count + 1)/2;
-		printf("The count is %d\n", count);
-	}
-	
-	temp = head;
-	
-	while(count -- < 1)
-	{
-		temp = temp -> next;
-	}
-	
-	struct node * new_node;
-	
-	new_node = (struct node *)malloc(sizeof(struct node));
-	
-	printf("Enter the data to be inserted at middle\n");
-	scanf("%d", &new_node -> data);
-	new_node -> next = temp -> next;
-	temp -> next = new_node;
 }
 
 /*Function to print the list of nodes. */
@@ -150,7 +131,7 @@ void display()
 		printf("The list is \n");
 		while(temp -> next != NULL)
 		{
-			printf("%d\n", temp -> data);
+			printf("%d ", temp -> data);
 			temp = temp -> next;
 		}
 		printf("%d\n", temp -> data);
@@ -195,6 +176,9 @@ void main()
 				break;
 			case 5:
 				exit(0);
+			default:
+				printf("Unknown option\n");
+				break;
 		}
 	}
 }
