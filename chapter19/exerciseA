@@ -1,0 +1,79 @@
+[A] Answer the following:
+
+(a) The FILE structure is defined in which of the following files:
+
+    1. stdlib.h
+    2. stdio.c
+    3. io.h
+    4. stdio.h
+    
+    Answer : stdio.h
+    
+(b) If a file contains the line "Iam a boy\r\n" then on reading this line in 
+    to the array str[] usinf fgets() what would str[] contain?
+    
+    1. I am a boy\r\n\o	
+    2. I am a boy\r\o
+    3. I am a boyn\o
+    4. I am a boy
+    
+    Answer : I am a boy
+    
+(c) State True or False
+
+1. The disadvantage of high-level file I/O functions is that the programmer has
+   to manage the file buffers - False
+   
+2. If a file is opened for reading, it is necessary that the file must exist - True
+
+3. If a file opened for writing already exists, it contents would be overwritten - False
+
+4. For opening a file in append mode, it is necessary that file should exist - False
+
+(d) On opening a file for reading which of the following activites are performed:
+
+	1. The disk is searched for existence of the file. 
+	2. The file is brought in to memory.
+	3. A pointer is set up which points to the first character in the file.
+	4. All the above.
+	
+	Answer : 4. All the above.
+
+(e) Is it necessary that a file is created in text mode must always be opened in text mode
+    for subsequent operations?
+    
+    Answer : Yes
+
+(f) While using this statement
+    
+    fp = fopen("myfile.c", "r");
+    
+    what happens if,
+    
+    - 'myfile.c' does not exist on the disk
+    - 'myfile.c' exists on the disk
+    
+    Answer : If 'myfile.c' does not exist on the disk, the file cannot be opened.
+             If 'myfile.c' exist on the disk, the contents of the file is opened.
+
+(g) While using the statement,
+	
+		fp = fopen("myfile.c", "wb");
+		
+		what happens if,
+		
+		- 'myfile.c' does not exist on the disk
+		- 'myfile.c exists on the disk
+	
+	Answer : If 'myfile.c' does not exist on the disk, a new file will be created.
+                 If 'myfile.c' exist on the disk, the contents of the file are overwritten.
+                 
+(h) A floating-point array contains percentage marks obtained by students in an examination.
+    To store these marks in a file 'marks.dat', in which mode would you open the file and why?
+    
+    Answer : "w" mode is used, to create a file and write the contents in to the file. 
+		
+		
+    
+     
+

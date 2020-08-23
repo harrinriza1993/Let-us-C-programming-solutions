@@ -1,0 +1,24 @@
+Important notes:
+-----------------
+
+1) File IO functions :
+	a) High level :
+	   1) Text mode - (i)Formatted (ii) Unformatted
+	   2) Binary mode
+	b) Low level
+	
+2) High level text mode formatted file IO functions : fprintf(), fscanf()
+
+3) High level text mode, unformatted file IO functions:
+   char - fgetc(), fputc()
+   int, float - no functions
+   string - fgets(), fputs()
+
+4) Functions to open and close a file :
+   High level - fopen(), fclose()
+   Low leveel - open(), close()
+
+5) fs = fopen(s, "r"); - Returns NULL if file is absent
+                         Returns address of FILE structure, if present
+   ft = fopen(t, "w"); - Creates new file if file is absent
+                         Overwrites file, if present.

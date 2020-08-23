@@ -1,0 +1,5 @@
+Harrin  20
+Lal     27
+Evelyn  50
+Rosario 56
+John    70
