@@ -12,43 +12,43 @@ Apporach:
 void main()
 {
 	FILE *fp;
-	char str[200], ch;
-	int number, n;
+	char str[200], ch = 'Y', c;
+	int n, i ;
 	
-	fp = fopen("student1.txt", "w");
-	
+	fp = fopen("logs/student1.txt", "w");
 	if(fp == NULL)
 	{
 		printf("Cannot open existing file\n");
 		exit(0);
 	}
 	
-	printf("Enter the no. of students to be written in a file\n");
-	scanf("%d ", &number);
-	
 	/*Get the students name and store it in fp file. */	
-	for(int i = 0; i < number; i++)
+	while(ch == 'Y')
 	{
-		fgets(str, sizeof(str), stdin);
+		printf("Enter the name : ");
+		scanf("%[^\n]",str);
+		//fflush(stdin);
 		fputs(str, fp);
+		//printf("Do you want to continue Y/N : ");
+		//scanf(" %c", &ch);
+		//fflush(stdin);
 	}
-	fclose(fp);
 	
-	printf("Enter the number of student whose name should be displayed\n"); 
+	printf("Enter the  nth number of student whose name should be displayed\n"); 
 	scanf("%d", &n);
 	
 	/*Display the nth name in the list, where n is read from keyboard. */
-	fp = fopen("student.txt", "r");
-	if(n <= number)
+	rewind(fp);
+	for(i = 0; i < n; i++)
 	{
-		for(int i = 0; i < number; i++)
-		{
-			fgets(str, sizeof(str), fp);
-			
-			if(n == i + 1)
-				printf("The student name to be displayed from the list is %s", str);
-		}
+		if((str, sizeof(str), fp) == NULL)
+				break;
 	}
+	if(i == n)
+		printf("The student name to be displayed from the list is %s", str);
+	else
+		printf("The no of lines in a file is less\n");
+	
 	fclose(fp);
 }
 	

@@ -16,7 +16,6 @@ Apporach:
 
 #include<stdio.h>
 #include<stdlib.h>
-#define MAX 5
 
 struct blood_donor
 {
@@ -24,13 +23,13 @@ struct blood_donor
 	char address[40];
 	int age;
 	int blood_type;
-}b[MAX];
+}b;
 
 void main()
 {
 	FILE *fp;
 	
-	fp = fopen("blood_donor.txt", "r");
+	fp = fopen("logs/blood_donor.txt", "r");
 	if(fp == NULL)
 	{
 		printf("Cannot open existing file\n");
@@ -38,21 +37,19 @@ void main()
 	}
 	
 	/* Read the  blood donors from the file. */
-	printf("The details of a blood donor are\n");
-	for(int i = 0; i < MAX; i++)
+	printf("The details of a blood donor whose age is less than 25 and blood type 2 is\n");
+	while(1) 
 	{
-		if(fscanf(fp, "%s %s %d %d", b[i].name, b[i].address, &b[i].age, &b[i].blood_type) != EOF)
+		if(fscanf(fp, "%s %s %d %d", b.name, b.address, &b.age, &b.blood_type) != EOF)
 		{
-			printf("%s %s %d %d\n", b[i].name, b[i].address, b[i].age, b[i].blood_type);
+			if(b.age < 25 && b.blood_type == 2)
+				printf("%s %s %d %d\n", b.name, b.address, b.age, b.blood_type);
+		}
+		else
+		{
+			break;
 		}
 	}
 	
-	/* Print the details of blood donors whose age is below 25 and whose blood type is 2. */
-	printf("\nThe details of blood donors whose age is below 25 and whose blood type is 2\n");  
-	for(int i = 0; i < MAX; i++)
-	{
-		if(b[i].age < 25 && b[i].blood_type == 2)
-			printf("%s %s %d %d\n", b[i].name, b[i].address, b[i].age, b[i].blood_type);
-	}
 	fclose(fp);
 }

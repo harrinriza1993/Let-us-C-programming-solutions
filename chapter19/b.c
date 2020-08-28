@@ -13,19 +13,17 @@ void main()
 	char ch;
 	
 	/*Open the file which is used for appending the other file.*/
-	fp = fopen("file1", "a");
-	fprintf(fp, "\n");
-	
+	fp = fopen("logs/file1", "a");
 	if(fp == NULL)
 	{
-		printf("Cannot open file\n");
+		printf("Cannot be able to open file1\n");
 		exit(0);
 	}
 	
-	fs = fopen("file2", "r");
+	fs = fopen("logs / file2", "r");
 	if(fs == NULL)
 	{
-		printf("Cannot open file\n");
+		printf("Cannot be able to open file2\n");
 		exit(0);
 	}
 	
@@ -38,11 +36,9 @@ void main()
 		{
 			break;
 		}
-		else
-		{
-			fputc(ch, fp);
-		}
-	}
+		
+		fputc(ch, fp);
+}
 	fclose(fp);
 	fclose(fs);
 }

@@ -15,18 +15,18 @@ void main()
 	char ch;
 	
 	/*Opening a new file.*/	
-	fs = fopen("lower.txt", "r");
+	fs = fopen("logs/lower.txt", "r");
 	if(fs == NULL)
 	{
-		printf("Cannot open file\n");
+		printf("Cannot open lower.txt file\n");
 		exit(0);
 	}
 	
 	/*Creating a new file. */
-	fp = fopen("upper.txt", "w");
+	fp = fopen("logs/upper.txt", "w");
 	if(fp == NULL)
 	{
-		printf("cannot open file\n");
+		printf("cannot open upper.txt file\n");
 		exit(0);
 	}
 	
@@ -39,16 +39,12 @@ void main()
 		{
 			break;
 		}
-		
 		else if(ch >= 97 && ch <= 122)
 		{
 			ch = ch - 32;
-			fputc(ch, fp);
 		}
-		else
-		{
-			fputc(ch, fp);
-		}
+		
+		fputc(ch, fp);
 	}
 	fclose(fs);
 	fclose(fp);

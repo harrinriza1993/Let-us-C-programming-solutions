@@ -22,46 +22,46 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#define MAX 5;
-struct customer
+
+#define MAX 5
+struct customer_details
 {
 	int accno;
 	char name[30];
 	float balance;
-}c[MAX];
+}customer[MAX];
 
-struct trans
+struct transaction_details
 {
 	int accno;
 	char trans_type;
 	float amount;
-}t[MAX];
+}transaction[MAX];
 
 void main()
 {
 	FILE *fp, *fs;
 	
-	fp = fopen("CUSTOMER.DAT", "r");
-	fs = fopen("TRANSACTIONS.DAT", "r"); 
-	
+	fp = fopen("logs/CUSTOMER.DAT", "r");
+	fs = fopen("logs/TRANSACTIONS.DAT", "r"); 
 	if(fp == NULL || fs == NULL)
 	{
-		printf("Cannot open existing file\n");
+		printf("Could not able to open CUSTOMER.DAT and TRANSACTIONS.DAT file\n");
 		exit(0);
 	}
 	
 	printf("The customer Details in a file is\n");
 	for(int i = 0; i < MAX; i++)
 	{
-		if(fscanf(fp, "%d %s %f", &c[i].accno, c[i].name, &c[i].balance) != EOF)
-			printf("%d %s %f\n", c[i].accno, c[i].name, c[i].balance);
+		if(fscanf(fp, "%d %s %f", &customer[i].accno, customer[i].name, &customer[i].balance) != EOF)
+			printf("%d %s %f\n", customer[i].accno, customer[i].name, customer[i].balance);
 	}
 	
 	printf("\nThe transcation details in a trans file is\n");
 	for(int i = 0; i < MAX; i++)
 	{
-		if(fscanf(fs, "%d %c %f", &t[i].accno, &t[i].trans_type, &t[i].amount) != EOF)
-			printf("%d %c %f\n", t[i].accno, t[i].trans_type, t[i].amount);
+		if(fscanf(fs, "%d %c %f", &transaction[i].accno, &transaction[i].trans_type, &transaction[i].amount) != EOF)
+			printf("%d %c %f\n", transaction[i].accno, transaction[i].trans_type, transaction[i].amount);
 	}
 	
 	printf("\nThe customer details after transcation\n");
@@ -69,28 +69,29 @@ void main()
 	{
 		for(int j = 0; j < MAX; j++)
 		{
-			if(c[i].accno == t[j].accno)
+			if(customer[i].accno == transaction[j].accno)
 			{
-				if((t[j].trans_type == 'W') &&((c[i].balance - t[j].amount) > 100))
+				if((transaction[j].trans_type == 'W') &&((customer[i].balance - transaction[j].amount) > 100))
 				{
-					c[i].balance = c[i].balance - t[j].amount; 
+					customer[i].balance = customer[i].balance - transaction[j].amount; 
 				}
-				else if(t[j].trans_type == 'D') 
+				else if(transaction[j].trans_type == 'D') 
 				{
-					c[i].balance = c[i].balance + t[j].amount;
+					customer[i].balance = customer[i].balance + transaction[j].amount;
 				}
 			}
 		}
-		printf("%d %s %f\n", c[i].accno, c[i].name, c[i].balance);
+		printf("%d %s %f\n", customer[i].accno, customer[i].name, customer[i].balance);
 	}
 	fclose(fp);
 	
-	fp = fopen("CUSTOMER.DAT", "w");
+	fp = fopen("logs/CUSTOMER.DAT", "w");
 
 	for(int i = 0; i < MAX; i++)
 	{
-		fprintf(fp,"%d %s %f\n", c[i].accno, c[i].name, c[i].balance);
+		fprintf(fp,"%d %s %f\n", customer[i].accno, customer[i].name, customer[i].balance);
 	}
+	
 	fclose(fp);
 	fclose(fs);
 }

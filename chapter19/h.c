@@ -23,6 +23,7 @@ Apporach:
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
+
 #define MAX 6
 
 struct date
@@ -32,18 +33,18 @@ struct date
 	int y;
 };
 
-struct employee
+struct employee_details
 {
 	int empcode;
 	char empname[20];
 	struct date join_date;
 	float salary;
-}e[MAX];
+}employee[MAX];
 
 int compare_year(const void *pa, const void *pb)
 {
-	struct employee *p1 = (struct employee *)pa;
-	struct employee *p2 = (struct employee *)pb;
+	struct employee_details *p1 = (struct employee_details *)pa;
+	struct employee_details *p2 = (struct employee_details *)pb;
 	return (p1 -> join_date.y - p2 -> join_date.y);	
 }
 
@@ -57,56 +58,55 @@ void main()
 	int tempmonth;
 	int tempyear;
 	float tempsalary;
+	FILE *fp, *fs;
 	
-	FILE *fp;
-	
-	fp = fopen("employee.txt", "r");
-	
-	if(fp == NULL)
+	fp = fopen("logs/employee.txt", "r");
+	fs = fopen("logs/employee1.txt", "w");
+	if(fp == NULL || fs == NULL)
 	{
-		printf("Cannot open existing file\n");
+		printf("Could not open employee.txt, employee1.txt file\n");
 		exit(0);
 	}
 	
 	printf("The details of employee is\n");
 	for(int i = 0; i < MAX; i++)
 	{
-		if(fscanf(fp, " %d %s %d %d %d %f", &e[i].empcode, e[i].empname, &e[i].join_date.d, &e[i].join_date.m, &e[i].join_date.y, &e[i].salary) != EOF)
-			printf(" %d %s %d %d %d %f\n", e[i].empcode, e[i].empname, e[i].join_date.d, e[i].join_date.m, e[i].join_date.y, e[i].salary);
+		if(fscanf(fp, " %d %s %d %d %d %f", &employee[i].empcode, employee[i].empname, &employee[i].join_date.d, &employee[i].join_date.m, &employee[i].join_date.y, &employee[i].salary) != 			EOF)
+			printf(" %d %s %d %d %d %f\n", employee[i].empcode, employee[i].empname, employee[i].join_date.d, employee[i].join_date.m, employee[i].join_date.y, employee[i].salary);
 	}
 	
 	/*Using qsort arrange them in terms of year. */
-	qsort(e, 6, sizeof(struct employee), compare_year);
+	qsort(employee, MAX, sizeof(struct employee_details), compare_year);
 	
 	/*If two year are equal, then check the months and swap them accordingly. */
 	for(int i = 0; i < MAX; i++)
 	{
-		for(int j = i + 1; j < 6; j++)
+		for(int j = i + 1; j < MAX; j++)
 		{
-			if(e[i].join_date.y == e[j].join_date.y)
+			if(employee[i].join_date.y == employee[j].join_date.y)
 			{
-				if(e[i].join_date.m > e[j].join_date.m)
+				if(employee[i].join_date.m > employee[j].join_date.m)
 				{
-					tempcode = e[i].empcode;
-					strcpy(tempname, e[i].empname);
-					tempday = e[i].join_date.d;
-					tempmonth = e[i].join_date.m;
-					tempyear = e[i].join_date.y;
-					tempsalary = e[i].salary;
+					tempcode = employee[i].empcode;
+					strcpy(tempname, employee[i].empname);
+					tempday = employee[i].join_date.d;
+					tempmonth = employee[i].join_date.m;
+					tempyear = employee[i].join_date.y;
+					tempsalary = employee[i].salary;
 					
-					e[i].empcode = e[j].empcode;
-					strcpy(e[i].empname, e[j].empname);
-					e[i].join_date.d = e[j].join_date.d;
-					e[i].join_date.m = e[j].join_date.m;
-					e[i].join_date.y = e[j].join_date.y;
-					e[i].salary = e[j].salary;
+					employee[i].empcode = employee[j].empcode;
+					strcpy(employee[i].empname, employee[j].empname);
+					employee[i].join_date.d = employee[j].join_date.d;
+					employee[i].join_date.m = employee[j].join_date.m;
+					employee[i].join_date.y = employee[j].join_date.y;
+					employee[i].salary = employee[j].salary;
 					
-					e[j].empcode = tempcode; 
-					strcpy(e[j].empname, tempname);
-					e[j].join_date.d = tempday; 
-					e[j].join_date.m = tempmonth; 
-					e[j].join_date.y = tempyear;  
-					e[j].salary = tempsalary;
+					employee[j].empcode = tempcode; 
+					strcpy(employee[j].empname, tempname);
+					employee[j].join_date.d = tempday; 
+					employee[j].join_date.m = tempmonth; 
+					employee[j].join_date.y = tempyear;  
+					employee[j].salary = tempsalary;
 				}
 			}
 		}	
@@ -117,30 +117,30 @@ void main()
 	{
 		for(int j = i + 1; j < MAX; j++)
 		{
-			if((e[i].join_date.m == e[j].join_date.m) && (e[i].join_date.y == e[j].join_date.y))
+			if((employee[i].join_date.m == employee[j].join_date.m) && (employee[i].join_date.y == employee[j].join_date.y))
 			{
-				if(e[i].join_date.d > e[j].join_date.d)
+				if(employee[i].join_date.d > employee[j].join_date.d)
 				{
-					tempcode = e[i].empcode;
-					strcpy(tempname, e[i].empname);
-					tempday = e[i].join_date.d;
-					tempmonth = e[i].join_date.m;
-					tempyear = e[i].join_date.y;
-					tempsalary = e[i].salary;
+					tempcode = employee[i].empcode;
+					strcpy(tempname, employee[i].empname);
+					tempday = employee[i].join_date.d;
+					tempmonth = employee[i].join_date.m;
+					tempyear = employee[i].join_date.y;
+					tempsalary = employee[i].salary;
 					
-					e[i].empcode = e[j].empcode;
-					strcpy(e[i].empname, e[j].empname);
-					e[i].join_date.d = e[j].join_date.d;
-					e[i].join_date.m = e[j].join_date.m;
-					e[i].join_date.y = e[j].join_date.y;
-					e[i].salary = e[j].salary;
+					employee[i].empcode = employee[j].empcode;
+					strcpy(employee[i].empname, employee[j].empname);
+					employee[i].join_date.d = employee[j].join_date.d;
+					employee[i].join_date.m = employee[j].join_date.m;
+					employee[i].join_date.y = employee[j].join_date.y;
+					employee[i].salary = employee[j].salary;
 					
-					e[j].empcode = tempcode; 
-					strcpy(e[j].empname, tempname);
-					e[j].join_date.d = tempday; 
-					e[j].join_date.m = tempmonth; 
-					e[j].join_date.y = tempyear;  
-					e[j].salary = tempsalary; 
+					employee[j].empcode = tempcode; 
+					strcpy(employee[j].empname, tempname);
+					employee[j].join_date.d = tempday; 
+					employee[j].join_date.m = tempmonth; 
+					employee[j].join_date.y = tempyear;  
+					employee[j].salary = tempsalary; 
 				}
 			}
 		}
@@ -149,9 +149,16 @@ void main()
 	printf("\nThe sorted data based on joining date is\n");
 	for(int i = 0; i < MAX; i++)
 	{
-		printf(" %d %s %d %d %d %f\n", e[i].empcode, e[i].empname, e[i].join_date.d, e[i].join_date.m, e[i].join_date.y, e[i].salary);
+		printf(" %d %s %d %d %d %f\n", employee[i].empcode, employee[i].empname, employee[i].join_date.d, employee[i].join_date.m, employee[i].join_date.y, employee[i].salary);
 	}
+	
+	for(int i = 0; i < MAX; i++)
+	{
+		fprintf(fs, " %d %s %d %d %d %f\n", employee[i].empcode, employee[i].empname, employee[i].join_date.d, employee[i].join_date.m, employee[i].join_date.y, employee[i].salary);
+	}
+	
 	fclose(fp);
-}	
+	fclose(fs);
+}
 	
 

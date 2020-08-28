@@ -14,9 +14,8 @@ void main()
 	FILE *fp, *fs;
 	char str[300], ch;
 	
-	fp = fopen("file.txt", "r");
-	fs = fopen("fil.txt", "w");
-	
+	fp = fopen("logs/file.txt", "r");
+	fs = fopen("logs/fil.txt", "w");
 	if(fp == NULL || fs == NULL)
 	{
 		printf("Cannot open existing file\n");
@@ -24,8 +23,9 @@ void main()
 	}
 	
 	/*Remove the words "a", "the", "an" from the text and replacing it by a space. */	
-	while(fscanf(fp, "%s", str) != EOF)
+	while(fgets(str, fp))
 	{
+		printf("%s", str);
 		if((strcmp(str, "the") == 0) || (strcmp(str, "a") == 0) || (strcmp(str, "an") == 0))
 		{
 			strcpy(str, "  ");
@@ -34,8 +34,12 @@ void main()
 		else
 		{
 			fputs(str, fs);
-		} 
+			fputs(" ", fs);
+		}
+		
+		 
 	}
+	
 	fclose(fp);
 	fclose(fs);
 }

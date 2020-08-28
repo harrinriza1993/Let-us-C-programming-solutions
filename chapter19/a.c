@@ -15,33 +15,34 @@ int main()
 	int i = 1;
 	
 	/*Reads a file. */
-	fp = fopen("a.txt", "r");
-	
+	fp = fopen("logs/a.txt", "r");
 	if (fp == NULL)
 	{
-		printf("Cannot open existing file\n");
+		printf("Cannot open a.txt file\n");
 		exit(1);
 	}
 	
 	/*Prints the file along with line numbers before each line. */
-	printf("%d\n", i);
+	printf("%d ", i);
 	while(1)
 	{
 		ch = fgetc(fp);
+		printf("%c", ch);
 		
 		if(ch == '\n')
 		{
 			i++;
-			printf("\n%d", i);
+			printf("%d ", i);
 		}
+		
 		if (ch == EOF)
 			break;
-		
-		printf("%c", ch);
-	}
+}
 	
 	printf("\n");
+	
 	fclose(fp);
+	
 	return 0;
 }
 
