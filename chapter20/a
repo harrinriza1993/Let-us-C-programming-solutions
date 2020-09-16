@@ -1,0 +1,127 @@
+(a) How will you use the following program to :
+
+	- Copy the contents of one file into another.
+	- Create a new file and add some text to it.
+	- Display the contents of an existing file.
+	
+	#include<stdio.h>
+	
+	int main()
+	{
+		char ch, str[10];
+		
+		while((ch = fgetc(stdin)) != -1)
+			fputc(ch, stdout);
+		
+		return 0;
+	}
+
+
+/* Copy the contents of one file in to another.*/
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+
+void main(int argc, char *argv[])
+{
+	
+	FILE *fp, *ft;
+	char ch;
+	
+	fp = fopen(argv[1], "r");
+	if(fp == NULL)
+	{
+		printf("Cannot able to open the source file\n");
+		exit(0);
+	}
+	
+	ft = fopen(argv[2], "w");
+	if(ft == NULL)
+	{
+		printf("Cannot able to open the target file\n");
+		exit(0);
+	}
+	
+	if(argc != 3)
+	{
+		puts("Improper number of arguments\n");
+		exit(0);
+	}
+	
+	while(1)
+	{
+		ch = fgetc(fp);
+		
+		if(ch == EOF)
+			break;
+		else
+			fputc(ch, ft);
+	}
+	
+	fclose(fp);
+	fclose(ft);
+}
+
+/*Create a new file and add some text into it. */
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+
+void main(int argc, char *argv[])
+{
+	FILE *fp;
+	char str[10];
+	
+	fp = fopen(argv[1], "w");
+	if(fp == NULL)
+	{
+		printf("Cannot open the target file\n");
+		exit(0);
+	}
+	
+	if(argc != 2)
+	{
+		printf("Improper number of arguments\n");
+		exit(0);
+	}
+	
+	strcpy(str, "LALBOSCO");
+	fputs(str, fp);
+	
+	fclose(fp);
+}
+
+/* Display the contents of an existing file. */
+#include<stdio.h>
+#include<stdlib.h>
+
+void main(int argc, char *argv[])
+{
+	char ch;
+	FILE *fp;
+	
+	fp = fopen(argv[1], "r");
+	if(fp == NULL)
+	{
+		printf("Cannot open the target file\n");
+		exit(0);
+	}
+	
+	if(argc != 2)
+	{
+		printf("Improper number of arguments\n");
+		exit(0);
+	}
+	
+	while(1)
+	{
+		ch = fgetc(fp);
+		
+		if(ch == EOF)
+			break;
+		else
+			printf("%c", ch);
+	}
+	
+	fclose(fp);
+}

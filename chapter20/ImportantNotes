@@ -1,0 +1,20 @@
+Important notes:
+-----------------
+
+1) Command-line arguments are arguments provided to main() from command line.
+	
+2) Command-line arguments are collected in main() in variables argc and argv
+	argc - Count of arguments
+	argv - Vector(array) of arguments
+	Any variable names other than argc, argv are ok.
+
+3) char *argv[] is an array of pointers to strings. So all arguments are
+   received as strings and their addresses are stored in argv[].
+   
+4) Errors in reading / Writing from / to a file can be detected using ferror()
+   and reported using perror().
+
+5) Most OSs predefine pointers of three standard files :
+	stdin  - standard input device(Keyboard)
+	stdout - standard output device - monitor
+	stdder - standard error device - monitor

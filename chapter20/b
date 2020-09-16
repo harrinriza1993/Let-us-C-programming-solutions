@@ -1,0 +1,8 @@
+State True or False:
+
+1. We can send arguments at command line even if we define main() function without
+   parameters - True
+   
+2. To use standard file pointers we don't need to open the file using fopen() - False
+
+3. The zeroth element of the argv array is always the name of the executable file - True
