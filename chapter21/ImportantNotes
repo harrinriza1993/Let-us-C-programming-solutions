@@ -1,0 +1,19 @@
+Important notes:
+-----------------
+
+1) Bit is the basic unit of information.
+	
+2) A bit can take a value 0 or 1.
+
+3) Units : 
+	4  bits = Nibble
+	8  bits = Byte
+	16 bits = Word
+	32 bits = Dword
+   
+4) Errors in reading / Writing from / to a file can be detected using ferror()
+   and reported using perror().
+
+5) Bitwise Operations :
+	Set a bit to a value 0/1 --> Write operation.
+	Check whether bit 6 is 1(on) or 0(off) --> Read operation. 
