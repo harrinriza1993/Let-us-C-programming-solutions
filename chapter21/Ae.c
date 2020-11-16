@@ -9,124 +9,69 @@
       in the array.  
 */
 
- #include<stdio.h>
 
+#include<stdio.h>
 
-void main() {
-
-unsigned int yr,br,data_yr,data_br;
-int i,j,k,rn,a,b,flag=0;
-int data[]={ 273,548,786,1096};
-
-
-
-printf("Enter room number: ");
-scanf("%d",&rn);
-
-printf("\n\n\n  Year: ");
-
-
-/*********************/
-/* checking for year */
-/*********************/
-
-
-for(i=1;i<=8;i=i*2) {
-
-yr= rn & i;
-
-if(yr==1)  {
-printf("First year");
-break;
+void main()
+{
+	int data[ ] = { 273, 548, 786, 1096 } ;
+	int data_room_number[4], room_number, i, j, is_set_bit;
+	char *year[] = {	"Ist year",
+				"IInd year",
+				"IIIrd year",
+				"IVth year",
+			};
+	char *department[] = {	"Mechanical",
+				"Chemical",
+				"Electronics",
+				"CS",
+			    };
+				
+	
+	printf("The room number of given data is\n");	
+	for(i = 0; i <= 3; i++)
+	{
+		data_room_number[i] = data[i] >> 8;
+		printf("%d\n", data_room_number[i]);
+	}
+	
+	printf("Enter the room number\n");
+	scanf("%d", &room_number);
+	
+	printf("The year of the student is\t");
+	for(i = 0; i <= 3; i++)
+	{
+		if(data_room_number[i] == room_number)
+		{
+			for(j = 0; j <= 3; j++)
+			{
+				is_set_bit = data[i] & (1 << j);
+				
+				if(is_set_bit != 0)
+				{
+					printf("%s\n", year[j]); 
+				}
+			}
+		}
+	}
+	
+	printf("The department of the student is\t");
+	for(i = 0; i <= 3; i++)
+	{
+		data[i] = data[i] >> 4;
+		
+		if(data_room_number[i] == room_number)
+		{
+			for(j = 0; j <= 3; j++)
+			{
+				is_set_bit= data[i] & (1 << j);
+				
+				if(is_set_bit != 0)
+				{
+					printf("%s\n", department[j]); 
+				}
+			}
+		}
+	}
+	
 }
-
-if(yr==2) {
-printf("Second year");
-break;
-}
-
-if(yr==4)  {
-printf("Third year");
-break;
-}
-
-if(yr==8) {
-printf("Fourth year");
-break;
-}
-
-}
-
-/***********************/
-/* Checking for branch */
-/***********************/
-
-
-printf("\n\nBranch: ");
-
-for(i=16;i<=128;i=i*2) {
-
-br= rn & i;
-
-if(br==16)  {
-printf("Mechanical");
-break;
-}
-
-if(br==32) {
-printf("Chemical");
-break;
-}
-
-if(br==64) {
-printf("Electronics");
-break;
-}
-
-if(br==128) {
-printf("I.T.");
-break;
-}
-
-}
-
-
-/***********************************************/
-/* checking if data matches with that of array */
-/***********************************************/
-
-
-for(i=1,j=16;i<=8,j<=128;i=i*2,j=j*2) {
-
-
-yr=rn&i;
-
-br=rn&j;
-
-for(k=0,a=1,b=16;k<4,a<=8,b<=128;k++,a=a*2,b=b*2) {
-
-data_yr=data[k] & a;
-
-data_br=data[k] & b;
-
-if(yr==data_yr && br==data_br) {
-
-flag+=1;
-
-break;
-
-}
-
-}
-
-}
-
-if(flag==0)
-printf("\n\n\ndata doesn't matche with the array.\n");
-
-else
-printf("\n\n\ndata matches with the array.\n");
-
-
-}
-

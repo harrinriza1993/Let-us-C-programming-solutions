@@ -6,43 +6,38 @@
        H    H   H    H    H    M    M    M    M    M     M    S    S   S   S   S
 */
 
+
 #include <stdio.h>
-#include<math.h>
+
+#define NUMBER_OF_BITS_SECONDS 0x1F
+#define NUMBER_OF_BITS_MINUTES 0x2F
+#define NUMBER_OF_BITS_HOUR 0x1F
+ 
+
+int time(int number, int *seconds, int *minutes, int *hour)
+{
+	*seconds =  NUMBER_OF_BITS_SECONDS & number;
+	
+	*minutes = (NUMBER_OF_BITS_MINUTES << 5) & number;
+	*minutes = *minutes >> 5;
+	
+	*hour = (NUMBER_OF_BITS_HOUR << 11) & number;
+	*hour = *hour >> 11;
+}
 
 void main()
 {
-	int number, i;
-	unsigned char k, andmask;
+	int number;
+	int seconds, minutes, hour;
 	
 	printf("Enter the number\n");
 	scanf("%d", &number);
 	
-	/*To find the seconds, minutes and hours find the binary value for each 4 bits and
-	  divide the number by 16 at each step. */
-	for(int i = 3; i >= 0; i--)
-	{
-		andmask = 1 << i;
-		k = number & andmask;
-		k == 0 ? printf("0s ") : printf("1s ");
-	}
+	time(number, &seconds, &minutes, &hour);
 	
-	number = number / (2 * 2 * 2 * 2);
-	
-	for(int i = 3; i >= 0; i--)
-	{
-		andmask = 1 << i;
-		k = number & andmask;
-		k == 0 ? printf("0M ") : printf("1M ");
-	}
-	
-	number = number / 16;
-	
-	for(int i = 3; i >= 0; i--)
-	{
-		andmask = 1 << i;
-		k = number & andmask;
-		k == 0 ? printf("0H ") : printf("1H ");
-	}
+	printf("\nSeconds = %d\n", seconds);
+	printf("Minutes = %d\n", minutes);
+	printf("Hour = %d\n", hour);
 }
-
-       
+	
+	

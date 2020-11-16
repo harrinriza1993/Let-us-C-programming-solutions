@@ -4,42 +4,35 @@
       a number and based on this number it reports which colors in the rainbow do the 
       number represents.
 */
+
 #include<stdio.h>
 
 void main()
 {
+	int is_color_set, i;
 	int num;
-	char color;
+	char *colour[7] = { "Violet",
+			  "Indigo",
+			  "Blue",
+			  "Green",
+			  "Yellow",
+			  "Orange",
+			  "Red"
+			 };
 	
-	printf("Please enter the number(0-6): \n");
+	
+	printf("Enter the number\n");
 	scanf("%d", &num);
 	
-	/*To make the corresponding bit on and other bit off, left shift 1 by the corresponding
-	  number. */
-	color = 1 << num;
-	
-	printf("The color is ");
-	if (num == 0 && color == 1)
-		printf("Violet\n");
+	for(i = 0; i <= 6; i++)
+	{
+		is_color_set = num & (1 << i);
 		
-	else if (num == 1 && color == 2)
-		printf("Indigo\n");
 		
-	else if (num == 2 && color == 4)
-		printf("Blue\n");
-		
-	else if (num == 3 && color == 8)
-		printf("Yellow\n");	
-		
-	else if (num == 4 && color == 16)
-		printf("Green\n");
-		
-	else if (num == 5 && color == 32)
-		printf("Orange\n");	
-		
-	else if (num == 6 && color == 64)
-		printf("Red\n");
-		
-	else
-		printf("invalid option\n");
+		if(is_color_set)
+		{
+			printf("%s\n", colour[i]);
+		}
+	}
 }
+

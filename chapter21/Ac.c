@@ -14,11 +14,13 @@
        struct animal a = {"OCELOT", 18};
 */
 
+
 #include<stdio.h>
 #include<stdlib.h>
 
 void main()
 {
+	int is_bit_set;
 	struct animal
 	{
 		char name[30];
@@ -26,30 +28,26 @@ void main()
 	};
 	
 	struct animal a = {"OCELOT", 18};
+	char *name[] = {
+				"canine",
+				 "feline",
+				 "cetacean",
+				 "marsupial",
+				 "Herbivorous",
+				 "carnivorous",
+			};
 	
-	/*Shift the number by 1 for each bit and find it's type. */
-	if(a.type % 2 == 1)
-		printf("Canine\n");
+	for(int i = 0; i <= 4; i++)
+	{
+		is_bit_set = (1 << i) & a.type;
 	
-	a.type = a.type >> 1;
-	
-	if(a.type % 2 == 1)
-		printf("Ocelot is Feline\n");
-	
-	a.type = a.type >> 1;
-	
-	if(a.type % 2 == 1)
-		printf("Cetacean\n");
-	
-	a.type = a.type >> 1;
-	
-	if(a.type % 2 == 1)
-		printf("Marsupial\n");
-	
-	a.type = a.type >> 1;
-	
-	if(a.type % 2 == 1)
-		printf("And it is a Carnivore\n");
-	else
-		printf("And it is a Herbivore\n");
+		if(is_bit_set)
+		{
+			printf("%s : %s\n",a.name, name[i]);
+		}
+		else if(i == 4)
+		{
+			printf("%s : %s",a.name, name[i + 1]);
+		}	
+	}
 }
