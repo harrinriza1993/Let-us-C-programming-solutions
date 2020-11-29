@@ -4,36 +4,38 @@
        in number x.
 */
 
-#include<stdio.h>
+/* 
+	76543210
+	11011011
+	p = 4
+	n = 3
+        
+ */
 
-int checkbits(int x, int p,int n)
+#include<stdio.h>
+#include<stdbool.h>
+
+bool checkbits(int x, int p,int n)
 {
-	int y, count = 0, z, k = p;
+	int y, is_bit_set;
 	
 	/*Checking the bits from starting position to the number of bits specified. */
-	for(int i = p; p >= n; p--)
+	for(int i = 0; i < n; i++, p--)
 	{
-		 y = 1 << p;
-		 z = y & x;
 		 
-		 if(z != 0)
-		 	count++;
-		 else
-		 	break;
+		 is_bit_set = (1 << p) & x;
+		 
+		 if(!is_bit_set)
+		 	return false;
 	}
 	
-	if(count == (n + 1))
-		return 1;
-	else
-		return 0;
-	
+	return true;
 }
 
 int main()
 {
 	int x, p, n, check;
 
-	
 	printf("Enter the number\n");
 	scanf("%d", &x);
 	printf("Enter the starting position of the number to the checked\n");
@@ -44,7 +46,7 @@ int main()
 	/*Function to check whether the bits are turned on. */
 	check = checkbits(x, p, n);
 	
-	if(check == 1)
+	if(check)
 		printf("\nSince the bits are on, it is True\n");
 	else
 		printf("\nSince the bits are off, it is False\n");

@@ -3,37 +3,18 @@
 */
 
 #include<stdio.h>
+#define checkbit(number, is_bit_set) (1 << is_bit_set) & (number)
 
 void main()
 {
-	int number, x, n = 0;
+	int number;
 	
 	printf("Enter the number\n");
 	scanf("%d", &number);
 	
-	/*Left shift 1 by the respective bit and do and operation with the
-	  number, if we get 0 then the bit is off or else the bit is on. */
-	x = 1 << 3;
-	n = number & x;
-	
-	if (n != 0)
-		printf("The 3rd bit is on\n");
+	/*Check the number with 3rd bit, 5th bit, 7th bit. */
+	if (checkbit(number, 3) || checkbit(number, 5) || checkbit(number, 7))
+		printf("The required bits are on\n");
 	else
-		printf("The 3rd bit is off\n"); 
-	
-	x = 1 << 6;
-	n = number & x;
-	
-	if(n != 0)
-		printf("The 6th bit is on\n");
-	else
-		printf("The 6th bit is off\n");
-	
-	x = 1 << 7;
-	n = number & x;
-	
-	if(n != 0)
-		printf("The 7th bit is on\n");
-	else
-		printf("The 7th bit is off\n");
+		printf("The required bits are off\n"); 
 }

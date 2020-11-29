@@ -3,38 +3,38 @@
 */
 
 #include<stdio.h>
+#define checkbit(x) (1 << x)
 
 void main()
 {
-	int n, x, y;
+	int number, is_bit_set, bit_set;
 	
 	printf("Enter the number\n");
-	scanf("%d", &n);
+	scanf("%d", &number);
 	
-	x = 1 << 3;
-	y = n & x;
+	is_bit_set = number & checkbit(3);
 	
-	if(y == 0)
+	if(is_bit_set == 0)
+	{
 		printf("\nThe 3rd bit is off\n");
+		bit_set = number | checkbit(3);
+		printf("The number after reseting 3rd bit on is %d\n", bit_set);
+	}
 	else
-		printf("\nthe 3rd bit is on\n");
-		
-	x = 1 << 5;
-	y = n & x;
+	{
+		printf("The 3rd bit is on\n");
+	}
 	
-	if(y == 0)
-		printf("The 5th bit is off\n");
+	is_bit_set = number & checkbit(5);
+	
+	if(is_bit_set == 0)
+	{
+		printf("\nThe 5th bit is off\n");
+		bit_set = bit_set | checkbit(5);
+		printf("The number after reseting 5th bit on is %d\n", bit_set);
+	}
 	else
+	{
 		printf("The 5th bit is on\n");
-	
-	/*To make respective bits on left shift 1 by 3 and do or operation
-	  with the number. */
-	x = 1 << 3;
-	y = n | x;
-	
-	x = 1 << 5;
-	y = y | x;
-	
-	printf("\nThe number after reseting 3rd bit and 5th bit on is\n");
-	printf("%d\n", y); 
+	}
 }

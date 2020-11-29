@@ -2,27 +2,32 @@
       it's higher 4 bits with lower 4 bits.
 */
 
+/*
+1 bytes : 4 bits [15-8 7-0]
+ 7 6 5 4 3 2 1 0  : Bit positions (8 bit)
+ 1 0 0 1 0 1 1 0  : input
+ 0 1 1 0 0 0 0 0 : input << 4 : left
+ 0 0 0 0 1 0 0 1  : input >> 4 : right
+ 0 1 1 0 1 0 0 1  : left  | right
+*/
+       
+
 #include<stdio.h>
 
 void main()
 {
-	unsigned char n, y = 0, x;
+	unsigned short int number, left, right;
 	
-	printf("Enter the number\n");
-	scanf("%c", &n);
+	printf("Enter the number in hexadecimal form\n");
+	scanf("%x", &number);
 	
-	for(int i = 0; i < 8; i++)
-	{
-		/*Find the last bit of the number and do or operation with y. */
-		x = n & 0x01;
-		y = y | x;
-		
-		/*Right shift the number at each step. */
-		n = n >> 1;
-		
-		/*Left shift y at each step to exchange the higher bits and lower bits. */
-		y = y << 1;
-	}
+	printf("The number before swapping is 0x%x\n", number);
+
 	
-	printf("The number after exchanging it's higher bits and lower bits is %d\n", y);
+	/*Left shift and right shift the number by 4 and do or operation. */
+	left = (number << 4);
+	right = (number >> 4);
+	number = left | right;
+	
+	printf("The number after swapping is 0x%x\n", number);
 }
