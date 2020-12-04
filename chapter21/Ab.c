@@ -13,67 +13,40 @@
 
 void main()
 {
-	int game, number, won = 0;
+	int number, is_game_set, won = 0;
+	char *game[8] = { "cricket",
+	                    "basketball",
+	                    "football",
+	                    "hockey",
+	                    "lawn tennis",
+	                    "table tennis",
+	                    "carom",
+	                    "chess"
+	                  };
 	
 	printf("Enter the number\n");
 	scanf("%d", &number);
 	
-	printf("\nThe name of the game won by the college %d is\n", number);
-	for(int i = 1; i <= 8; i++)
+	printf("The game won by the colleges is\n");
+	for(int i = 0; i < 8; i++)
 	{
-		/*To check the number of games won by college do and operation of given number with 
-		  numbers 1 to 8. */
-		game = number & i;
+		is_game_set = number & (1 << i);
+		won++;
 		
-		if(game == 1)
+		if(is_game_set)
 		{
-			printf("Cricket\n");
-			won++;
-		}
-		else if(game == 2)
-		{
-			printf("Basketball\n");
-			won++;
-		}
-		else if(game == 3)
-		{
-			printf("Football\n");
-			won++;
-		}
-		else if(game == 4)
-		{
-			printf("Hockey\n");
-			won++;
-		}
-		else if(game == 5)
-		{
-			printf("Lawn tennis\n");
-			won++;
-		}
-		else if(game == 6)
-		{
-			printf("Tabble tennis\n");
-			won++;
-		}
-		else if(game == 7)
-		{
-			printf("Carom\n");
-			won++;
-		}
-		else if(game == 8)
-		{
-			printf("Chess\n");
-			won++;
+			printf("%s\n", game[i]);
 		}
 	}
 	
-	if(won >= 5)
-		printf("\nThe college %d wins the champion of Champions trophy\n", number);
+	if(won <= 5)
+	{
+		printf("The college won the champions trophy\n");
+	}
 	else
-		printf("\nThe college %d does not win the champion of champions trophy\n", number);
+	{
+		printf("The college doesn't won the champions trophy\n");
+	}
 }
-		
-		
-	
 	
 
