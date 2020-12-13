@@ -14,7 +14,6 @@
        struct animal a = {"OCELOT", 18};
 */
 
-
 #include<stdio.h>
 #include<stdlib.h>
 
@@ -29,13 +28,13 @@ void main()
 	
 	struct animal a = {"OCELOT", 18};
 	char *name[] = {
-				"canine",
-				 "feline",
-				 "cetacean",
-				 "marsupial",
-				 "Herbivorous",
-				 "carnivorous",
-			};
+					"canine",
+					"feline",
+					"cetacean",
+					"marsupial",
+					"Herbivorous",
+					"carnivorous",
+				  };
 	
 	for(int i = 0; i <= 4; i++)
 	{

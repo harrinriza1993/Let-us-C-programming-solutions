@@ -8,19 +8,19 @@
 	or not, along with the games won by the college.
 */
 
-
 #include<stdio.h>
 
 void main()
 {
 	int number, is_game_set, won = 0;
-	char *game[8] = { "cricket",
-	                    "basketball",
-	                    "football",
-	                    "hockey",
-	                    "lawn tennis",
-	                    "table tennis",
-	                    "carom",
+	char *game[8] = {
+						"cricket",
+						"basketball",
+						"football",
+						"hockey",
+						"lawn tennis",
+						"table tennis",
+						"carom",
 	                    "chess"
 	                  };
 	
@@ -31,15 +31,15 @@ void main()
 	for(int i = 0; i < 8; i++)
 	{
 		is_game_set = number & (1 << i);
-		won++;
 		
 		if(is_game_set)
 		{
+			won++;
 			printf("%s\n", game[i]);
 		}
 	}
 	
-	if(won <= 5)
+	if(won >= 5)
 	{
 		printf("The college won the champions trophy\n");
 	}

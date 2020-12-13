@@ -4,14 +4,10 @@
 
 # define _BV(x) (1 << x)
 
-void main()
+void showbits(unsigned char n)
 {
-	int n;
 	unsigned char k, andmask;
-	
-	printf("Enter the number\n");
-	scanf("%d", &n);
-	
+
 	printf("\nThe binary value of a number is \n");
 	for(int i = 7; i >= 0; i--)
 	{
@@ -21,4 +17,14 @@ void main()
 		k == 0 ? printf("0") : printf("1");
 	}
 	printf("\n");
+}
+
+void main()
+{
+	unsigned char n;
+	
+	printf("Enter the number\n");
+	scanf("%d", &n);
+	
+	showbits(n);
 }

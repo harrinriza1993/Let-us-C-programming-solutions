@@ -3,42 +3,47 @@
 */
 
 #include<stdio.h>
-#define checkbit(x) (1 << x)
+
+#define IS_BIT_SET(number, pos) (number & (1 << pos))
+#define BYTE_TO_BINARY_PATTERN "%c%c%c%c%c%c%c%c"
+#define BYTE_TO_BINARY(byte)  \
+  (byte & 0x80 ? '1' : '0'), \
+  (byte & 0x40 ? '1' : '0'), \
+  (byte & 0x20 ? '1' : '0'), \
+  (byte & 0x10 ? '1' : '0'), \
+  (byte & 0x08 ? '1' : '0'), \
+  (byte & 0x04 ? '1' : '0'), \
+  (byte & 0x02 ? '1' : '0'), \
+  (byte & 0x01 ? '1' : '0')
+  
+unsigned char checkAndClearIfBitSet(unsigned char number, int bit_position)
+{
+	unsigned char clear_bit;
+	
+	if(IS_BIT_SET(number, bit_position))
+	{
+		printf("\nThe %drd bit is on\n", bit_position);
+		
+		// Clear the bit
+		clear_bit = ~(1 << bit_position);
+		clear_bit = number & clear_bit;
+		return clear_bit;
+	}
+
+	return number;
+}
 
 void main()
 {
-	int is_bit_set, left_shift, bit_set;
-	int number;
+	unsigned char number;
 	
 	printf("Enter the number\n");
 	scanf("%d", &number);
 	
-	is_bit_set = number & checkbit(3);
+	printf("\nBefore clear bit "BYTE_TO_BINARY_PATTERN, BYTE_TO_BINARY(number));
 	
-	if(is_bit_set != 0)
-	{
-		printf("The 3rd bit is on\n");
-		left_shift = ~(1 << 3);
-		bit_set = number & left_shift;
-		printf("The number reseting 3rd bit off is %d\n", bit_set); 
-		
-	}
-	else
-	{
-		printf("The 3rd bit is off\n");
-	}
+	number &= checkAndClearIfBitSet(number, 3);
+	number &= checkAndClearIfBitSet(number, 5);
 	
-	is_bit_set = number & checkbit(5);
-	
-	if(is_bit_set != 0)
-	{
-		printf("The 5th bit is on\n");
-		left_shift = ~(1 << 5);
-		bit_set = bit_set & left_shift;
-		printf("The number after reseting 5th bit on is %d\n", bit_set);
-	}
-	else
-	{
-		printf("The 5th bit is off\n");
-	}
+	printf("\nAfter clear bit "BYTE_TO_BINARY_PATTERN, BYTE_TO_BINARY(number));
 }

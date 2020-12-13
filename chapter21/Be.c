@@ -16,13 +16,12 @@ void main()
 {
 	unsigned short int number, left, right;
 	
-	printf("Enter the number in hexadecimal form\n");
+	printf("Enter the number of 2-bytes (Ex. oxabcd) in hexadecimal form\n");
 	scanf("%x", &number);
 	
 	printf("The number before swapping is 0x%x\n", number);
-
 	
-	/*Left shift and right shift the number by 15 and do or operation. */
+	/* Left shift and right shift the number by 15 and do or operation. */
 	left = (number << 8);
 	right = (number >> 8);
 	number = left | right;

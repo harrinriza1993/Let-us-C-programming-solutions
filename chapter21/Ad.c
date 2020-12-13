@@ -12,23 +12,27 @@
 #define NUMBER_OF_BITS_SECONDS 0x1F
 #define NUMBER_OF_BITS_MINUTES 0x2F
 #define NUMBER_OF_BITS_HOUR 0x1F
- 
 
-int time(int number, int *seconds, int *minutes, int *hour)
+int time(unsigned short int number,
+		 unsigned char *seconds,
+		 unsigned char *minutes,
+		 unsigned char *hour)
 {
+	int temp;
+
 	*seconds =  NUMBER_OF_BITS_SECONDS & number;
 	
 	*minutes = (NUMBER_OF_BITS_MINUTES << 5) & number;
 	*minutes = *minutes >> 5;
 	
-	*hour = (NUMBER_OF_BITS_HOUR << 11) & number;
-	*hour = *hour >> 11;
+	temp = (NUMBER_OF_BITS_HOUR << 11) & number;
+	*hour = temp >> 11;
 }
 
 void main()
 {
-	int number;
-	int seconds, minutes, hour;
+	unsigned short int number;
+	unsigned char seconds, minutes, hour;
 	
 	printf("Enter the number\n");
 	scanf("%d", &number);

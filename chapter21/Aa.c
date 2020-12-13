@@ -9,25 +9,23 @@
 
 void main()
 {
-	int is_color_set, i;
-	int num;
-	char *colour[7] = { "Violet",
-			  "Indigo",
-			  "Blue",
-			  "Green",
-			  "Yellow",
-			  "Orange",
-			  "Red"
-			 };
-	
-	
+	unsigned char is_color_set, num, i;
+	char *colour[7] = {
+						"Violet",
+						"Indigo",
+						"Blue",
+						"Green",
+						"Yellow",
+						"Orange",
+						"Red"
+					  };
+
 	printf("Enter the number\n");
 	scanf("%d", &num);
 	
 	for(i = 0; i <= 6; i++)
 	{
 		is_color_set = num & (1 << i);
-		
 		
 		if(is_color_set)
 		{

@@ -3,7 +3,8 @@
 */
 
 #include<stdio.h>
-#define checkbit(number, is_bit_set) (1 << is_bit_set) & (number)
+
+#define CHECK_BIT(number, is_bit_set) (1 << is_bit_set) & (number)
 
 void main()
 {
@@ -12,9 +13,9 @@ void main()
 	printf("Enter the number\n");
 	scanf("%d", &number);
 	
-	/*Check the number with 3rd bit, 5th bit, 7th bit. */
-	if (checkbit(number, 3) || checkbit(number, 5) || checkbit(number, 7))
-		printf("The required bits are on\n");
+	/* Check the number with 3rd bit, 5th bit, 7th bit. */
+	if (CHECK_BIT(number, 3) && CHECK_BIT(number, 5) && CHECK_BIT(number, 7))
+		printf("The required bits [3rd, 5th and 7th] are on\n");
 	else
-		printf("The required bits are off\n"); 
+		printf("The required bits [3rd, 5th and 7th] are off\n"); 
 }

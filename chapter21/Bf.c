@@ -11,18 +11,16 @@
  0 1 1 0 1 0 0 1  : left  | right
 */
        
-
 #include<stdio.h>
 
 void main()
 {
-	unsigned short int number, left, right;
+	unsigned char number, left, right;
 	
-	printf("Enter the number in hexadecimal form\n");
+	printf("Enter the number of 1 byte (Ex. 0xAB) in hexadecimal form\n");
 	scanf("%x", &number);
 	
 	printf("The number before swapping is 0x%x\n", number);
-
 	
 	/*Left shift and right shift the number by 4 and do or operation. */
 	left = (number << 4);
