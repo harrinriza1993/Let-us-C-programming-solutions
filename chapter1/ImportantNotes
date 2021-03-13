@@ -1,0 +1,15 @@
+Important notes:
+-----------------
+
+1. Advantages of c : Good base for learning c++, c# or java later
+		      Unix, Linux, Windows, Gaming frameworks are written in c
+		      C offers better interaction with H/W
+		      
+2. A constant is an entity that doesn't change
+
+3. A variable is an entity that may change, the value stored in each location may
+   change the names given to these locations are called variable names.
+   
+4. printf() outputs the values to the screen.
+
+5. scanf() receives the input from the keyboard.

@@ -1,0 +1,49 @@
+[E] Point out the errors,if any,in the following programs.
+
+a. int main()
+   {  
+	int a, float b, int c;
+	a = 25; b = 3.24, c = a + b * b - 35;
+   }
+
+   Compiler Error: expected identifier or ‘(’ before ‘float’
+   
+   Note: int and float should be terminated by ;
+
+b. #include<stdio.h>
+
+   int main()
+   {
+	int a = 35; float b = 3.24;
+	printf("%d%f%d", a, b + 1.5, 235);
+   }
+   error : No error
+
+   Note: Output : 35 4.740000 235
+
+c. #include<stdio.h>
+
+   int main()
+   {
+	int a, b, c;
+	scanf("%d%d%d", a, b, c);
+    } 
+   Compiler error : format ‘%d’ expects argument of type ‘int *’, but argument 2 has type ‘int’ [-Wformat=]
+
+   Note: & operator should be used in scanf operator.
+
+d. #include<stdio.h>
+
+   int main()
+   {
+	int m1, m2, m3
+	printf("Enter values of marks in 3 subjects")
+	scanf("%d%d%d", &m1, &m2, &m3)
+	printf("You entered %d %d %d", m1, m2, m3)
+   }
+   Compiler error : expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘printf
+   
+   Note : ; should be used to terminate a line in the program.
+  
+   
+

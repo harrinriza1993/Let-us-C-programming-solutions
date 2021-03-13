@@ -1,0 +1,21 @@
+[B] Which of the following are invalid variable names and why ?
+
+	B'day		int		$hello
+	#HASH		dot.		number
+	totalArea	_main()	temp_in_Deg
+	total%		1st		stack-queue
+	variable name	%name%		salary
+	
+Answer :
+	
+	The invalid variables are
+		B'day		- ' is used in between
+		int		- int is a keyword
+		$hello		- $ is used at first
+		#HASH		- # is used at first
+		dot.		- . is used at last
+		_main() 	- main() is a function
+		total%  	- % is used at last
+		1st		- number is used in first
+		stack -queue 	- - is used in between
+		%name%		- % is used at first and last 

@@ -1,0 +1,35 @@
+[D] Match the following
+
+(a) \n		Literal
+(b) 3.14	Statement terminator
+(c) -6513	Character constant
+(d) 'D' 	Escape sequence
+(e) 4.25e-3	Input function
+(f) main()	Function
+(g) %f, %d,%c	Integer constant
+(h) ;		Address of operator
+(i) Constant	Output function
+(j) Variable	Format specifier
+(k) &		Exponential form
+(l) printf()  	Real constant
+(m) scanf()	Identifier
+
+
+Answer
+
+(a) \n		Escape Sequence
+(b) 3.14	Real constant
+(c) -6513	Integer constant
+(d) 'D' 	Character constant
+(e) 4.25e-3	Exponential form
+(f) main()	Function
+(g) %f, %d,%c	Format specifier
+(h) ;		Statement Terminator
+(i) Constant	Literal
+(j) Variable	Identifier
+(k) &		Address of operator
+(l) printf()  	Output function
+(m) scanf()	Input function
+
+
+

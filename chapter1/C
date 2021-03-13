@@ -1,0 +1,33 @@
+[C] State whether the following statements are True or False
+
+(a) C language was developed by Dennis Ritchie. - True
+
+(b) Operating systems like Windows, Unix, Linux and Andriod are
+    Written in C. - True
+
+(c) C language programs can easily interact with hardware of a PC/
+    Laptop - True
+
+(d) A real constant in C can be expressed in both Fractional and
+    Exponential forms. - True
+
+(e) A character variable can at a time store only one Character - True
+
+(f) The maximum Value that an integer constant can have varies from
+    one compiler to another - True
+ 
+(g) Usually all C statements are written in small case letters - True
+
+(h) Spaces may be inserted between two words in a C statement - True
+
+(i) Spaces cannot be present within a variable name - True
+
+(j) C programs are converted in to machine language with the help of a
+    program called Editor - False 
+
+(k) Most development environment provide an Editor to type a C program 
+    and a compiler to convert it into machine language - True
+    
+(l) int, char, float, real, integer, character, char, main, printf and 
+    scanf all are Keywords - False
+    
