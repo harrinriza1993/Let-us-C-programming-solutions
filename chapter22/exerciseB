@@ -1,0 +1,71 @@
+[B] Point out the errors,if any,in the following program.
+
+a. #include<stdio.h>
+
+   int main()
+   {
+	typedef struct patient
+	{
+		char name[20];int age;
+		int systolic_bp; int diastolic_bp;
+	}ptt;	
+	
+	
+	ptt p1 = {"anil", 23, 110, 220};
+	printf("%s%d\n", p1.name, p1.age);
+	printf("%d%d\n", p1.systolic_bp, p1.diastolic_bp);
+	
+	return 0;
+   }
+   Error  : No Error.
+   Output : anil23
+	    110220
+
+b. #include<stdio.h>
+
+   void show();
+
+   int main()
+   {
+	void (*s) ();
+	s = show;
+	(*s)();
+	s();
+	
+	return 0;
+   }
+
+   void show()
+   {
+	printf("don't show off. It won't pay in the long run\n");
+   }
+
+   error  :  No Error.
+   Output :  don't show off. It won't pay in the long run
+             don't show off. It won't pay in the long run
+
+
+c. #include<stdio.h>
+
+   void show(int, float);
+
+   int main()
+   {
+	void (*s)(int, float);
+	s = show;
+	(*s)(10, 3.14);
+	
+	return 0;
+   }
+
+   void show(int i, float f)
+   {
+	printf("%d%f\n", i, f);
+   }
+
+   
+   error  :  No Error.
+   Output :  103.140000
+
+
+   

@@ -1,0 +1,20 @@
+Important notes:
+-----------------
+
+1) In computer programming, an enumerated type  is a data type consisting of a set of named values called elements, 
+   members, enumeral, or enumerators of the type. The enumerator names are usually identifiers that behave as constants in the language. 
+	
+2) typedef is a reserved keyword in the programming languages. It is used to create an additional name (alias) for 
+   another data type, but does not create a new type, except in the obscure case of a qualified typedef of an array 
+   type where the typedef qualifiers are transferred to the array element type.
+
+3) In programming terminology, a bit field is a data structure that allows the programmer to allocate memory to structures and unions 
+   in bits in order to utilize computer memory in an efficient manner. Since structures and unions are user-defined data types in C, 
+   the user has an idea of how much memory will they occupy.
+   
+4) Function Pointers point to code like normal pointers. In Functions Pointers, function's name can be used to get function's address. 
+   A function can also be passed as an arguments and can be returned from a function.
+   
+5) A union is a special data type available in C that allows to store different data types in the same memory location. You can define a union 
+   with many members, but only one member can contain a value at any given time. Unions provide an efficient way of using the same memory location 
+   for multiple-purpose.
