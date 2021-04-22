@@ -1,0 +1,41 @@
+[A] Point out the errors, if any, in the following C statements:
+
+(a) x = (y + 3);
+Error : No error.
+
+(b) cir = 2 * 3.141593 * r;
+Error : No error.
+
+(c) char = '3';
+Error : Variable name should not be keyword.
+
+(d) 4/3 * 3.14 * r * r * r = vol_of_sphere;
+Error : Variable should not be in right side.
+
+(e) Volume = a^3;
+Error : Exponential operation can be done by pow function.
+
+(f) area = 1/2 * base * height;
+Error : No error.
+
+(g)si = p * r * n / 100;
+Error : No error.
+
+(h) areaofcircle = 3.14 * r  * r;
+Error : No error.
+
+(i) peri_of_tri = a + b + c;
+Error : No error.
+
+(j) slope = (y2 - y1) .-.(x2 - x1);
+Error : Division operation is performed by / operator.
+
+(k) 3 = b = 4 = a;
+Error : Assignment operator cn be assigned one left side and right side.
+
+(l) count = count + 1;
+Error : No error.
+
+(m) char ch = '25Apr12'
+Error : Only one character can be assigned to a single character variable.
+

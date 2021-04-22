@@ -1,0 +1,38 @@
+[B] Evaluate the following expressions and show their hierarchy.
+
+(a) ans = 5 * b * b * x - 3 * a * y * y - 8 * b *b * x + 10 * a * y;
+    (a = 3, b = 2, x = 5, y = 4 assume ans to be an int)
+    
+    Solution :
+    	ans = 5 * 2 * 2 * 5 - 3 * 3 * 4 * 4 -8 * 2 * 2 * 5 + 10 * 3 * 4
+    	    = 100 - 144 - 160 + 120
+    	    = 100 - 144 - 40
+    	    = -44 - 40
+    	 ans    = -84
+    	 
+(b) res = 4 * a * y / c - a * y / c;
+    (a = 4, y = 1, c = 3, assume res to be an int)
+    
+    Solution :
+    	res  = 4 * 4 * 1 / 3 - 4 * 1 / 3
+    	     = 16 / 3 - 4 / 3
+    	     = 5 - 1
+    	res  = 4
+    	
+(c) s = c + a * y * y / b;
+    (a = 2.2, b = 0.0, c = 4.1 y = 3.0, assume s to be an float)
+    
+    Solution :
+    	s = 4.1 + 2.2 * 3.0 * 3.0 / 0.0
+    	  = 4.1 + 18.0 / 0.0
+    	  = 4.1 + 0
+    	s = 4.1
+
+(d) R = x * x + 2 * x + 1 / 2 * x * x + x + 1;
+    (x = 3.5, assume R to be an float)
+    
+    Solution :
+    	 R = 3.5 * 3.5 + 2 * 3.5 + 1 / 2 * 3.5 * 3.5 + 3.5 + 1
+    	   = 12.25 + 7.0 + 1 / 24.5 + 3.5 + 1
+    	   = 12.25 + 7.0 + 0.04 + 3.5 + 1
+    	 R  = 23.79

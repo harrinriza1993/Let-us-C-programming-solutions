@@ -1,0 +1,16 @@
+[G] Fill in the blanks:
+
+(a) In y = 10 * x / 2 + z; ____ operation will be performed first.
+    Ans : *
+    
+(b) If a is an integer variable, a = 11 / 2; will store ____ in a.
+    Ans : 5
+    
+(c) The expression, a = 22 / 7 * 5 / 3; would evulate to____.
+    Ans : 0
+    
+(d) The expression x = -7 % 2 - 8 would evulate to ____.
+    Ans : -9
+    
+(f) If d is the float operation d = 2 / 7.0 would store ____ in d.
+    Ans : 0.0 

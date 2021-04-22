@@ -1,0 +1,20 @@
+Important notes:
+-----------------
+
+1. C offers 3 types of instructions :
+	1) Type declaration 2) Arithmetic 3) Control
+	
+2. Declaration and assignment can be combine Ex : int a = 5.
+
+3. 3 types of Arithmetic instructions :
+	1) Integer mode 2) Arithmetic 3) Control
+	
+4. Rules for arithmetic instructions :
+	- If one operand is float, result is a float
+	- Result is int only if both operands are ints
+	
+5. Every operator has 1)Priority 2)Associativity
+	* Priority is * / % + - =
+	* Priority can be changed using ().
+	
+
