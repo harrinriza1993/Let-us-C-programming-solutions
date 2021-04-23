@@ -1,0 +1,18 @@
+Important notes:
+-----------------
+1. Three ways of taking decisions in a program :
+	1) Using if-else statement
+	2) Using conditional operators
+	3) Using the switch statement
+	
+2. General form of decision control instruction :
+	if(condition)
+		statemrnt1;
+	else
+		statement2;
+		
+3. If more than 1 statement is present inside if or else {} is necessary.
+
+4. Condition is built using relation operators <,>,<=,>=,==,!=.
+
+5. Any non-zero number is true, 0 is false.

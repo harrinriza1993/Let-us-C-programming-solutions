@@ -1,0 +1,129 @@
+[B] Point out the errors, if any, in the following programs.
+
+a. #include<stdio.h>
+
+   int main()
+   {
+	float a = 12.25, b = 12.52;
+	
+	if(a = b)
+		printf("a and b are equal\n");
+		
+	return 0;
+   }
+   Error : No error.
+   
+   Notes : Usually logical operators are used in conditional statements. a = b means it is
+           always true.
+
+a. #include<stdio.h>
+
+   int main()
+   {
+	int j = 10, k = 12;
+	
+	if(k >= j)
+	{
+		{
+			k = j;
+			j = k;
+		}
+	}
+	
+	return 0;
+   }
+
+   Error : No error.
+	
+   Notes : No printf statement in the program. So the program does not display anything.
+   
+b. #include<stdio.h>
+
+   int main()
+   {
+	if ('X' < 'x')
+		printf("ascii value of X is smaller than that of x\n");
+   }
+   	Error : No error.
+   	
+   	Notes : return 0 is absent in the program.
+
+c. #include<stdio.h>
+
+int main()
+{
+	int x = 10;
+	
+	if(x >= 2)then
+		printf("%d\n", x);
+		
+	return 0;
+}
+
+   Error : 
+   	Compiler error : ‘then’ undeclared (first use in this function).
+   	 
+   Notes : Unwanted usage of then in the program.
+   
+d. #include<stdio.h>
+
+   int main()
+   {
+	int x = 10, y = 15;
+	
+	if(x % 2 = y % 3)
+		printf("Carpathians\n");
+   }
+
+    Error : 
+   	Compiler error : lvalue required as left operand of assignment
+
+   Notes : When you have an assignment operator in a statement, the LHS of the operator must be something the 
+           language calls an lvalue. If the LHS of the operator does not evaluate to an lvalue, the value from 
+           the RHS cannot be assigned to the LHS.
+           
+e. #include<stdio.h>
+
+   int main()
+   {
+	int x = 30, y = 40;
+	
+	if(x == y)
+		printf("x is equal to y\n");
+	elseif(x > y)
+		printf("x is greater than y\n");
+	elseif(x < y)
+		printf("x is less than y\n");
+	
+   }
+
+   Error : 
+   	Compiler error : expected ‘;’ before ‘printf’.
+
+   Notes : else if should be used instead of elseif.
+           
+f. #include<stdio.h>
+
+   int main()
+   {
+	int a, b;
+	
+	scanf("%d%d", a, b);
+	
+	if(a > b);
+		printf("This is a game\n");
+	else
+		printf("You have to play it\n");
+		
+	return 0;
+   }
+   Error : 
+   	Compiler error : ‘else’ without a previous ‘if’
+
+   Notes : ; should not be used in if statement.
+           & should be used in scanf statement.
+   
+
+   
+   
+
