@@ -1,0 +1,148 @@
+[C] Point out the errors, if any, in the following programs.
+
+a. #include<stdio.h>
+
+   int main()
+   {
+	char spy = 'a', password = 'z';
+	
+	if(spy == a or password == 'z')
+		printf("All the birds are safe in the nest\n");
+	
+	return 0;
+   }
+   Error : 
+   	Compiler error : ‘a’ undeclared (first use in this function).
+   
+   Notes : a is a character so single quotes should be given and or is not a operator.
+
+b. #include<stdio.h>
+
+   int main()
+   {
+	int i = 10, j = 20;
+	
+	if(i == 5) && if (j == 10)
+		printf("Have a nice day\n");
+	
+	return 0;
+   }
+   Error : 
+   	Compiler error : expected identifier before ‘if'
+	
+   Notes : Two if statements cannot be written in same line.
+   
+c. #include<stdio.h>
+
+   int main()
+   {
+	int x = 10, y = 20;
+	
+	if(x >= 2 and y <= 50)
+		printf("%d\n", x);
+   }
+   	Error : 
+   		Compiler error : expected ‘)’ before ‘and’. 
+   	
+   	Notes : && should be used instead of and.
+
+d. #include<stdio.h>
+
+   int main()
+   {
+	int x = 2;
+	
+	if(x == 2 && x != 0);
+		printf("Hello\n");
+	else
+		printf("Bye\n");
+	
+	return 0;
+   }
+   Error : 
+   	Compiler error : ‘else’ without a previous ‘if’
+
+   Notes : In if statement ; should not be used.
+   
+e.#include<stdio.h>
+
+   int main()
+   {
+	int j = 65;
+	
+	printf("j >= 65 ? %d : %c\n", j);
+	
+	return 0;
+   }
+    Error : 
+   	Compiler error : format ‘%c’ expects a matching ‘int’ argument [-Wformat=].
+
+   Notes : %c cannot be used since int is the data type.
+           
+e. #include<stdio.h>
+
+   int main()
+   {
+	int j = 65;
+	
+	printf("j >= 65 ? %d : %c\n", j);
+	
+	return 0;
+   }
+
+   Error : 
+   	Compiler error : format ‘%c’ expects a matching ‘int’ argument [-Wformat=]
+
+   Notes : int is the datatype used in the program. so %d should be used instead of %c.
+           
+f. #include<stdio.h>
+
+   int main()
+   {
+	int i = 10, j;
+	
+	i >= 5 ? j = 10 : j = 15;
+	
+	printf("%d%d\n", i, j);
+	
+	return 0;
+   }
+   Error : 
+   	Compiler error : lvalue required as left operand of assignment
+
+   Notes : Variable(j) should not be written after : in conditional operator.
+           
+g. #include<stdio.h>
+
+   int main()
+   {
+	int a = 5, b = 6;
+	
+	(a == b ? printf("%d\n", a));
+	
+	return 0;
+   }
+   Error : 
+   	Compiler error : expected ‘:’ before ‘)’ token
+
+   Notes :In Conditional operator ? is follwed by :.
+    
+h. #include<stdio.h>
+
+   int main()
+   {
+	int n = 9;
+	
+	(n == 9 ? printf("correct\n"); : printf("Wrong\n"););
+	
+	return 0;
+   }
+
+   Error : 
+   	Compiler error : expected ‘:’ before ‘;’ token
+
+   Notes : Before terminating conditional operator ; should not be used.
+
+   
+   
+

@@ -1,0 +1,16 @@
+Important notes:
+-----------------
+1. Logical operators are &&, || and !.
+
+2. Logical operators are useful in 2 situations :
+	1) Checking ranges  2)Solving yes/no problem
+		
+3. sizeof is an operator. It gives number of bytes occupied by an entity.
+
+4. Conditional operators ?: are ternary operators. General form :
+	?: can have only 1 statement each
+	?: can be nested
+	?: always go together. : is not optional.
+	
+5. Always paranthesis assignment operation is used with ?:
+
