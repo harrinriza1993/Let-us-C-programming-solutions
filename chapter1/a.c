@@ -7,18 +7,19 @@
 
 void main()
 {
-	int basic_salary, dearness_allowance, house_rent_allowance, gross_salary;
+	float basic_salary, dearness_allowance, house_rent_allowance, gross_salary;
 	
 	printf("Enter the basic salary\n");
-	scanf("%d", &basic_salary);
+	scanf("%f", &basic_salary);
 	
-	dearness_allowance = (basic_salary / 40) * 100;
-	house_rent_allowance = (basic_salary / 20) * 100;
+	dearness_allowance = (basic_salary * 40) / 100;
+	house_rent_allowance = (basic_salary * 20) / 100;
 	
-	printf("\nThe dearness allowance is %d\n", dearness_allowance);
-	printf("The house rent allowance is %d\n", house_rent_allowance);
+	printf("\nThe dearness allowance is %f\n", dearness_allowance);
+	printf("The house rent allowance is %f\n", house_rent_allowance);
 	
 	/*Formula for gross salary. */
 	gross_salary = basic_salary + dearness_allowance + house_rent_allowance;
-	printf("The gross salary is %d\n", gross_salary);
+
+	printf("The gross salary is %f\n", gross_salary);
 }

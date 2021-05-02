@@ -1,7 +1,7 @@
 # Let-us-C-programming-solutions
 Solve the given C programming in Let us C programming written by Yashavant Kanetkar
 
-**chapter1** . Comming Soon  
+**chapter1** . Getting Started  
 **chapter2** . Comming Soon  
 **chapter3** . Comming Soon  
 **chapter4** . Comming Soon  

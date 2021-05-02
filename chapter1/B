@@ -8,14 +8,14 @@
 	
 Answer :
 	
-	The invalid variables are
-		B'day		- ' is used in between
-		int		- int is a keyword
-		$hello		- $ is used at first
-		#HASH		- # is used at first
-		dot.		- . is used at last
-		_main() 	- main() is a function
-		total%  	- % is used at last
-		1st		- number is used in first
-		stack -queue 	- - is used in between
-		%name%		- % is used at first and last 
+	The invalid variables are  
+		B'day		- ' is used in between   
+		int		-  int is a keyword  
+		$hello		- $ is used at first  
+		#HASH		- # is used at first  
+		dot.		- . is used at last  
+		_main() 	- main() is a function  
+		total%  	- % is used at last  
+		1st		- number is used in first  
+		stack -queue 	- - is used in between  
+		%name%		- % is used at first and last   

@@ -4,19 +4,20 @@
 */
 
 #include<stdio.h>
+
 #define PI  3.14
 
 void main()
 {
-	int length, breadth, radius;
+	float length, breadth, radius;
 	
 	printf("Enter the length and breadth of rectangle\n");
-	scanf("%d%d", &length, &breadth);
+	scanf("%f%f", &length, &breadth);
 	printf("Enter the radius of the circle\n");
-	scanf("%d", &radius);
+	scanf("%f", &radius);
 	
-	printf("The area of the rectangle is %f\n", (float) (length * breadth));
-	printf("The perimeter of the rectangle is %f\n", (float) 2 * (length + breadth));
-	printf("The area of the circle is %f\n", (float)PI * radius * radius);
-	printf("The circumference of the circle is %f\n", (float)2 * PI * radius); 
+	printf("The area of the rectangle is %f\n",  length * breadth);
+	printf("The perimeter of the rectangle is %f\n",  2 * (length + breadth));
+	printf("The area of the circle is %f\n", PI * radius * radius);
+	printf("The circumference of the circle is %f\n", 2 * PI * radius); 
 }

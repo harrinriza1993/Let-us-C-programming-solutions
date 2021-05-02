@@ -1,4 +1,4 @@
-# Chapter 5 : Getting Started
+# Chapter 1 : Getting Started
 
 ### [A] Which of the following are invalid C constants and why?
 - This one is covered in `exerciseA` file. 

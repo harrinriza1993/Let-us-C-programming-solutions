@@ -16,7 +16,7 @@ void main()
 	if(m1 <= 100 && m1 >= 0 && m2 <= 100 && m2 >= 0 && m3 <= 100 && m3 >= 0 && m4 <= 100 && m4 >= 0 && m5 <= 100 && m5 >= 0)
   	{
 		printf("The Aggregate mark of the student is %d\n", m1 + m2 + m3 + m4 + m5);
-		printf("The Percentage mark of the student is %f\n", (float)((m1 + m2 + m3 + m4 + m5) / 5) * 100);
+		printf("The Percentage mark of the student is %f\n", (float)((m1 + m2 + m3 + m4 + m5) / 5));
 	}
 	else
 	{
