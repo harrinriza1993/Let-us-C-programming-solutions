@@ -10,15 +10,15 @@
  
  void main()
  {
- 	int x, y, r;
- 	float s;
+ 	int x, y;
+ 	float s, r;
  	
  	printf("Enter the value of x and y\n");
  	scanf("%d%d", &x, &y);
  	
- 	r = pow((x * x) + (y * y), 0.5);
+ 	r = sqrt((x * x) + (y * y));
  	s = atan(y / x);
  	
- 	printf("The Polar co-ordinates are %d and %f\n", r, s);
+ 	printf("The Polar co-ordinates are %f and %f\n", r, s);
  	
  }

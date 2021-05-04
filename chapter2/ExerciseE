@@ -16,7 +16,7 @@ a. #include<stdio.h>
 	return 0;
    }
    Output:
-   	020.0000002.000000
+   	0 2 0.000000 2.000000
 
    Notes: %d prints integer value and %f prints float value.
 

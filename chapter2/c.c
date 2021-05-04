@@ -6,13 +6,14 @@
 
 void main()
 {
-	int length1, length2, length3, area;
+	int length1, length2, length3;
+	float area;
 	
 	printf("Enter the three sides of the triangle\n");
 	scanf("%d%d%d", &length1, &length2, &length3);
 	
-	area = (length1 + length2 + length3) / 2;
+	area = (length1 + length2 + length3) / 2.0;
 	
-	printf("The area of the triangle is %d\n", area);
+	printf("The area of the triangle is %f\n", area);
 }
        

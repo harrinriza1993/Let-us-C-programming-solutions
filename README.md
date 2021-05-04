@@ -2,7 +2,7 @@
 Solve the given C programming in Let us C programming written by Yashavant Kanetkar
 
 **chapter1** . Getting Started  
-**chapter2** . Comming Soon  
+**chapter2** . C Instructions  
 **chapter3** . Comming Soon  
 **chapter4** . Comming Soon  
 **chapter5** . Loop Control Instruction  

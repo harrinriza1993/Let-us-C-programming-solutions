@@ -1,4 +1,4 @@
-# Chapter 5 : C Instructions
+# Chapter 2 : C Instructions
 
 ### [A] Point out the errors, if any, in the following C statements.
 - This one is covered in `exerciseA` file.

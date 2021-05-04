@@ -7,10 +7,10 @@
     Ans : 5
     
 (c) The expression, a = 22 / 7 * 5 / 3; would evulate to____.
-    Ans : 0
+    Ans : 5
     
 (d) The expression x = -7 % 2 - 8 would evulate to ____.
     Ans : -9
     
 (f) If d is the float operation d = 2 / 7.0 would store ____ in d.
-    Ans : 0.0 
+    Ans : 0.285714 
