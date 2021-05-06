@@ -12,17 +12,15 @@ void main()
 	printf("Enter the cost price and selling price\n");
 	scanf("%d%d", &cost_price, &selling_price);
 	
-	if((selling_price - cost_price) > (cost_price - selling_price))
-	{
-		printf("The lesser has made profit\n");
-		profit = selling_price - cost_price;
-		
+	profit = selling_price - cost_price;
+	loss   = cost_price - selling_price;
+	
+	if(profit > loss )
+	{	
 		printf("The profit made by the seller is %d\n", profit);  
 	}
 	else
-	{
-		printf("The seller has made loss\n");
-		loss = cost_price - selling_price;
+	{	
 		printf("The loss made by the seller is %d\n", loss);
 	}
 }

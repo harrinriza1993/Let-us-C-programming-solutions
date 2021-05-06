@@ -50,15 +50,15 @@ b. #include<stdio.h>
 
 c. #include<stdio.h>
 
-int main()
-{
-	int x = 10;
-	
-	if(x >= 2)then
-		printf("%d\n", x);
+	int main()
+	{
+		int x = 10;
 		
-	return 0;
-}
+		if(x >= 2)then
+			printf("%d\n", x);
+			
+		return 0;
+	}
 
    Error : 
    	Compiler error : ‘then’ undeclared (first use in this function).

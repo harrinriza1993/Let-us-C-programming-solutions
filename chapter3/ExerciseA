@@ -15,7 +15,7 @@ a. #include<stdio.h>
 	
 	return 0;
    }
-   Output: 32767200
+   Output: 32767(Garbage) 200
    
    Notes : Since a is not greater than or equal to 400, b stores the garbage value.
 
@@ -34,7 +34,7 @@ b. #include<stdio.h>
 	
 	return 0;
    }
-   Output : 300200
+   Output : 300 200
 
    Notes : Since a is greater than 400, the value of b is 200.
    

@@ -15,9 +15,9 @@ void main()
 	scanf("%d%d%d", &y1, &y2, &y3);
 	
 	m = (y2 - y1) / (x2 - x1);
-	n = (y3 -y2) / (x3 - x2);
+	n = (y3 -y1) / (x3 - x1);
 	
-	if(m== n)
+	if(m == n)
 		printf("All three points fall on one straight line\n");
 	else
 		printf("All three points does not fall on one straight line\n");

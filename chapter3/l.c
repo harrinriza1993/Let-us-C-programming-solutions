@@ -15,6 +15,8 @@ void main()
 		printf("The point lies in X axis\n");
 	else if(x == 0 && y == 0)
 		printf("The point lies in center\n");
+	else if(x!=0 && y!=0)
+		printf("The points lie on the plane\n");
 	else
 		printf("The point neither lies in X axis nor in Y axis\n");
 }

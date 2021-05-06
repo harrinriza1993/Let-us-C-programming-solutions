@@ -15,8 +15,10 @@ void main()
 	printf("Enter the radius of the circle\n");
 	scanf("%d", &r);
 	
-	if(r >= sqrt(pow(x,2) + pow(y, 2)))
+	if(r > sqrt(pow(x,2) + pow(y, 2)))
 		printf("The coordinates lies inside the circle\n");
+	else if (r == sqrt(pow(x,2) + pow(y, 2)))
+		printf("The coordinates lies on the circle\n");
 	else
 		printf("The coordinates lies outside the circle\n");		
 }
