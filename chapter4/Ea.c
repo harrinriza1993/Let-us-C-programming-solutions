@@ -14,7 +14,9 @@ void main()
 	printf("Entered the character\n");
 	scanf("%c", &character);
 	
-	printf("Enter the choice\n");
+	printf("\nEnter the choice\n");
+	printf("1. To find the lower or upper case\n");
+	printf("2. To find the special character\n");
 	scanf("%d", &choice);
 	
 	switch(choice)

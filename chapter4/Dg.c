@@ -27,16 +27,16 @@ void main()
 	
 	if(body_mass_index < 15)
 		printf("The BMI category is Starvation\n");
-	else if((body_mass_index > 15.1) && (body_mass_index <= 17.5))
+	if((body_mass_index > 15.1) && (body_mass_index <= 17.5))
 		printf("The BMI category is Anorexic\n");
-	else if((body_mass_index > 17.6) && (body_mass_index <= 18.5))
+	if((body_mass_index > 17.6) && (body_mass_index <= 18.5))
 		printf("The BMI category is Underweight\n");
-	else if((body_mass_index > 18.6) && (body_mass_index <= 24.9))
+	if((body_mass_index > 18.6) && (body_mass_index <= 24.9))
 		printf("The BMI category is Ideal\n");
-	else if((body_mass_index > 25) && (body_mass_index <= 25.9))
+	if((body_mass_index > 25) && (body_mass_index <= 25.9))
 		printf("The BMI category is overweight\n");
-	else if((body_mass_index > 30) && (body_mass_index <= 30.9))
+	if((body_mass_index > 30) && (body_mass_index <= 30.9))
 		printf("The BMI category is Obese\n");
-	else if(body_mass_index >= 40)
+	if(body_mass_index >= 40)
 		printf("The BMI category is Morbidly Obese\n");
 }

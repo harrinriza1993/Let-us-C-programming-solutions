@@ -15,7 +15,7 @@ void main()
 		printf("The triangle is equilateral\n");
 	
 	/*Any two sides of a traingle is equal means isosceles triangle. */
-	if((side1 == side2) || (side2 == side3) || (side1 == side3))
+	if( ((side1 == side2) && (side1 != side3)) || ((side2 == side3)  && (side2 != side1)) || ((side1 == side3)  && (side1 != side2)))
 		printf("The triangle is isosceles triangle\n");
 	
 	/*Sum of square of two sides of a traingle is equal to square of the largest side. If the sides satsisfy this

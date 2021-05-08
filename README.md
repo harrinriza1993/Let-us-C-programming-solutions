@@ -4,7 +4,7 @@ Solve the given C programming in Let us C programming written by Yashavant Kanet
 **chapter1** . Getting Started  
 **chapter2** . C Instructions  
 **chapter3** . Decision Control Instruction  
-**chapter4** . Comming Soon  
+**chapter4** . More Complex Decision Making  
 **chapter5** . Loop Control Instruction  
 **chapter6** . More Complex Repetitions  
 **chapter7** . Case Control Instruction  

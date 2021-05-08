@@ -18,9 +18,8 @@
 
 #include<stdio.h>
 
-float max(int a, int b, int c)
+float max(float a, float b, float c)
 {
-	
 	if((a > b) && ( a > c))
 	{
 		return a;

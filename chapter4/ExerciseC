@@ -74,27 +74,11 @@ e.#include<stdio.h>
 	
 	return 0;
    }
-    Error : 
-   	Compiler error : format ‘%c’ expects a matching ‘int’ argument [-Wformat=].
-
-   Notes : %c cannot be used since int is the data type.
-           
-e. #include<stdio.h>
-
-   int main()
-   {
-	int j = 65;
-	
-	printf("j >= 65 ? %d : %c\n", j);
-	
-	return 0;
-   }
-
-   Error : 
-   	Compiler error : format ‘%c’ expects a matching ‘int’ argument [-Wformat=]
-
-   Notes : int is the datatype used in the program. so %d should be used instead of %c.
-           
+   
+    Output: j >= 65 ? 65 : <garbage value>
+		
+   Notes : only one data type is used that is the reason %c prints garbage value.
+                      
 f. #include<stdio.h>
 
    int main()

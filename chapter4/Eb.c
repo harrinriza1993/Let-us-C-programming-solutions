@@ -11,5 +11,5 @@ void main()
 	printf("Enter the year\n");
 	scanf("%d", &year);
 	
-	((year % 4 == 0) && (year % 100 != 0)) ? printf("The given year is a leap year\n") : printf("The given year is not a leap year\n");
+	((year % 4 == 0 && year % 100 != 0) || (year%400 == 0)) ? printf("The given year is a leap year\n") : printf("The given year is not a leap year\n");
 }

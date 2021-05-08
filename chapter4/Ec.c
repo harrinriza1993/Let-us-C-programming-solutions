@@ -13,5 +13,5 @@ void main()
 	scanf("%d", &num2);
 	scanf("%d", &num3);
 	
-	((num1 > num2) ? ((num1 > num3) ? printf("%d is greatest\n", num1) : printf("%d is greatest", num3)) : ((num2 > num3) ? printf("%d is greatest\n", num2) : printf("%d is greatest", num3)));
+	((num1 > num2) ? ((num1 > num3) ? printf("%d is greatest\n", num1) : printf("%d is greatest\n", num3)) : ((num2 > num3) ? printf("%d is greatest\n", num2) : printf("%d is greatest", num3)));
 }

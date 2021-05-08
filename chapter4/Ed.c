@@ -7,12 +7,12 @@
 
 void main()
 {
-	int angle, sum;
+	float angle, sum;
 	
 	printf("Enter the angle in degrees\n");
-	scanf("%d", &angle);
+	scanf("%f", &angle);
 	
 	sum = (cos(angle) * cos(angle)) + (sin(angle) * sin(angle));
 	
-	((sum == 1) ? printf("The sum of squares of sin and cosine value is 1\n") : printf("The sum of squares of sin and cosine value is not equal to 1\n"));
+	((sum == 1.0) ? printf("The sum of squares of sin and cosine value is 1\n") : printf("The sum of squares of sin and cosine value is not equal to 1\n"));
 }

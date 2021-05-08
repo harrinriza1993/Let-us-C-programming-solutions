@@ -30,11 +30,11 @@ void main()
 	
 	if((hardness > 50) && (carbon_content < 0.7) && (tensile_strength > 5600))
 		printf("The grade of the steel is 10\n");
-	else if((hardness > 50) && (carbon_content < 0.7))
+	else if((hardness > 50) && (carbon_content < 0.7) && tensile_strength<=5600)
 		printf("The grade of the steal is 9\n");
-	else if((carbon_content < 0.7) && (tensile_strength > 5600))
+	else if((carbon_content < 0.7) && (tensile_strength > 5600) && carbon_content<0.7)
 		printf("The grade of the steel is 8\n");
-	else if((hardness > 50) && (tensile_strength > 5600))
+	else if((hardness > 50) && (tensile_strength > 5600) && carbon_content>=0.7)
 		printf("The grade of the steel is 7\n");
 	else if((hardness > 50) || (carbon_content < 0.7) || (tensile_strength > 5600))
 		printf("The grade of the steel is 6\n");
