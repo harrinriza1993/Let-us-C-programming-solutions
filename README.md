@@ -17,4 +17,10 @@ Solve the given C programming in Let us C programming written by Yashavant Kanet
 **chapter14** . Multidimensional Arrays   
 **chapter15** . Strings   
 **chapter16** . Handling Multiple Strings   
-**chapter17** . Structures   
+**chapter17** . Structures    
+**chapter18** . Console Input / Output    
+**chapter19** . FILE INPUT / OUTPUT   
+**chapter20** . More Issues in Input / Output  
+**chapter21** . Operation On Bits    
+**chapter22** . Miscellaneous Features    
+
